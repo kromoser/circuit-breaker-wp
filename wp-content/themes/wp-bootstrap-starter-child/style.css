@@ -11,3 +11,262 @@ License URI: LICENSE
 Text Domain: wp-bootstrap-starter-child
 Tags: blog, custom-menu, featured-images, threaded-comments, translation-ready, right-sidebar, custom-background, e-commerce, theme-options, sticky-post, full-width-template
 */
+/* colors */
+/* fonts */
+/* general settings and styles */
+p {
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif; }
+
+h1, h2, h3 {
+  font-family: Vollkorn, Georgia, "Adobe Garamond Pro", Garamond, serif; }
+
+.col-border-left {
+  border-top: none;
+  border-bottom: none;
+  border-left: 1px solid #dedede; }
+  @media screen and (max-width: 767px) {
+    .col-border-left {
+      border-left: 0px; } }
+
+.col-border-right {
+  border-top: none;
+  border-bottom: none;
+  border-right: 1px solid #dedede; }
+  @media screen and (max-width: 1200px) {
+    .col-border-right {
+      border-right: 0px; } }
+
+/* logo and branding */
+.branding-logo {
+  width: 100%;
+  margin-bottom: -1rem;
+  position: relative;
+  z-index: 1; }
+
+/* block subheads */
+.block-title {
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+  color: #6b6b6b;
+  margin: 0 0 1.5rem 0; }
+
+/* nav styles */
+.navbar-expand-lg {
+  padding-bottom: 0;
+  padding-top: 0;
+  border-top: 1px solid #dedede; }
+  .navbar-expand-lg ul.navbar-nav {
+    margin: 0 auto;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif; }
+    .navbar-expand-lg ul.navbar-nav li {
+      font-size: .85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15rem; }
+      .navbar-expand-lg ul.navbar-nav li.dropdown:hover .dropdown-menu {
+        display: block; }
+      .navbar-expand-lg ul.navbar-nav li a.nav-link {
+        color: #6b6b6b;
+        padding: 1rem 1.5rem; }
+        .navbar-expand-lg ul.navbar-nav li a.nav-link:hover {
+          background: #6d005f;
+          color: #f3f3f3; }
+
+/* hero posts blade */
+div.hero-posts {
+  background: -moz-linear-gradient(left, rgba(58, 0, 51, 0.15) 0%, rgba(58, 0, 51, 0.95) 65%, rgba(58, 0, 51, 0.95) 100%), url(assets/img/detained-fence.jpg) center center;
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, rgba(58, 0, 51, 0.15) 0%, rgba(58, 0, 51, 0.95) 65%, rgba(58, 0, 51, 0.95) 100%), url(assets/img/detained-fence.jpg) center center;
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, rgba(58, 0, 51, 0.15) 0%, rgba(58, 0, 51, 0.95) 65%, rgba(58, 0, 51, 0.95) 100%), url(assets/img/detained-fence.jpg) center center;
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#006d005f', endColorstr='#6d005f',GradientType=0 );
+  /* IE6-9 */
+  background-size: cover;
+  height: 275px;
+  margin-bottom: 3rem; }
+  @media screen and (max-width: 991px) {
+    div.hero-posts {
+      height: 350px;
+      text-align: center;
+      background: -moz-linear-gradient(top, rgba(58, 0, 51, 0.15) 0%, rgba(58, 0, 51, 0.95) 65%, rgba(58, 0, 51, 0.95) 100%), url(assets/img/detained-fence.jpg) center center;
+      /* FF3.6-15 */
+      background: -webkit-linear-gradient(top, rgba(58, 0, 51, 0.15) 0%, rgba(58, 0, 51, 0.95) 65%, rgba(58, 0, 51, 0.95) 100%), url(assets/img/detained-fence.jpg) center center;
+      /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(to bottom, rgba(58, 0, 51, 0.15) 0%, rgba(58, 0, 51, 0.95) 65%, rgba(58, 0, 51, 0.95) 100%), url(assets/img/detained-fence.jpg) center center;
+      /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ } }
+  @media screen and (max-width: 767px) {
+    div.hero-posts {
+      height: auto;
+      padding: 3rem 1.5rem; } }
+  div.hero-posts .primary-feature-post {
+    text-shadow: 2px 1px 5px rgba(0, 0, 0, 0.8); }
+    div.hero-posts .primary-feature-post h2 {
+      font-size: 3rem;
+      font-weight: 600;
+      letter-spacing: 0.06rem; }
+    div.hero-posts .primary-feature-post p {
+      font-size: 1.1rem; }
+  div.hero-posts .secondary-feature-posts {
+    text-transform: uppercase;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
+    letter-spacing: 0.25rem; }
+    div.hero-posts .secondary-feature-posts h4 {
+      font-size: 1rem;
+      text-align: right;
+      margin-bottom: 1.6rem; }
+      div.hero-posts .secondary-feature-posts h4:last-child {
+        margin-bottom: 0; }
+      div.hero-posts .secondary-feature-posts h4 a {
+        color: #ffffff; }
+        div.hero-posts .secondary-feature-posts h4 a:hover {
+          color: #f3f3f3;
+          text-decoration: none;
+          border-bottom: 2px solid #f3f3f3; }
+      @media screen and (max-width: 991px) {
+        div.hero-posts .secondary-feature-posts h4 {
+          text-align: center; } }
+
+/* end hero posts blade */
+/* case list */
+ul.case-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2rem; }
+  @media screen and (max-width: 767px) {
+    ul.case-list {
+      -webkit-column-gap: 20px;
+      -moz-column-gap: 20px;
+      column-gap: 20px;
+      -webkit-column-count: 2;
+      -moz-column-count: 2;
+      column-count: 2; } }
+  ul.case-list a {
+    color: #870075;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
+    display: inline-block;
+    width: 100%; }
+    ul.case-list a:hover {
+      text-decoration: none;
+      color: #21001c; }
+    ul.case-list a li {
+      padding: .5rem .25rem;
+      background: none; }
+      ul.case-list a li:hover {
+        background: #f3f3f3; }
+    ul.case-list a li.opinion-issued:before {
+      content: "Opinion";
+      text-transform: uppercase;
+      color: #ffffff;
+      font-weight: bold;
+      background: #f29f10;
+      letter-spacing: 0.15rem;
+      font-size: 0.6rem;
+      border-radius: 3px;
+      padding: 3px 3px 3px 6px;
+      text-align: center;
+      position: relative;
+      top: -3px;
+      margin-right: 6px; }
+    ul.case-list a li.arguments:before {
+      content: "Arguments";
+      text-transform: uppercase;
+      color: #ffffff;
+      font-weight: bold;
+      background: #278585;
+      letter-spacing: 0.15rem;
+      font-size: 0.6rem;
+      border-radius: 3px;
+      padding: 3px 3px 3px 6px;
+      text-align: center;
+      position: relative;
+      top: -3px;
+      margin-right: 6px; }
+    ul.case-list a li.new-appeal:before {
+      content: "New Appeal";
+      text-transform: uppercase;
+      color: #ffffff;
+      font-weight: bold;
+      background: #451b5e;
+      letter-spacing: 0.15rem;
+      font-size: 0.6rem;
+      border-radius: 3px;
+      padding: 3px 3px 3px 6px;
+      text-align: center;
+      position: relative;
+      top: -3px;
+      margin-right: 6px; }
+
+/* e-mail sign up form */
+form.email-form {
+  display: flex;
+  flex-wrap: wrap;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
+  margin-bottom: 2rem; }
+  form.email-form button {
+    background: #6d005f;
+    border: none;
+    color: #ffffff;
+    padding: 4px 0;
+    border-radius: 3px;
+    cursor: pointer; }
+  form.email-form .email-form-group {
+    border-bottom: 2px solid #6d005f;
+    margin-bottom: 2rem; }
+    form.email-form .email-form-group input {
+      height: 100%;
+      border: none;
+      font-weight: 300;
+      cursor: pointer;
+      padding-left: 6px; }
+      form.email-form .email-form-group input:focus {
+        outline: 0;
+        background: #f3f3f3;
+        cursor: auto; }
+
+/* recent posts lop */
+article.post {
+  margin: 3rem 0; }
+  article.post:first-of-type {
+    margin-top: 0; }
+  article.post p {
+    color: #6b6b6b; }
+
+/* calendar */
+div.calendar {
+  background: #ebebeb;
+  height: 435px;
+  margin-bottom: 1.5rem; }
+
+/* twitter feed */
+div.tweet-block {
+  background: #ebebeb;
+  height: 455px;
+  margin-bottom: 1.5rem; }
+  div.tweet-block a.twitter-timeline {
+    max-height: 455px; }
+
+/* search block */
+div.search-block {
+  background: #ebebeb;
+  height: 110px;
+  margin-bottom: 1.5rem; }
+
+/* video block */
+div.video-block {
+  background: #ebebeb;
+  height: 180px;
+  margin-bottom: 1.5rem; }
+
+/* footer */
+footer {
+  background: #21001c;
+  color: #f3f3f3;
+  padding: 3rem;
+  margin: 3rem 0 0;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
+  font-weight: 300; }
+
+/*# sourceMappingURL=style.css.map */
