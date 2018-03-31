@@ -1,0 +1,373 @@
+/*
+Theme Name: WP Bootstrap Starter Child - Circuit Breaker
+Theme URI: https://afterimagedesigns.com/wp-bootstrap-starter/
+Author: Kevin Romoser
+Author URI: http://kevinromoser.com/
+Template: wp-bootstrap-starter
+Description: Boostrap Starter Child Theme
+Version: 3.0.11
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: wp-bootstrap-starter-child
+Tags: blog, custom-menu, featured-images, threaded-comments, translation-ready, right-sidebar, custom-background, e-commerce, theme-options, sticky-post, full-width-template
+*/
+
+/* colors */
+$main-purple: rgb(109,0,95);
+$black: #000000;
+$link-color: lighten( $main-purple, 5% );
+$white: #ffffff;
+$gold-highlight: #f29f10;
+$accent-turquoise: #278585;
+$blue-plum: #451b5e;
+$white: #ffffff;
+$light-gray: #f3f3f3;
+$medium-gray: #dedede;
+$dark-gray: #6b6b6b;
+
+
+/* fonts */
+$sans-serif: 'Open Sans', 'Helvetica Neue', Helvetica, sans-serif;
+$serif: Vollkorn, Georgia, 'Adobe Garamond Pro', Garamond, serif;
+
+
+/* general settings and styles */
+p {
+  font-family: $sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: $serif;
+}
+
+.col-border-left {
+  border-top: none;
+  border-bottom: none;
+  border-left: 1px solid $medium-gray;
+
+  @media screen and (max-width: 767px) {
+    border-left: 0px;
+  }
+}
+
+.col-border-right {
+  border-top: none;
+  border-bottom: none;
+  border-right: 1px solid $medium-gray;
+
+  @media screen and (max-width: 1200px) {
+    border-right: 0px;
+  }
+
+}
+
+/* logo and branding */
+.branding-logo {
+  width: 100%;
+  margin-bottom: -1rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* block subheads */
+.block-title {
+  font-family: $sans-serif;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+  color: $dark-gray;
+  margin: 0 0 1.5rem 0;
+}
+
+/* nav styles */
+
+
+.navbar-expand-lg {
+
+  padding-bottom: 0;
+  padding-top: 0;
+  border-top: 1px solid $medium-gray;
+
+
+  ul.navbar-nav {
+  margin: 0 auto;
+  font-family: $sans-serif;
+
+    li {
+
+      font-size: .85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15rem;
+
+      &.dropdown:hover .dropdown-menu {
+        display: block;
+      }
+      a.nav-link {
+        color: $dark-gray;
+        padding: 1rem 1.5rem;
+
+        &:hover {
+          background: $main-purple;
+          color: $light-gray;
+        }
+      }
+    }
+  }
+}
+
+
+/* hero posts blade */
+div.hero-posts {
+  background: -moz-linear-gradient(left, rgba( darken($main-purple, 10%), 0.15) 0%, rgba( darken($main-purple, 10%), 0.95 ) 65%, rgba( darken($main-purple, 10%), 0.95 ) 100%), url(assets/img/detained-fence.jpg) center center; /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, rgba( darken($main-purple, 10%), 0.15) 0%,rgba( darken($main-purple, 10%), 0.95 ) 65%,rgba( darken($main-purple, 10%), 0.95 ) 100%), url(assets/img/detained-fence.jpg) center center; /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, rgba( darken($main-purple, 10%), 0.15) 0%,rgba( darken($main-purple, 10%), 0.95 ) 65%,rgba( darken($main-purple, 10%), 0.95 ) 100%), url(assets/img/detained-fence.jpg) center center; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#006d005f', endColorstr='#6d005f',GradientType=0 ); /* IE6-9 */
+  background-size: cover;
+  height: 275px;
+  margin-bottom: 3rem;
+
+  @media screen and (max-width: 991px) {
+    height: 350px;
+    text-align: center;
+    background: -moz-linear-gradient(top, rgba( darken($main-purple, 10%), 0.15) 0%, rgba( darken($main-purple, 10%), 0.95 ) 65%, rgba( darken($main-purple, 10%), 0.95 ) 100%), url(assets/img/detained-fence.jpg) center center; /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba( darken($main-purple, 10%), 0.15) 0%,rgba( darken($main-purple, 10%), 0.95 ) 65%,rgba( darken($main-purple, 10%), 0.95 ) 100%), url(assets/img/detained-fence.jpg) center center; /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba( darken($main-purple, 10%), 0.15) 0%,rgba( darken($main-purple, 10%), 0.95 ) 65%,rgba( darken($main-purple, 10%), 0.95 ) 100%), url(assets/img/detained-fence.jpg) center center; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+
+  }
+
+  @media screen and (max-width: 767px) {
+    height: auto;
+    padding: 3rem 1.5rem;
+  }
+
+  .primary-feature-post {
+    text-shadow: 2px 1px 5px rgba( $black, 0.8);
+
+    h2 {
+      font-size: 3rem;
+      font-weight: 600;
+      letter-spacing: 0.06rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+    }
+  }
+
+  .secondary-feature-posts {
+    text-transform: uppercase;
+    font-family: $sans-serif;
+    letter-spacing: 0.25rem;
+
+      h4 {
+        font-size: 1rem;
+        text-align: right;
+        margin-bottom: 1.6rem;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        a {
+          color: $white;
+
+          &:hover {
+            color: $light-gray;
+            text-decoration: none;
+            border-bottom: 2px solid $light-gray;
+          }
+        }
+
+        @media screen and (max-width: 991px) {
+          text-align: center;
+        }
+      }
+  }
+
+} /* end hero posts blade */
+
+
+/* case list */
+ul.case-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2rem;
+
+  @media screen and (max-width: 767px) {
+    -webkit-column-gap: 20px;
+    -moz-column-gap: 20px;
+    column-gap: 20px;
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+  }
+
+  a {
+
+    color: $link-color;
+    font-family: $sans-serif;
+    display: inline-block;
+    width: 100%;
+
+    &:hover {
+      text-decoration: none;
+      color: darken( $main-purple, 15% );
+    }
+
+    li {
+    padding: .5rem .25rem;
+    background: none;
+
+      &:hover {
+        background: $light-gray;
+      }
+    }
+
+    li.opinion-issued:before {
+      content: "Opinion";
+      text-transform: uppercase;
+      color: $white;
+      font-weight: bold;
+      background: $gold-highlight;
+      letter-spacing: 0.15rem;
+      font-size: 0.6rem;
+      border-radius: 3px;
+      padding: 3px 3px 3px 6px;
+      text-align: center;
+      position: relative;
+      top: -3px;
+      margin-right: 6px;
+    }
+
+    li.arguments:before {
+      content: "Arguments";
+      text-transform: uppercase;
+      color: $white;
+      font-weight: bold;
+      background: $accent-turquoise;
+      letter-spacing: 0.15rem;
+      font-size: 0.6rem;
+      border-radius: 3px;
+      padding: 3px 3px 3px 6px;
+      text-align: center;
+      position: relative;
+      top: -3px;
+      margin-right: 6px;
+    }
+
+    li.new-appeal:before {
+      content: "New Appeal";
+      text-transform: uppercase;
+      color: $white;
+      font-weight: bold;
+      background: $blue-plum;
+      letter-spacing: 0.15rem;
+      font-size: 0.6rem;
+      border-radius: 3px;
+      padding: 3px 3px 3px 6px;
+      text-align: center;
+      position: relative;
+      top: -3px;
+      margin-right: 6px;
+    }
+  }
+}
+
+/* e-mail sign up form */
+form.email-form {
+
+  display: flex;
+  flex-wrap: wrap;
+  font-family: $sans-serif;
+  margin-bottom: 2rem;
+
+  button {
+    background: $main-purple;
+    border: none;
+    color: $white;
+    padding: 4px 0;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+
+  .email-form-group {
+
+    border-bottom: 2px solid $main-purple;
+    margin-bottom: 2rem;
+
+
+    input {
+      height: 100%;
+      border: none;
+      font-weight: 300;
+      cursor: pointer;
+      padding-left: 6px;
+      &:focus {
+        outline: 0;
+        background: $light-gray;
+        cursor: auto;
+      }
+    }
+
+
+
+
+  }
+}
+
+/* recent posts lop */
+article.post {
+
+  margin: 3rem 0;
+
+  &:first-of-type {
+    margin-top: 0;
+  }
+  p {
+    color: $dark-gray;
+  }
+}
+
+/* calendar */
+div.calendar {
+  background: lighten($medium-gray, 5%);
+  height: 435px;
+  margin-bottom: 1.5rem;
+}
+
+/* twitter feed */
+div.tweet-block {
+  background: lighten($medium-gray, 5%);
+  height: 455px;
+  margin-bottom: 1.5rem;
+
+  a.twitter-timeline {
+    max-height: 455px;
+  }
+}
+
+/* search block */
+div.search-block {
+  background: lighten($medium-gray, 5%);
+  height: 110px;
+  margin-bottom: 1.5rem;
+}
+
+/* video block */
+div.video-block {
+  background: lighten($medium-gray, 5%);
+  height: 180px;
+  margin-bottom: 1.5rem;
+}
+
+
+/* footer */
+footer {
+  background: darken($main-purple, 15%);
+  color: $light-gray;
+  padding: 3rem;
+  margin: 3rem 0 0;
+  font-family: $sans-serif;
+  font-weight: 300;
+}
