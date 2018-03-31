@@ -47,7 +47,7 @@ get_header(); ?>
 												<a href="<?php the_permalink() ?>"><h3 class="entry-title"><?php the_title() ?></h3></a>
 											</header>
 											<div class="entry-content">
-												<p><?php the_excerpt() ?></p>
+												<?php the_excerpt() ?>
 											</div>
 										</article>
 
@@ -62,43 +62,36 @@ get_header(); ?>
 
 					</div>
 
-					<div class="col-sm-6 col-md-3">
-						<h3>Middle col: Only <a href="cases">cases</a></h3>
+					<!-- middle column / cases -->
+            <div class="col-sm-12 col-md-4 col-lg-4 col-xl-3 col-border-left col-border-right">
+                <!-- case list -->
+                <div class="block-title">Cases we’re watching</div>
 
+									<ul class="case-list">
+										<?php
+										// Featured cases list
+										$args = array(
+											'post_type'						=> 'case',
+											'meta_key'						=> 'featured',
+											'meta_value'					=> '1',
+											'posts_per_page'			=> '10'
+										);
+										$latest_posts = new WP_Query( $args );
 
-							<?php
-								// Latest posts query
-								$args = array(
-									'post_type'						=> 'case',
-									'meta_key'						=> 'featured',
-									'meta_value'					=> '1',
-									'posts_per_page'			=> '10'
-								);
+										//Start loop
+										if ( $latest_posts->have_posts() ) :
 
-								$latest_posts = new WP_Query( $args );
+											while ( $latest_posts->have_posts() ) : $latest_posts->the_post(); ?>
+											<?php $opinion = get_post_meta($post->ID, 'opinion', true);?>
+												<a href="<?php the_permalink() ?>"><li class="<?php if ($opinion) {?>opinion-issued<?php }?>"><?php the_title() ?></li></a>
+											<?php endwhile;
 
-								?>
+											wp_reset_postdata();
+											?>
 
-
-													<?php
-													//Start loop
-													if ( $latest_posts->have_posts() ) :
-
-														while ( $latest_posts->have_posts() ) : $latest_posts->the_post(); ?>
-															<?php $opinion = get_post_meta($post->ID, 'opinion', true);
-															if ( $opinion ) { ?>
-																<span style="background: blue">OPINION</span>
-															<?php } ?>
-
-															<h4><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h4>
-														<?php endwhile;
-
-														wp_reset_postdata();
-														?>
-
-													<?php else : ?>
-														<p><?php esc_html_e( 'Sorry, there are no recent posts.' ); ?></p>
-													<?php endif; ?>
+										<?php else : ?>
+											<p><?php esc_html_e( 'Sorry, there are no recent posts.' ); ?></p>
+										<?php endif; ?>
 
 
 

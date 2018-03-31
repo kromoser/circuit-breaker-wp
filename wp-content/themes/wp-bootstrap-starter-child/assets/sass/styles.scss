@@ -17,6 +17,7 @@ $main-purple: rgb(109,0,95);
 $black: #000000;
 $link-color: lighten( $main-purple, 5% );
 $white: #ffffff;
+$black: #000000;
 $gold-highlight: #f29f10;
 $accent-turquoise: #278585;
 $blue-plum: #451b5e;
@@ -32,6 +33,21 @@ $serif: Vollkorn, Georgia, 'Adobe Garamond Pro', Garamond, serif;
 
 
 /* general settings and styles */
+.entry-header {
+  a {
+    color: $black;
+  }
+
+  a:hover {
+    color: $link-color;
+    text-decoration: none;
+  }
+
+  h3 {
+    font-family: $serif;
+  }
+}
+
 p {
   font-family: $sans-serif;
 }
@@ -39,6 +55,7 @@ p {
 h1, h2, h3 {
   font-family: $serif;
 }
+
 
 .col-border-left {
   border-top: none;
@@ -75,7 +92,7 @@ h1, h2, h3 {
   font-size: 0.8rem;
   font-weight: bold;
   text-transform: uppercase;
-  letter-spacing: 0.3rem;
+  letter-spacing: 0.25rem;
   color: $dark-gray;
   margin: 0 0 1.5rem 0;
 }
@@ -326,6 +343,10 @@ article.post {
   }
   p {
     color: $dark-gray;
+  }
+
+  .entry-content {
+    margin-top: 0;
   }
 }
 

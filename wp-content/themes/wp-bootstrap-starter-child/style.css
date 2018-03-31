@@ -14,6 +14,14 @@ Tags: blog, custom-menu, featured-images, threaded-comments, translation-ready, 
 /* colors */
 /* fonts */
 /* general settings and styles */
+.entry-header a {
+  color: #000000; }
+.entry-header a:hover {
+  color: #870075;
+  text-decoration: none; }
+.entry-header h3 {
+  font-family: Vollkorn, Georgia, "Adobe Garamond Pro", Garamond, serif; }
+
 p {
   font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif; }
 
@@ -49,7 +57,7 @@ h1, h2, h3 {
   font-size: 0.8rem;
   font-weight: bold;
   text-transform: uppercase;
-  letter-spacing: 0.3rem;
+  letter-spacing: 0.25rem;
   color: #6b6b6b;
   margin: 0 0 1.5rem 0; }
 
@@ -233,6 +241,8 @@ article.post {
     margin-top: 0; }
   article.post p {
     color: #6b6b6b; }
+  article.post .entry-content {
+    margin-top: 0; }
 
 /* calendar */
 div.calendar {
