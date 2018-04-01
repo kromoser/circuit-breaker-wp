@@ -33,6 +33,11 @@ $serif: Vollkorn, Georgia, 'Adobe Garamond Pro', Garamond, serif;
 
 
 /* general settings and styles */
+header#masthead {
+  background-color: $white;
+  padding-bottom: 0;
+}
+
 .entry-header {
   a {
     color: $black;
@@ -99,34 +104,52 @@ h1, h2, h3 {
 
 /* nav styles */
 
+#masthead {
+  .navbar-expand-lg {
 
-.navbar-expand-lg {
-
-  padding-bottom: 0;
-  padding-top: 0;
-  border-top: 1px solid $medium-gray;
+    padding-bottom: 0;
+    padding-top: 0;
+    border-top: 1px solid $medium-gray;
 
 
-  ul.navbar-nav {
-  margin: 0 auto;
-  font-family: $sans-serif;
+    ul.navbar-nav {
+    margin: 0 auto;
+    font-family: $sans-serif;
 
-    li {
+      li {
 
-      font-size: .85rem;
-      text-transform: uppercase;
-      letter-spacing: 0.15rem;
+        font-size: .85rem;
+        text-transform: uppercase;
+        letter-spacing: 0.15rem;
 
-      &.dropdown:hover .dropdown-menu {
-        display: block;
-      }
-      a.nav-link {
-        color: $dark-gray;
-        padding: 1rem 1.5rem;
+        &.dropdown:hover .dropdown-menu {
+          display: block;
+        }
 
-        &:hover {
-          background: $main-purple;
-          color: $light-gray;
+        &.active {
+          color: $main-purple;
+
+          a.nav-link {
+            font-weight: 700;
+
+            &:hover {
+              background: rgba(0,0,0,0);
+              font-weight: 700;
+              color: $main-purple;
+            }
+          }
+        }
+
+
+        a.nav-link {
+          color: $dark-gray;
+          padding: 1rem 1.5rem;
+
+          &:hover {
+            background: $main-purple;
+            color: $light-gray;
+            font-weight: 400;
+          }
         }
       }
     }

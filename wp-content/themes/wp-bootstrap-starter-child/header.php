@@ -27,29 +27,29 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'wp-bootstrap-starter' ); ?></a>
     <?php if(!is_page_template( 'blank-page.php' ) && !is_page_template( 'blank-page-with-container.php' )): ?>
-	<header id="masthead" class="site-header navbar-static-top <?php echo wp_bootstrap_starter_bg_class(); ?>" role="banner">
-        <div class="container">
-            <nav class="navbar navbar-expand-xl p-0">
-                <div class="navbar-brand">
-                    <?php if ( get_theme_mod( 'wp_bootstrap_starter_logo' ) ): ?>
-                        <a href="<?php echo esc_url( home_url( '/' )); ?>">
-                            <img src="<?php echo esc_attr(get_theme_mod( 'wp_bootstrap_starter_logo' )); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
-                        </a>
-                    <?php else : ?>
-                        <a class="site-title" href="<?php echo esc_url( home_url( '/' )); ?>"><?php esc_url(bloginfo('name')); ?></a>
-                    <?php endif; ?>
+      <header id="masthead" class="site-header navbar-static-top" role="banner">
+        <div class="container-fluid">
+          <div class="navbar-brand col-sm-10 offset-sm-1 col-md-6 offset-md-3 col-lg-5 offset-lg-1">
+            <?php if ( get_theme_mod( 'wp_bootstrap_starter_logo' ) ): ?>
+                <a href="<?php echo esc_url( home_url( '/' )); ?>">
+                    <img src="<?php echo esc_attr(get_theme_mod( 'wp_bootstrap_starter_logo' )); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" class="branding-logo">
+                </a>
+            <?php else : ?>
+                <a class="site-title" href="<?php echo esc_url( home_url( '/' )); ?>"><?php esc_url(bloginfo('name')); ?></a>
+            <?php endif; ?>
+          </div>
+          <nav class="navbar navbar-expand-lg" role="navigation">
 
-                </div>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="material-icons">menu</i>
+            </button>
 
                 <?php
                 wp_nav_menu(array(
                 'theme_location'    => 'primary',
                 'container'       => 'div',
                 'container_id'    => 'main-nav',
-                'container_class' => 'collapse navbar-collapse justify-content-end',
+                'container_class' => 'collapse navbar-collapse',
                 'menu_id'         => false,
                 'menu_class'      => 'navbar-nav',
                 'depth'           => 3,
@@ -62,7 +62,7 @@
         </div>
 	</header><!-- #masthead -->
     <?php if(is_front_page() && !get_theme_mod( 'header_banner_visibility' )): ?>
-        <div id="page-sub-header" <?php if(has_header_image()) { ?>style="background-image: url('<?php header_image(); ?>');" <?php } ?>>
+        <div id="page-sub-header">
             <div class="container">
                 <h1>
                     Circuit Breaker
