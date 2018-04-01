@@ -61,20 +61,10 @@
             </nav>
         </div>
 	</header><!-- #masthead -->
-    <?php if(is_front_page() && !get_theme_mod( 'header_banner_visibility' )): ?>
-        <div id="page-sub-header">
-            <div class="container">
-                <h1>
-                    Circuit Breaker
-                </h1>
-                <p>
-                    A paragraph
-                </p>
-                <!--<a href="#content" class="page-scroller"><i class="fa fa-fw fa-angle-down"></i></a>-->
-            </div>
-        </div>
+    <?php if(!is_front_page() && !get_theme_mod( 'header_banner_visibility' )): ?>
+      <div id="content" class="site-content">
+    		<div class="container">
+    			<div class="row">
     <?php endif; ?>
-	<div id="content" class="site-content">
-		<div class="container">
-			<div class="row">
+
                 <?php endif; ?>

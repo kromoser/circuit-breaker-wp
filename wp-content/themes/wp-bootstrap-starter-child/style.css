@@ -30,7 +30,7 @@ p {
   font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif; }
 
 h1, h2, h3 {
-  font-family: Vollkorn, Georgia, "Adobe Garamond Pro", Garamond, serif; }
+  font-family: Vollkorn, Georgia, "Adobe Garamond Pro", Garamond, serif !important; }
 
 .col-border-left {
   border-top: none;

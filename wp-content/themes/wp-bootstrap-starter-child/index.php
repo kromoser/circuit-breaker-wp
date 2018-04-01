@@ -14,10 +14,55 @@
 
 get_header(); ?>
 
-	<section id="primary" class="content-area col-sm-12">
+	<section id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
+			<!-- FEATURED POST/IMG HERO -->
+			<div class="container-fluid hero-posts align-items-center">
 
+
+							<div class="row align-items-center h-100 text-white">
+
+								<?php
+
+								$args = array(
+									'post_type'						=> 'post',
+									'meta_key'						=> 'feature_order',
+									'orderby'							=> 'meta_value',
+									'order'								=> 'ASC',
+									'posts_per_page'			=> '4',
+									'ignore_sticky_posts' => '1'
+								);
+
+								$featured_posts = new WP_Query( $args );
+
+								if ( $featured_posts->have_posts() ) {
+									$postCount = 0;
+									while ( $featured_posts->have_posts() ) {
+										$postCount++;
+										$featured_posts->the_post();
+
+										if ( $postCount == 1 ) { ?>
+											<div class="col-lg-6 offset-lg-1 col-xs-12 primary-feature-post">
+												<h2><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h2>
+												<p><?php the_excerpt() ?></p>
+											</div>
+
+											<div class="col-lg-4 col-xs-12 secondary-feature-posts">
+										<?php
+										}
+										else { ?>
+											<h4><a href="<?php the_permalink ?>"><?php the_title() ?></a></h4>
+											<?php
+										}
+
+									}
+
+								} ?>
+								</div> <!-- End secondary featured posts -->
+							</div>
+			</div>
+			<!-- END POST/IMG HERO -->
 
 			<!-- START MAIN CONTENT -->
         <div class="container">
