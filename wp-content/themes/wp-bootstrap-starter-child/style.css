@@ -97,6 +97,18 @@ h1, h2, h3 {
 
 /* hero posts blade */
 div.hero-posts {
+  height: 275px;
+  margin-bottom: 3rem; }
+  @media screen and (max-width: 991px) {
+    div.hero-posts {
+      height: 350px;
+      text-align: center; } }
+  @media screen and (max-width: 767px) {
+    div.hero-posts {
+      height: auto;
+      padding: 3rem 1.5rem; } }
+
+div.gradient-overlay {
   background: -moz-linear-gradient(left, rgba(58, 0, 51, 0.15) 0%, rgba(58, 0, 51, 0.95) 65%, rgba(58, 0, 51, 0.95) 100%), url(assets/img/detained-fence.jpg) center center;
   /* FF3.6-15 */
   background: -webkit-linear-gradient(left, rgba(58, 0, 51, 0.15) 0%, rgba(58, 0, 51, 0.95) 65%, rgba(58, 0, 51, 0.95) 100%), url(assets/img/detained-fence.jpg) center center;
@@ -105,49 +117,43 @@ div.hero-posts {
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#006d005f', endColorstr='#6d005f',GradientType=0 );
   /* IE6-9 */
-  background-size: cover;
-  height: 275px;
-  margin-bottom: 3rem; }
+  background-size: cover; }
   @media screen and (max-width: 991px) {
-    div.hero-posts {
-      height: 350px;
-      text-align: center;
+    div.gradient-overlay {
       background: -moz-linear-gradient(top, rgba(58, 0, 51, 0.15) 0%, rgba(58, 0, 51, 0.95) 65%, rgba(58, 0, 51, 0.95) 100%), url(assets/img/detained-fence.jpg) center center;
       /* FF3.6-15 */
       background: -webkit-linear-gradient(top, rgba(58, 0, 51, 0.15) 0%, rgba(58, 0, 51, 0.95) 65%, rgba(58, 0, 51, 0.95) 100%), url(assets/img/detained-fence.jpg) center center;
       /* Chrome10-25,Safari5.1-6 */
       background: linear-gradient(to bottom, rgba(58, 0, 51, 0.15) 0%, rgba(58, 0, 51, 0.95) 65%, rgba(58, 0, 51, 0.95) 100%), url(assets/img/detained-fence.jpg) center center;
       /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ } }
-  @media screen and (max-width: 767px) {
-    div.hero-posts {
-      height: auto;
-      padding: 3rem 1.5rem; } }
-  div.hero-posts .primary-feature-post {
+  div.gradient-overlay .primary-feature-post {
     text-shadow: 2px 1px 5px rgba(0, 0, 0, 0.8); }
-    div.hero-posts .primary-feature-post h2 {
+    div.gradient-overlay .primary-feature-post h2 {
       font-size: 3rem;
       font-weight: 600;
       letter-spacing: 0.06rem; }
-    div.hero-posts .primary-feature-post p {
+      div.gradient-overlay .primary-feature-post h2 a {
+        color: #ffffff; }
+    div.gradient-overlay .primary-feature-post p {
       font-size: 1.1rem; }
-  div.hero-posts .secondary-feature-posts {
+  div.gradient-overlay .secondary-feature-posts {
     text-transform: uppercase;
     font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
     letter-spacing: 0.25rem; }
-    div.hero-posts .secondary-feature-posts h4 {
+    div.gradient-overlay .secondary-feature-posts h4 {
       font-size: 1rem;
       text-align: right;
       margin-bottom: 1.6rem; }
-      div.hero-posts .secondary-feature-posts h4:last-child {
+      div.gradient-overlay .secondary-feature-posts h4:last-child {
         margin-bottom: 0; }
-      div.hero-posts .secondary-feature-posts h4 a {
+      div.gradient-overlay .secondary-feature-posts h4 a {
         color: #ffffff; }
-        div.hero-posts .secondary-feature-posts h4 a:hover {
+        div.gradient-overlay .secondary-feature-posts h4 a:hover {
           color: #f3f3f3;
           text-decoration: none;
           border-bottom: 2px solid #f3f3f3; }
       @media screen and (max-width: 991px) {
-        div.hero-posts .secondary-feature-posts h4 {
+        div.gradient-overlay .secondary-feature-posts h4 {
           text-align: center; } }
 
 /* end hero posts blade */
@@ -291,5 +297,14 @@ footer {
   margin: 3rem 0 0;
   font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
   font-weight: 300; }
+
+/* Cases table */
+.sorting_asc:before, .sorting_desc:before, .sorting:before {
+  font-family: "Material Icons";
+  content: "\e5ce" !important; }
+
+.sorting_asc:after, .sorting_desc:after, .sorting:after {
+  font-family: "Material Icons";
+  content: "\e5cf" !important; }
 
 /*# sourceMappingURL=style.css.map */

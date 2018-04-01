@@ -158,28 +158,38 @@ h1, h2, h3 {
 
 
 /* hero posts blade */
+
 div.hero-posts {
-  background: -moz-linear-gradient(left, rgba( darken($main-purple, 10%), 0.15) 0%, rgba( darken($main-purple, 10%), 0.95 ) 65%, rgba( darken($main-purple, 10%), 0.95 ) 100%), url(assets/img/detained-fence.jpg) center center; /* FF3.6-15 */
-  background: -webkit-linear-gradient(left, rgba( darken($main-purple, 10%), 0.15) 0%,rgba( darken($main-purple, 10%), 0.95 ) 65%,rgba( darken($main-purple, 10%), 0.95 ) 100%), url(assets/img/detained-fence.jpg) center center; /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to right, rgba( darken($main-purple, 10%), 0.15) 0%,rgba( darken($main-purple, 10%), 0.95 ) 65%,rgba( darken($main-purple, 10%), 0.95 ) 100%), url(assets/img/detained-fence.jpg) center center; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#006d005f', endColorstr='#6d005f',GradientType=0 ); /* IE6-9 */
-  background-size: cover;
   height: 275px;
   margin-bottom: 3rem;
 
   @media screen and (max-width: 991px) {
     height: 350px;
     text-align: center;
-    background: -moz-linear-gradient(top, rgba( darken($main-purple, 10%), 0.15) 0%, rgba( darken($main-purple, 10%), 0.95 ) 65%, rgba( darken($main-purple, 10%), 0.95 ) 100%), url(assets/img/detained-fence.jpg) center center; /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, rgba( darken($main-purple, 10%), 0.15) 0%,rgba( darken($main-purple, 10%), 0.95 ) 65%,rgba( darken($main-purple, 10%), 0.95 ) 100%), url(assets/img/detained-fence.jpg) center center; /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom, rgba( darken($main-purple, 10%), 0.15) 0%,rgba( darken($main-purple, 10%), 0.95 ) 65%,rgba( darken($main-purple, 10%), 0.95 ) 100%), url(assets/img/detained-fence.jpg) center center; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-
   }
 
   @media screen and (max-width: 767px) {
     height: auto;
     padding: 3rem 1.5rem;
   }
+}
+div.gradient-overlay {
+  background: -moz-linear-gradient(left, rgba( darken($main-purple, 10%), 0.15) 0%, rgba( darken($main-purple, 10%), 0.95 ) 65%, rgba( darken($main-purple, 10%), 0.95 ) 100%), url(assets/img/detained-fence.jpg) center center; /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, rgba( darken($main-purple, 10%), 0.15) 0%,rgba( darken($main-purple, 10%), 0.95 ) 65%,rgba( darken($main-purple, 10%), 0.95 ) 100%), url(assets/img/detained-fence.jpg) center center; /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, rgba( darken($main-purple, 10%), 0.15) 0%,rgba( darken($main-purple, 10%), 0.95 ) 65%,rgba( darken($main-purple, 10%), 0.95 ) 100%), url(assets/img/detained-fence.jpg) center center; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#006d005f', endColorstr='#6d005f',GradientType=0 ); /* IE6-9 */
+  background-size: cover;
+
+
+  @media screen and (max-width: 991px) {
+
+    background: -moz-linear-gradient(top, rgba( darken($main-purple, 10%), 0.15) 0%, rgba( darken($main-purple, 10%), 0.95 ) 65%, rgba( darken($main-purple, 10%), 0.95 ) 100%), url(assets/img/detained-fence.jpg) center center; /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba( darken($main-purple, 10%), 0.15) 0%,rgba( darken($main-purple, 10%), 0.95 ) 65%,rgba( darken($main-purple, 10%), 0.95 ) 100%), url(assets/img/detained-fence.jpg) center center; /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba( darken($main-purple, 10%), 0.15) 0%,rgba( darken($main-purple, 10%), 0.95 ) 65%,rgba( darken($main-purple, 10%), 0.95 ) 100%), url(assets/img/detained-fence.jpg) center center; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+
+  }
+
+
 
   .primary-feature-post {
     text-shadow: 2px 1px 5px rgba( $black, 0.8);
@@ -188,6 +198,10 @@ div.hero-posts {
       font-size: 3rem;
       font-weight: 600;
       letter-spacing: 0.06rem;
+
+      a {
+        color: $white;
+      }
     }
 
     p {
@@ -414,4 +428,15 @@ footer {
   margin: 3rem 0 0;
   font-family: $sans-serif;
   font-weight: 300;
+}
+
+/* Cases table */
+.sorting_asc:before, .sorting_desc:before, .sorting:before {
+  font-family: "Material Icons";
+  content: "\e5ce" !important;
+}
+
+.sorting_asc:after, .sorting_desc:after, .sorting:after {
+  font-family: "Material Icons";
+  content: "\e5cf" !important;
 }

@@ -17,12 +17,6 @@ get_header(); ?>
 	<section id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-			<!-- FEATURED POST/IMG HERO -->
-			<div class="container-fluid hero-posts align-items-center">
-
-
-							<div class="row align-items-center h-100 text-white">
-
 								<?php
 
 								$args = array(
@@ -33,7 +27,7 @@ get_header(); ?>
 									'posts_per_page'			=> '4',
 									'ignore_sticky_posts' => '1'
 								);
-
+								global $post;
 								$featured_posts = new WP_Query( $args );
 
 								if ( $featured_posts->have_posts() ) {
@@ -42,12 +36,17 @@ get_header(); ?>
 										$postCount++;
 										$featured_posts->the_post();
 
-										if ( $postCount == 1 ) { ?>
-											<div class="col-lg-6 offset-lg-1 col-xs-12 primary-feature-post">
-												<h2><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h2>
-												<p><?php the_excerpt() ?></p>
-											</div>
+										if ( $postCount == 1 ) {
+											// Get post featured image
 
+											$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
+											<!-- FEATURED POST/IMG HERO -->
+											<div class="container-fluid hero-posts align-items-center" style="background-image: url('<?php echo $image[0] ?>'); ">
+												<div class="row align-items-center h-100 text-white gradient-overlay">
+													<div class="col-lg-6 offset-lg-1 col-xs-12 primary-feature-post">
+														<h2><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h2>
+														<p><?php the_excerpt() ?></p>
+													</div>
 											<div class="col-lg-4 col-xs-12 secondary-feature-posts">
 										<?php
 										}
