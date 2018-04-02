@@ -21,11 +21,18 @@ get_header(); ?>
 
 								$args = array(
 									'post_type'						=> 'post',
+									'meta_query' 					=> array(
+										array(
+											'key'							=> 'featured',
+											'compare'					=> '=',
+											'value'						=> 1
+										)
+									),
 									'meta_key'						=> 'feature_order',
 									'orderby'							=> 'meta_value',
 									'order'								=> 'ASC',
 									'posts_per_page'			=> '4',
-									'ignore_sticky_posts' => '1'
+									'ignore_sticky_posts' => 1
 								);
 								global $post;
 								$featured_posts = new WP_Query( $args );
@@ -35,6 +42,7 @@ get_header(); ?>
 									while ( $featured_posts->have_posts() ) {
 										$postCount++;
 										$featured_posts->the_post();
+										$exclude_posts[] = $post->ID;
 
 										if ( $postCount == 1 ) {
 											// Get post featured image
@@ -51,17 +59,16 @@ get_header(); ?>
 										<?php
 										}
 										else { ?>
-											<h4><a href="<?php the_permalink ?>"><?php the_title() ?></a></h4>
+											<h4><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h4>
 											<?php
 										}
-
-									}
-
-								} ?>
-								</div> <!-- End secondary featured posts -->
-							</div>
-			</div>
-			<!-- END POST/IMG HERO -->
+										}
+										wp_reset_postdata();
+									} ?>
+												</div> <!-- End secondary featured posts -->
+											</div>
+										</div>
+										<!-- END POST/IMG HERO -->
 
 			<!-- START MAIN CONTENT -->
         <div class="container">
@@ -76,7 +83,7 @@ get_header(); ?>
 								'orderby'							=> 'date',
 								'order'								=> 'DESC',
 								'posts_per_page'			=> '5',
-								'post__not_in' 				=> get_option("sticky_posts")
+								'post__not_in' 				=> $exclude_posts
 							);
 
 							$latest_posts = new WP_Query( $args );
@@ -126,8 +133,11 @@ get_header(); ?>
 										if ( $latest_posts->have_posts() ) :
 
 											while ( $latest_posts->have_posts() ) : $latest_posts->the_post(); ?>
-											<?php $opinion = get_post_meta($post->ID, 'opinion', true);?>
-												<a href="<?php the_permalink() ?>"><li class="<?php if ($opinion) {?>opinion-issued<?php }?>"><?php the_title() ?></li></a>
+											<?php
+												$opinion = get_post_meta($post->ID, 'opinion', true);
+												$argument = get_post_meta($post->ID, 'argument_date', true);
+											?>
+												<a href="<?php the_permalink() ?>"><li class="<?php if ($opinion) {?>opinion-issued<?php }?><?php if ($argument) {?>arguments<?php }?>"><?php the_title() ?></li></a>
 											<?php endwhile;
 
 											wp_reset_postdata();
@@ -137,24 +147,96 @@ get_header(); ?>
 											<p><?php esc_html_e( 'Sorry, there are no recent posts.' ); ?></p>
 										<?php endif; ?>
 
+										<div class="block-title">Upcoming arguments</div>
+		                <div class="calendar">
+											<ul>
+												<?php
+												// Upcoming arguments case list
+												$args = array(
+													'post_type'						=> 'case',
+													'meta_key'						=> 'argument_date',
+													'orderby'							=> 'meta_value',
+													'order'								=> 'ASC',
+													'posts_per_page'			=> '10'
+												);
+												$latest_posts = new WP_Query( $args );
 
+												//Start loop
+												if ( $latest_posts->have_posts() ) :
 
+													while ( $latest_posts->have_posts() ) : $latest_posts->the_post();
+														$date = get_field('argument_date', false, false);
+														$date = new DateTime($date);
+													?>
+														<a href="<?php the_permalink() ?>"><li><?php echo $date->format('j M Y'); ?>: <?php the_title() ?></li></a>
+													<?php endwhile;
 
+													wp_reset_postdata();
+													?>
+
+												<?php else : ?>
+													<p><?php esc_html_e( 'Sorry, there are no recent posts.' ); ?></p>
+												<?php endif; ?>
+											</ul>
+
+		                </div>
+					</div>
+
+					<!-- right column / sidebar -->
+					<div class="col-sm-12 col-lg-12 col-xl-3">
+
+						<div class="row">
+
+							<!-- e-mail signup -->
+							<div class="col-sm-12 col-md-4 col-xl-12">
+							<div class="block-title">Sign up for our list</div>
+							<form action="#" method="POST" class="email-form">
+								<div class="email-form-group w-50">
+									<input type="text" id="first_name" class="w-100" placeholder="First name">
+								</div>
+								<div class="email-form-group w-50">
+									<input type="text" id="last_name" class="w-100" placeholder="Last name">
+								</div>
+								<div class="email-form-group w-100">
+									<input type="email" id="e-mail" class="w-100" placeholder="E-mail address">
+								</div>
+								<div class="w-100">
+								<button type="submit" class="w-100">Sign up</button>
+								</div>
+							</form>
+							</div>
+
+							<!-- Twitter widget -->
+							<div class="col-sm-12 col-md-4  col-xl-12">
+							<div class="block-title">Recent tweets</div>
+							<div class="tweet-block">
+								<a class="twitter-timeline" data-height="455" data-dnt="true" data-link-color="#2B7BB9" href="https://twitter.com/TwitterDev?ref_src=twsrc%5Etfw">Tweets by TwitterDev</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+							</div>
+							</div>
+
+							<div class="col-sm-12 col-md-4 col-xl-12">
+							<div class="block-title">Search or something else?</div>
+							<div class="search-block">
+
+							</div>
+							</div>
 
 					</div>
 
-					<div class="col-sm-6 col-md-3">
-						<h3>Right col: E-mail</h3>
-						<p>First name:</p>
-						<p>Last name:</p>
-						<p>E-mail address:</p>
-						<h4>Past issues of the newsletter:</h4>
-						<?php
-
-						 ?>
 					</div>
-				</div>
+
+				</div> <!-- end row -->
+
+				<div class="row">
+
+					<div class="col-sm-12">
+						<div class="block-title">Video roundups</div>
+						<div class="video-block"></div>
+					</div>
+
+				</div> <!-- end row -->
 			</div>
+			<!-- END MAIN CONTENT -->
 
 		</main><!-- #main -->
 	</section><!-- #primary -->
