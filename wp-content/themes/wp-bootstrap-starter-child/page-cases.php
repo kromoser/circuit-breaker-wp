@@ -46,12 +46,17 @@ $(document).ready(function() {
     }
 
     $('.filter-button').click(function() {
-      filterParam.push($(this).attr('id'));
+      $(this).toggleClass('btn-dark');
+      filterParam = [];
+      $('.filter-button.btn-dark').each(function(){
+        filterParam.push( $(this).attr('id') )
+      });
       casesFilter();
     });
 
 
     $('#clear').click(function() {
+      $('.filter-button').removeClass('btn-dark');
       filterParam = [];
       casesFilter();
     });

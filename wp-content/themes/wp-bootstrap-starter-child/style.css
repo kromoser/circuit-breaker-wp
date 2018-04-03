@@ -345,4 +345,8 @@ table {
   font-family: "Material Icons";
   content: "\e5cf" !important; }
 
+.button-active {
+  background: #6d005f;
+  padding: 50px 0 0 0; }
+
 /*# sourceMappingURL=style.css.map */
