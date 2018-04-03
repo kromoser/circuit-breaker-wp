@@ -82,7 +82,7 @@ get_header(); ?>
 								'post_type'						=> 'post',
 								'orderby'							=> 'date',
 								'order'								=> 'DESC',
-								'posts_per_page'			=> '5',
+								'posts_per_page'			=> '6',
 								'post__not_in' 				=> $exclude_posts
 							);
 
@@ -147,6 +147,7 @@ get_header(); ?>
 											<p><?php esc_html_e( 'Sorry, there are no recent posts.' ); ?></p>
 										<?php endif; ?>
 									</ul>
+									<a href="/cases" class="btn btn-main">View all cases</a>
 
 								<div class="block-title">Upcoming arguments</div>
 		                <div class="calendar">
@@ -182,7 +183,7 @@ get_header(); ?>
 												<?php endif; ?>
 											</ul>
 
-											<a href="/calendar" class="btn btn-light">View all upcoming arguments</a>
+											<a href="/calendar" class="btn btn-main">View all upcoming arguments</a>
 
 		                </div>
 					</div>

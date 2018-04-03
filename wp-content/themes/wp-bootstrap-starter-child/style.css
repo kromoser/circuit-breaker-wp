@@ -41,6 +41,14 @@ h1, h2, h3 {
   color: #9e9e9e;
   letter-spacing: 0.2rem; }
 
+.btn-main {
+  background: #f3f3f3;
+  color: #6d005f;
+  margin: 0.25rem auto 3rem auto; }
+  .btn-main:hover {
+    background: #6d005f;
+    color: #f3f3f3; }
+
 .col-border-left {
   border-top: none;
   border-bottom: none;
@@ -170,7 +178,6 @@ div.gradient-overlay {
 ul.case-list {
   list-style: none;
   padding: 0;
-  margin-bottom: 2rem;
   font-size: 0.9rem; }
   @media screen and (max-width: 767px) {
     ul.case-list {
@@ -263,7 +270,7 @@ form.email-form {
 
 /* recent posts loop */
 article.post {
-  margin: 3rem 0; }
+  margin: 1.75rem 0; }
   article.post:first-of-type {
     margin-top: 0; }
   article.post p {
@@ -272,19 +279,17 @@ article.post {
     margin-top: 0; }
 
 /* calendar */
-div.calendar {
-  margin-bottom: 1.5rem; }
-  div.calendar ul {
-    list-style: none;
-    padding: 0; }
-    div.calendar ul li {
-      font-size: 0.9rem;
-      margin-bottom: .75rem; }
-      div.calendar ul li a {
-        color: #6b6b6b; }
-        div.calendar ul li a:hover {
-          color: #870075;
-          text-decoration: none; }
+div.calendar ul {
+  list-style: none;
+  padding: 0; }
+  div.calendar ul li {
+    font-size: 0.9rem;
+    margin-bottom: .75rem; }
+    div.calendar ul li a {
+      color: #6b6b6b; }
+      div.calendar ul li a:hover {
+        color: #870075;
+        text-decoration: none; }
 
 /* twitter feed */
 div.tweet-block {

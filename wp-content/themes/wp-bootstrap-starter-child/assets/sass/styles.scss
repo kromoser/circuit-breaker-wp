@@ -71,6 +71,17 @@ h1, h2, h3 {
   letter-spacing: 0.2rem;
 }
 
+.btn-main {
+  background: $light-gray;
+  color: $main-purple;
+  margin: 0.25rem auto 3rem auto;
+
+  &:hover {
+    background: $main-purple;
+    color: $light-gray;
+  }
+}
+
 
 .col-border-left {
   border-top: none;
@@ -256,7 +267,7 @@ div.gradient-overlay {
 ul.case-list {
   list-style: none;
   padding: 0;
-  margin-bottom: 2rem;
+
   font-size: 0.9rem;
 
   @media screen and (max-width: 767px) {
@@ -382,7 +393,7 @@ form.email-form {
 /* recent posts loop */
 article.post {
 
-  margin: 3rem 0;
+  margin: 1.75rem 0;
 
   &:first-of-type {
     margin-top: 0;
@@ -398,7 +409,6 @@ article.post {
 
 /* calendar */
 div.calendar {
-  margin-bottom: 1.5rem;
 
   ul {
     list-style: none;
@@ -415,11 +425,12 @@ div.calendar {
         &:hover {
           color: $link-color;
           text-decoration: none;
-          
         }
       }
     }
   }
+
+
 
 }
 
