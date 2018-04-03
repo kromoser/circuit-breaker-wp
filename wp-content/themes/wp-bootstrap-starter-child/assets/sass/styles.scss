@@ -471,6 +471,35 @@ footer {
 }
 
 /* Cases table */
+table {
+  font-family: $sans-serif;
+
+  th {
+    background-color: $medium-gray;
+    padding: 0.5rem;
+  }
+
+  tr {
+    background-color: $white;
+
+    td {
+      padding: .5rem;
+
+      a {
+        color: $link-color;
+
+        &:hover {
+          color: $main-purple;
+
+        }
+      }
+    }
+  }
+
+  tr:nth-child(even) {
+    background-color: $light-gray;
+  }
+}
 .sorting_asc:before, .sorting_desc:before, .sorting:before {
   font-family: "Material Icons";
   content: "\e5ce" !important;
@@ -479,4 +508,5 @@ footer {
 .sorting_asc:after, .sorting_desc:after, .sorting:after {
   font-family: "Material Icons";
   content: "\e5cf" !important;
+
 }

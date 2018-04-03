@@ -321,6 +321,22 @@ footer {
   font-weight: 300; }
 
 /* Cases table */
+table {
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif; }
+  table th {
+    background-color: #dedede;
+    padding: 0.5rem; }
+  table tr {
+    background-color: #ffffff; }
+    table tr td {
+      padding: .5rem; }
+      table tr td a {
+        color: #870075; }
+        table tr td a:hover {
+          color: #6d005f; }
+  table tr:nth-child(even) {
+    background-color: #f3f3f3; }
+
 .sorting_asc:before, .sorting_desc:before, .sorting:before {
   font-family: "Material Icons";
   content: "\e5ce" !important; }

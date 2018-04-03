@@ -32,11 +32,33 @@ get_header(); ?>
 <script>
 $(document).ready(function() {
 
-$('table#case-list').DataTable( {
-  "searching": true,
-  "ordering": true
-} );
-$('table#case-list').show()
+    let casesTable = $('table#case-list').DataTable( {
+      "searching": true,
+      "ordering": true
+    } );
+
+    $('table#case-list').show();
+
+    let filterParam = [];
+
+    function casesFilter() {
+      casesTable.columns(3).search( filterParam.join(' ') ).draw();
+    }
+
+    $('.filter-button').click(function() {
+      filterParam.push($(this).attr('id'));
+      casesFilter();
+    });
+
+
+    $('#clear').click(function() {
+      filterParam = [];
+      casesFilter();
+    });
+
+
+
+
 });
 
 
@@ -52,12 +74,16 @@ $('table#case-list').show()
     'posts_per_page'			=> '-1'
   );
 
-  $latest_posts = new WP_Query( $args );
+  $all_cases = new WP_Query( $args );
 
   ?>
+        <button type="button" id="active" class="btn-main filter-button">Active</button>
+        <button type="button" id="closed" class="btn-main filter-button">Inactive</button>
+        <button type="button" id="opinion" class="btn-main filter-button">Opinions</button>
+        <button type="button" id="arguments" class="btn-main filter-button">Arguments</button>
+        <button type="button" id="clear" name="button" class="btn-main filter-button">Clear filter</button>
 
-
-        <table id="case-list" style="display: none;">
+        <table id="case-list" style="display: none;" data-page-length='50'>
           <thead>
             <th>Case Name</th>
             <th>Case Number</th>
@@ -67,14 +93,14 @@ $('table#case-list').show()
           <tbody>
             <?php
             //Start loop and put into datatables table
-            if ( $latest_posts->have_posts() ) :
+            if ( $all_cases->have_posts() ) :
 
-              while ( $latest_posts->have_posts() ) : $latest_posts->the_post(); ?>
+              while ( $all_cases->have_posts() ) : $all_cases->the_post(); ?>
             <tr>
               <td><a href="<?php the_permalink() ?>"><?php the_title() ?></a></td>
               <td><?php the_field(case_number) ?></td>
               <td><?php strtotime(the_field(last_docket_entry)) ?></td>
-              <td>Status</td>
+              <td><?php the_field(status) ?></td>
             </tr>
               <?php endwhile;
 
@@ -82,7 +108,7 @@ $('table#case-list').show()
               ?>
 
             <?php else : ?>
-              <p><?php esc_html_e( 'Sorry, there are no recent posts.' ); ?></p>
+              <p><?php esc_html_e( 'Sorry, there are no cases.' ); ?></p>
             <?php endif; ?>
           </tbody>
         </table>
