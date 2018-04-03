@@ -146,8 +146,9 @@ get_header(); ?>
 										<?php else : ?>
 											<p><?php esc_html_e( 'Sorry, there are no recent posts.' ); ?></p>
 										<?php endif; ?>
+									</ul>
 
-										<div class="block-title">Upcoming arguments</div>
+								<div class="block-title">Upcoming arguments</div>
 		                <div class="calendar">
 											<ul>
 												<?php
@@ -168,7 +169,9 @@ get_header(); ?>
 														$date = get_field('argument_date', false, false);
 														$date = new DateTime($date);
 													?>
-														<a href="<?php the_permalink() ?>"><li><?php echo $date->format('j M Y'); ?>: <?php the_title() ?></li></a>
+														<li><span class="small-header"><?php echo $date->format('j M Y'); ?></span><br>
+															<a href="<?php the_permalink() ?>"><?php the_title() ?></a>
+														</li>
 													<?php endwhile;
 
 													wp_reset_postdata();
@@ -178,6 +181,8 @@ get_header(); ?>
 													<p><?php esc_html_e( 'Sorry, there are no recent posts.' ); ?></p>
 												<?php endif; ?>
 											</ul>
+
+											<a href="/calendar" class="btn btn-light">View all upcoming arguments</a>
 
 		                </div>
 					</div>

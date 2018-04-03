@@ -32,6 +32,15 @@ p {
 h1, h2, h3 {
   font-family: Vollkorn, Georgia, "Adobe Garamond Pro", Garamond, serif !important; }
 
+.small-header {
+  font-size: 0.7rem;
+  font-weight: 700;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
+  text-transform: uppercase;
+  font-variant: small-caps;
+  color: #9e9e9e;
+  letter-spacing: 0.2rem; }
+
 .col-border-left {
   border-top: none;
   border-bottom: none;
@@ -161,7 +170,8 @@ div.gradient-overlay {
 ul.case-list {
   list-style: none;
   padding: 0;
-  margin-bottom: 2rem; }
+  margin-bottom: 2rem;
+  font-size: 0.9rem; }
   @media screen and (max-width: 767px) {
     ul.case-list {
       -webkit-column-gap: 20px;
@@ -181,8 +191,6 @@ ul.case-list {
     ul.case-list a li {
       padding: .5rem .25rem;
       background: none; }
-      ul.case-list a li:hover {
-        background: #f3f3f3; }
     ul.case-list a li.opinion-issued:before {
       content: "Opinion";
       text-transform: uppercase;
@@ -253,7 +261,7 @@ form.email-form {
         background: #f3f3f3;
         cursor: auto; }
 
-/* recent posts lop */
+/* recent posts loop */
 article.post {
   margin: 3rem 0; }
   article.post:first-of-type {
@@ -265,9 +273,18 @@ article.post {
 
 /* calendar */
 div.calendar {
-  background: #ebebeb;
-  height: 435px;
   margin-bottom: 1.5rem; }
+  div.calendar ul {
+    list-style: none;
+    padding: 0; }
+    div.calendar ul li {
+      font-size: 0.9rem;
+      margin-bottom: .75rem; }
+      div.calendar ul li a {
+        color: #6b6b6b; }
+        div.calendar ul li a:hover {
+          color: #870075;
+          text-decoration: none; }
 
 /* twitter feed */
 div.tweet-block {

@@ -61,6 +61,16 @@ h1, h2, h3 {
   font-family: $serif !important;
 }
 
+.small-header {
+  font-size: 0.7rem;
+  font-weight: 700;
+  font-family: $sans-serif;
+  text-transform: uppercase;
+  font-variant: small-caps;
+  color: lighten( $dark-gray, 20% );
+  letter-spacing: 0.2rem;
+}
+
 
 .col-border-left {
   border-top: none;
@@ -247,6 +257,7 @@ ul.case-list {
   list-style: none;
   padding: 0;
   margin-bottom: 2rem;
+  font-size: 0.9rem;
 
   @media screen and (max-width: 767px) {
     -webkit-column-gap: 20px;
@@ -273,9 +284,7 @@ ul.case-list {
     padding: .5rem .25rem;
     background: none;
 
-      &:hover {
-        background: $light-gray;
-      }
+
     }
 
     li.opinion-issued:before {
@@ -370,7 +379,7 @@ form.email-form {
   }
 }
 
-/* recent posts lop */
+/* recent posts loop */
 article.post {
 
   margin: 3rem 0;
@@ -389,9 +398,29 @@ article.post {
 
 /* calendar */
 div.calendar {
-  background: lighten($medium-gray, 5%);
-  height: 435px;
   margin-bottom: 1.5rem;
+
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      font-size: 0.9rem;
+      margin-bottom: .75rem;
+
+
+      a {
+        color: $dark-gray;
+
+        &:hover {
+          color: $link-color;
+          text-decoration: none;
+          
+        }
+      }
+    }
+  }
+
 }
 
 /* twitter feed */
