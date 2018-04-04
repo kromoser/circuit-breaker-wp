@@ -321,29 +321,128 @@ footer {
   font-weight: 300; }
 
 /* Cases table */
-table {
+table.case-table {
   font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif; }
-  table th {
-    background-color: #dedede;
-    padding: 0.5rem; }
-  table tr {
-    background-color: #ffffff; }
-    table tr td {
-      padding: .5rem; }
-      table tr td a {
+  table.case-table th {
+    padding: 0.5rem;
+    font-size: 0.8rem; }
+  table.case-table tbody tr {
+    background-color: #ffffff;
+    font-size: 0.85rem; }
+    table.case-table tbody tr:hover {
+      background-color: #e6e6e6; }
+    table.case-table tbody tr td {
+      padding: .5rem;
+      border-collapse: collapse; }
+      table.case-table tbody tr td span.arguments-badge {
+        text-transform: uppercase;
+        color: #ffffff;
+        font-weight: bold;
+        background: #278585;
+        letter-spacing: 0.1rem;
+        font-size: 0.5rem;
+        border-radius: 3px;
+        padding: 3px 6px 3px 6px;
+        text-align: center;
+        position: relative;
+        display: inline-block;
+        margin: 2px; }
+      table.case-table tbody tr td span.opinion-badge {
+        text-transform: uppercase;
+        color: #ffffff;
+        font-weight: bold;
+        background: #f29f10;
+        letter-spacing: 0.1rem;
+        font-size: 0.5rem;
+        border-radius: 3px;
+        padding: 3px 6px 3px 6px;
+        text-align: center;
+        position: relative;
+        display: inline-block;
+        margin: 2px; }
+      table.case-table tbody tr td span.active {
+        text-transform: uppercase;
+        color: #ffffff;
+        font-weight: bold;
+        background: #451b5e;
+        letter-spacing: 0.1rem;
+        font-size: 0.5rem;
+        border-radius: 3px;
+        padding: 3px 6px 3px 6px;
+        text-align: center;
+        position: relative;
+        display: inline-block;
+        margin: 2px; }
+      table.case-table tbody tr td span.closed {
+        text-transform: uppercase;
+        color: #ffffff;
+        font-weight: bold;
+        background: #c5c5c5;
+        letter-spacing: 0.1rem;
+        font-size: 0.5rem;
+        border-radius: 3px;
+        padding: 3px 6px 3px 6px;
+        text-align: center;
+        position: relative;
+        display: inline-block;
+        margin: 2px; }
+      table.case-table tbody tr td a {
         color: #870075; }
-        table tr td a:hover {
+        table.case-table tbody tr td a:hover {
           color: #6d005f; }
-  table tr:nth-child(even) {
+  table.case-table tr:nth-child(even) {
     background-color: #f3f3f3; }
+    table.case-table tr:nth-child(even):hover {
+      background-color: #e6e6e6; }
 
 .sorting_asc:before, .sorting_desc:before, .sorting:before {
   font-family: "Material Icons";
-  content: "\e5ce" !important; }
+  content: "\e5d8" !important;
+  top: 0.6em !important; }
 
 .sorting_asc:after, .sorting_desc:after, .sorting:after {
   font-family: "Material Icons";
-  content: "\e5cf" !important; }
+  content: "\e5db" !important;
+  top: 0.8em !important;
+  right: 0.3em !important; }
+
+.dataTables_filter, .dataTables_paginate {
+  width: 50%;
+  float: right;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif; }
+  .dataTables_filter input, .dataTables_paginate input {
+    border-radius: 2px;
+    border: 1px solid #dedede;
+    outline: none;
+    padding: 3px 6px; }
+
+.dataTables_paginate {
+  padding-top: 0.85em; }
+
+.dataTables_length, .dataTables_info {
+  width: 45%;
+  float: left;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 0.8rem; }
+
+.paginate_button {
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
+  color: #870075;
+  padding: 3px;
+  margin: 0 3px;
+  border: 1px solid #f3f3f3; }
+  .paginate_button:hover {
+    background: #dedede;
+    color: #6d005f;
+    text-decoration: none;
+    cursor: pointer; }
+
+.filter-button {
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
+  border-radius: 2px;
+  background: #f3f3f3;
+  border: none;
+  outline: none; }
 
 .button-active {
   background: #6d005f;

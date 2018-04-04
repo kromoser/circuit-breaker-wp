@@ -88,7 +88,7 @@ $(document).ready(function() {
         <button type="button" id="arguments" class="btn-main filter-button">Arguments</button>
         <button type="button" id="clear" name="button" class="btn-main filter-button">Clear filter</button>
 
-        <table id="case-list" style="display: none;" data-page-length='50'>
+        <table id="case-list" style="display: none;" data-page-length='25' class="case-table table">
           <thead>
             <th>Case Name</th>
             <th>Case Number</th>
@@ -105,7 +105,14 @@ $(document).ready(function() {
               <td><a href="<?php the_permalink() ?>"><?php the_title() ?></a></td>
               <td><?php the_field(case_number) ?></td>
               <td><?php strtotime(the_field(last_docket_entry)) ?></td>
-              <td><?php the_field(status) ?></td>
+              <td><span class="<?php echo the_field(status) ?>"><?php the_field(status) ?></span>
+                  <?php if ( get_post_meta( $post->ID, 'argument_date', true )) {
+                    ?><span class="arguments-badge">arguments</span> <?php
+                  } ?>
+                  <?php if (get_post_meta( $post->ID, 'opinion', true )) {
+                    ?><span class="opinion-badge">opinion</span> <?php
+                  }?>
+              </td>
             </tr>
               <?php endwhile;
 

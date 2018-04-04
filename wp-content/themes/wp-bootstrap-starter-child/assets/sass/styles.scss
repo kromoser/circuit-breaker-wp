@@ -471,19 +471,88 @@ footer {
 }
 
 /* Cases table */
-table {
+table.case-table {
   font-family: $sans-serif;
 
+
+
   th {
-    background-color: $medium-gray;
+
     padding: 0.5rem;
+    font-size: 0.8rem;
   }
 
-  tr {
+  tbody tr {
     background-color: $white;
+    font-size: 0.85rem;
+
+    &:hover {
+      background-color: darken($light-gray, 5%);
+    }
 
     td {
       padding: .5rem;
+      border-collapse: collapse;
+
+      span.arguments-badge {
+        text-transform: uppercase;
+        color: $white;
+        font-weight: bold;
+        background: $accent-turquoise;
+        letter-spacing: 0.1rem;
+        font-size: 0.5rem;
+        border-radius: 3px;
+        padding: 3px 6px 3px 6px;
+        text-align: center;
+        position: relative;
+        display: inline-block;
+        margin: 2px;
+      }
+
+      span.opinion-badge {
+        text-transform: uppercase;
+        color: $white;
+        font-weight: bold;
+        background: $gold-highlight;
+        letter-spacing: 0.1rem;
+        font-size: 0.5rem;
+        border-radius: 3px;
+        padding: 3px 6px 3px 6px;
+        text-align: center;
+        position: relative;
+        display: inline-block;
+        margin:2px;
+      }
+
+      span.active {
+        text-transform: uppercase;
+        color: $white;
+        font-weight: bold;
+        background: $blue-plum;
+        letter-spacing: 0.1rem;
+        font-size: 0.5rem;
+        border-radius: 3px;
+        padding: 3px 6px 3px 6px;
+        text-align: center;
+        position: relative;
+        display: inline-block;
+        margin: 2px;
+      }
+
+      span.closed {
+        text-transform: uppercase;
+        color: $white;
+        font-weight: bold;
+        background: darken($medium-gray, 10%);
+        letter-spacing: 0.1rem;
+        font-size: 0.5rem;
+        border-radius: 3px;
+        padding: 3px 6px 3px 6px;
+        text-align: center;
+        position: relative;
+        display: inline-block;
+        margin: 2px;
+      }
 
       a {
         color: $link-color;
@@ -498,17 +567,78 @@ table {
 
   tr:nth-child(even) {
     background-color: $light-gray;
+
+    &:hover {
+      background-color: darken($light-gray, 5%);
+    }
   }
 }
 .sorting_asc:before, .sorting_desc:before, .sorting:before {
   font-family: "Material Icons";
-  content: "\e5ce" !important;
+  content: "\e5d8" !important;
+  top: 0.6em !important;
+
 }
 
 .sorting_asc:after, .sorting_desc:after, .sorting:after {
   font-family: "Material Icons";
-  content: "\e5cf" !important;
+  content: "\e5db" !important;
+  top: 0.8em !important;
+  right: 0.3em !important;
 
+}
+
+.dataTables_filter, .dataTables_paginate {
+  width: 50%;
+  float: right;
+  font-family: $sans-serif;
+
+  input {
+    border-radius: 2px;
+    border: 1px solid $medium-gray;
+    outline: none;
+    padding: 3px 6px;
+
+    &:focus {
+
+    }
+  }
+}
+
+.dataTables_paginate {
+  padding-top: 0.85em;
+}
+
+.dataTables_length, .dataTables_info {
+  width: 45%;
+  float: left;
+  font-family: $sans-serif;
+  font-size: 0.8rem;
+}
+
+
+.paginate_button {
+  font-family: $sans-serif;
+  color: $link-color;
+  padding: 3px;
+  margin: 0 3px;
+  border: 1px solid $light-gray;
+
+
+  &:hover {
+    background: $medium-gray;
+    color: $main-purple;
+    text-decoration: none;
+    cursor: pointer;
+  }
+}
+
+.filter-button {
+  font-family: $sans-serif;
+  border-radius: 2px;
+  background: $light-gray;
+  border: none;
+  outline: none;
 }
 
 .button-active {
