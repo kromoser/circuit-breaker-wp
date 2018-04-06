@@ -154,12 +154,23 @@ get_header(); ?>
 											<ul>
 												<?php
 												// Upcoming arguments case list
+												$now_date = new DateTime();
+            						$today = $now_date->getTimestamp();
+
 												$args = array(
 													'post_type'						=> 'case',
 													'meta_key'						=> 'argument_date',
-													'orderby'							=> 'meta_value',
+													'orderby'							=> 'meta_value_num',
 													'order'								=> 'ASC',
-													'posts_per_page'			=> '10'
+													'posts_per_page'			=> '10',
+													'meta_query'    			=> array(
+					                    'relation'      	=> 'AND',
+					                    array(
+					                        'key'       => 'argument_date',
+					                        'compare'   => '>=',
+					                        'value'     => $today,
+					                    )
+					                )
 												);
 												$latest_posts = new WP_Query( $args );
 
