@@ -10,6 +10,19 @@ get_header(); ?>
       <h3><?php the_title() ?></h3>
       <h5><?php the_field(case_number) ?></h5>
       <h5><?php the_field(date_filed) ?></h5>
+        <?php
+
+          $opinions = get_field(opinion);
+          ?>
+          <?php if( $opinions ): ?>
+            <?php foreach( $opinions as $opinion ): ?>
+          <h5>
+                <a href="<?php echo get_permalink( $opinion->ID ); ?>">
+                  <?php echo get_the_title( $opinion->ID ); ?>
+                </a>
+          </h5>
+          <?php endforeach; ?>
+          <?php endif; ?>
 
         <h4>Posts about this case:</h4>
         <?php
