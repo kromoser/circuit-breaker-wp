@@ -8,11 +8,11 @@ get_header(); ?>
 
 
       <h3><?php the_title() ?></h3>
-      <h5><?php the_field(case_number) ?></h5>
-      <h5><?php the_field(date_filed) ?></h5>
+      <h5><?php the_field('case_number') ?></h5>
+      <h5><?php the_field('date_filed') ?></h5>
         <?php
 
-          $opinions = get_field(opinion);
+          $opinions = get_field('opinion');
           ?>
           <?php if( $opinions ): ?>
             <?php foreach( $opinions as $opinion ): ?>

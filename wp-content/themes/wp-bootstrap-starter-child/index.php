@@ -191,7 +191,7 @@ get_header(); ?>
 												<?php endif; ?>
 											</ul>
 
-											<a href="/calendar" class="btn btn-main">View all upcoming arguments</a>
+											<a href="calendar" class="btn btn-main">View all upcoming arguments</a>
 
 		                </div>
 					</div>

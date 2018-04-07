@@ -448,4 +448,20 @@ table.case-table {
   background: #6d005f;
   padding: 50px 0 0 0; }
 
+/* FullCalendar Styles */
+#calendar {
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif; }
+
+.fc-event {
+  background: #278585 !important;
+  color: #ffffff !important;
+  padding: 3px 6px !important;
+  margin: 6px !important; }
+
+.fc-event:hover {
+  background: #33acac !important; }
+
+.fc-day-grid-event > .fc-content {
+  white-space: normal !important; }
+
 /*# sourceMappingURL=style.css.map */

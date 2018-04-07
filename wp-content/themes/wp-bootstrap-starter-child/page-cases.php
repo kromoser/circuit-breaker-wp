@@ -109,9 +109,9 @@ $(document).ready(function() {
 
             <tr>
               <td><a href="<?php the_permalink() ?>"><?php the_title() ?></a></td>
-              <td><?php the_field(case_number) ?></td>
-              <td><?php strtotime(the_field(last_docket_entry)) ?></td>
-              <td><span class="<?php echo the_field(status) ?>"><?php the_field(status) ?></span>
+              <td><?php the_field('case_number') ?></td>
+              <td><?php strtotime(the_field('last_docket_entry')) ?></td>
+              <td><span class="<?php echo the_field('status') ?>"><?php the_field('status') ?></span>
                   <?php if ( $arg_date >= $today) {
                     ?><span class="arguments-badge">arguments</span> <?php
                   } ?>

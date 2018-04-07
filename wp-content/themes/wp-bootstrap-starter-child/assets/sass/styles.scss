@@ -645,3 +645,25 @@ table.case-table {
   background: $main-purple;
   padding: 50px 0 0 0;
 }
+
+
+/* FullCalendar Styles */
+
+#calendar {
+  font-family: $sans-serif;
+}
+
+.fc-event {
+  background: $accent-turquoise !important;
+  color: $white !important;
+  padding: 3px 6px !important;
+  margin: 6px !important;
+}
+
+.fc-event:hover {
+  background: lighten($accent-turquoise, 10%) !important;
+}
+
+.fc-day-grid-event > .fc-content {
+    white-space: normal !important;
+}

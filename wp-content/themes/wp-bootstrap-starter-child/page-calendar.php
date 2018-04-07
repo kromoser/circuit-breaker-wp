@@ -18,7 +18,7 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 
 
-      <h3><?php the_title() ?></h3>
+      <h3>Upcoming Arguments</h3>
 
 			<?php
 			// Upcoming arguments case list
@@ -45,6 +45,7 @@ get_header(); ?>
 			    'title'   => $post->post_title,
 					'start'   => get_field('argument_date'),
 			    'end'     => get_field('argument_date'),
+					'url'			=> get_permalink($post),
 			    'allDay'  => true,
 			   );
 			 };
