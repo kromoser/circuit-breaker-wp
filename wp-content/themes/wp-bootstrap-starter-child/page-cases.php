@@ -80,6 +80,8 @@ $(document).ready(function() {
   );
 
   $all_cases = new WP_Query( $args );
+  $now_date = new DateTime();
+  $today = $now_date->getTimestamp();
 
   ?>
         <button type="button" id="active" class="btn-main filter-button">Active</button>
@@ -100,13 +102,17 @@ $(document).ready(function() {
             //Start loop and put into datatables table
             if ( $all_cases->have_posts() ) :
 
-              while ( $all_cases->have_posts() ) : $all_cases->the_post(); ?>
+              while ( $all_cases->have_posts() ) : $all_cases->the_post();
+              $arg_date = strtotime( get_post_meta($post->ID, 'argument_date', true) );
+
+            ?>
+
             <tr>
               <td><a href="<?php the_permalink() ?>"><?php the_title() ?></a></td>
               <td><?php the_field(case_number) ?></td>
               <td><?php strtotime(the_field(last_docket_entry)) ?></td>
               <td><span class="<?php echo the_field(status) ?>"><?php the_field(status) ?></span>
-                  <?php if ( get_post_meta( $post->ID, 'argument_date', true )) {
+                  <?php if ( $arg_date >= $today) {
                     ?><span class="arguments-badge">arguments</span> <?php
                   } ?>
                   <?php if (get_post_meta( $post->ID, 'opinion', true )) {

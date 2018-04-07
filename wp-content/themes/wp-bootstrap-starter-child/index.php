@@ -136,6 +136,7 @@ get_header(); ?>
 											<?php
 												$opinion = get_post_meta($post->ID, 'opinion', true);
 												$argument = get_post_meta($post->ID, 'argument_date', true);
+
 											?>
 												<a href="<?php the_permalink() ?>"><li class="<?php if ($opinion) {?>opinion-issued<?php }?><?php if ($argument) {?>arguments<?php }?>"><?php the_title() ?></li></a>
 											<?php endwhile;
