@@ -147,7 +147,7 @@ get_header(); ?>
 											<p><?php esc_html_e( 'Sorry, there are no recent posts.' ); ?></p>
 										<?php endif; ?>
 									</ul>
-									<a href="/cases" class="btn btn-main">View all cases</a>
+									<a href="cases" class="btn btn-main">View all cases</a>
 
 								<div class="block-title">Upcoming arguments</div>
 		                <div class="calendar">
@@ -245,7 +245,11 @@ get_header(); ?>
 
 					<div class="col-sm-12">
 						<div class="block-title">Video roundups</div>
-						<div class="video-block"></div>
+						<div class="video-block">
+
+							<?php get_search_form(); ?>
+
+						</div>
 					</div>
 
 				</div> <!-- end row -->
