@@ -136,7 +136,6 @@ get_header(); ?>
 											<?php
 												$opinion = get_post_meta($post->ID, 'opinion', true);
 												$argument = get_post_meta($post->ID, 'argument_date', true);
-
 											?>
 												<a href="<?php the_permalink() ?>"><li class="<?php if ($opinion) {?>opinion-issued<?php }?><?php if ($argument) {?>arguments<?php }?>"><?php the_title() ?></li></a>
 											<?php endwhile;
@@ -155,23 +154,20 @@ get_header(); ?>
 											<ul>
 												<?php
 												// Upcoming arguments case list
-												$now_date = new DateTime();
-            						$today = $now_date->getTimestamp();
+
+												//Today's date
+												$today = date('Ymd', strtotime("now"));
+
 
 												$args = array(
 													'post_type'						=> 'case',
 													'meta_key'						=> 'argument_date',
-													'orderby'							=> 'meta_value_num',
 													'order'								=> 'ASC',
 													'posts_per_page'			=> '10',
-													'meta_query'    			=> array(
-					                    'relation'      	=> 'AND',
-					                    array(
-					                        'key'       => 'argument_date',
-					                        'compare'   => '>=',
-					                        'value'     => $today,
-					                    )
-					                )
+													'meta_compare' 				=> '>=',
+													'meta_type' 					=> 'numeric',
+													'meta_value' 					=> $today,
+													'orderby' 						=> 'meta_value_num',
 												);
 												$latest_posts = new WP_Query( $args );
 
