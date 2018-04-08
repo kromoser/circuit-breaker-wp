@@ -64,22 +64,22 @@ function wp_bootstrap_starter_entry_footer() {
 		}
 
 		/* translators: used between list items, there is a space after the comma */
-		$tags_list = get_the_tag_list( '', esc_html__( ', ', 'wp-bootstrap-starter' ) );
+		$tags_list = get_the_tag_list( '', esc_html__( '', 'wp-bootstrap-starter' ) );
 		if ( $tags_list ) {
-			printf( ' <br><span class="tags-links">' . esc_html__( '%1$s', 'wp-bootstrap-starter' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+			printf( '<span class="tags-links h-100">' . esc_html__( '%1$s', 'wp-bootstrap-starter' ) . '</span>', $tags_list ); // WPCS: XSS OK.
 		}
 	}
 
 
-	edit_post_link(
-		sprintf(
-			/* translators: %s: Name of current post */
-			esc_html__( 'Edit %s', 'wp-bootstrap-starter' ),
-			the_title( '<span class="screen-reader-text">"', '"</span>', false )
-		),
-		' <br><span class="edit-link">',
-		'</span>'
-	);
+	//edit_post_link(
+	//	sprintf(
+	//		/* translators: %s: Name of current post */
+	//		esc_html__( 'Edit %s', 'wp-bootstrap-starter' ),
+	//		the_title( '<span class="screen-reader-text">"', '"</span>', false )
+	//	),
+	//	' <br><span class="edit-link">',
+	//	'</span>'
+	//);
 }
 endif;
 

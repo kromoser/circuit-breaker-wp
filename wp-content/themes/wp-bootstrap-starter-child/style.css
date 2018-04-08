@@ -471,4 +471,42 @@ h1.entry-title {
 div.entry-meta a {
   color: #870075; }
 
+.entry-footer {
+  padding: 0;
+  border-top: 1px solid #dedede;
+  border-bottom: 1px solid #dedede;
+  background: none; }
+  .entry-footer span.cat-links {
+    display: inline-block;
+    border-right: 1px solid #dedede; }
+    .entry-footer span.cat-links a {
+      display: inline-block;
+      background: #870075;
+      padding: 0.25rem 1.25rem;
+      color: #ffffff;
+      font-size: 0.8rem;
+      line-height: 1.2rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.15rem;
+      box-sizing: border-box; }
+      .entry-footer span.cat-links a:hover {
+        text-decoration: none;
+        background: #6d005f; }
+  .entry-footer span.tags-links {
+    display: inline-block;
+    padding: 0; }
+    .entry-footer span.tags-links a {
+      display: inline-block;
+      padding: 0.25rem 1.25rem 0.25rem 1.25rem;
+      border-right: 1px solid #dedede;
+      color: #870075;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      line-height: 1.2rem;
+      letter-spacing: 0.15rem; }
+      .entry-footer span.tags-links a:hover {
+        background: #f3f3f3;
+        text-decoration: none; }
+
 /*# sourceMappingURL=style.css.map */
