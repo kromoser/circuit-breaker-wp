@@ -410,6 +410,8 @@ table.case-table {
   width: 50%;
   float: right;
   font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif; }
+  .dataTables_filter label, .dataTables_paginate label {
+    font-size: 0.8rem; }
   .dataTables_filter input, .dataTables_paginate input {
     border-radius: 2px;
     border: 1px solid #dedede;
@@ -437,17 +439,46 @@ table.case-table {
     text-decoration: none;
     cursor: pointer; }
 
-.filter-button {
+div.filtering {
+  padding: 0;
+  border-top: 1px solid #dedede;
+  border-bottom: 1px solid #dedede;
+  margin: 4rem auto 2rem;
   font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
-  border-radius: 2px;
-  background: #f3f3f3;
-  border: none;
-  outline: none; }
+  display: flex;
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
+  font-size: .8rem; }
+  div.filtering span {
+    display: inline-block;
+    border-right: 1px solid #dedede;
+    padding: 0.25rem 1.25rem 0.25rem 1.25rem;
+    background: #f3f3f3; }
+    div.filtering span:first-child {
+      padding-left: 0; }
+    div.filtering span:hover {
+      cursor: pointer;
+      background: #dedede; }
+  div.filtering .active-filter {
+    color: #ffffff; }
+    div.filtering .active-filter#active {
+      background: #451b5e; }
+    div.filtering .active-filter#closed {
+      background: #c5c5c5; }
+    div.filtering .active-filter#opinion {
+      background: #f29f10; }
+    div.filtering .active-filter#pending-argument {
+      background: #278585; }
+  div.filtering #filter-label, div.filtering #clear {
+    background: none; }
+  div.filtering #filter-label:hover {
+    background: none;
+    cursor: default; }
 
-.button-active {
-  background: #6d005f;
-  padding: 50px 0 0 0; }
-
+/*.button-active {
+  background: $main-purple;
+  padding: 50px 0 0 0;
+}*/
 /* FullCalendar Styles */
 #calendar {
   font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif; }

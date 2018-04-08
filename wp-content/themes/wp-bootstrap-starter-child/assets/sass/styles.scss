@@ -593,11 +593,16 @@ table.case-table {
   float: right;
   font-family: $sans-serif;
 
+  label {
+    font-size: 0.8rem;
+  }
+
   input {
     border-radius: 2px;
     border: 1px solid $medium-gray;
     outline: none;
     padding: 3px 6px;
+
 
     &:focus {
 
@@ -633,18 +638,73 @@ table.case-table {
   }
 }
 
-.filter-button {
+div.filtering {
+  padding: 0;
+  border-top: 1px solid $medium-gray;
+  border-bottom: 1px solid $medium-gray;
+  margin: 4rem auto 2rem;
   font-family: $sans-serif;
-  border-radius: 2px;
-  background: $light-gray;
-  border: none;
-  outline: none;
+  display: flex;
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
+  font-size: .8rem;
+
+  span {
+    display: inline-block;
+    border-right: 1px solid $medium-gray;
+    padding: 0.25rem 1.25rem 0.25rem 1.25rem;
+    background: $light-gray;
+
+    &:first-child {
+      padding-left: 0;
+    }
+
+    &:hover {
+      cursor: pointer;
+      background: $medium-gray;
+    }
+
+  }
+
+  .active-filter {
+    color: $white;
+
+    &#active {
+      background: $blue-plum;
+    }
+
+    &#closed {
+      background: darken($medium-gray, 10%);
+    }
+
+    &#opinion {
+      background: $gold-highlight;
+    }
+
+    &#pending-argument {
+      background: $accent-turquoise;
+    }
+  }
+
+
+
+
+  #filter-label, #clear {
+    background: none;
+  }
+
+  #filter-label:hover {
+    background: none;
+    cursor: default;
+  }
+
 }
 
-.button-active {
+
+/*.button-active {
   background: $main-purple;
   padding: 50px 0 0 0;
-}
+}*/
 
 
 /* FullCalendar Styles */
@@ -735,6 +795,5 @@ div.entry-meta {
 
     }
   }
-
 
 }

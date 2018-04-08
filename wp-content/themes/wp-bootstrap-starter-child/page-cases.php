@@ -19,6 +19,18 @@ get_header(); ?>
 
 
       <h3><?php the_title() ?></h3>
+			<?php
+	    // TO SHOW THE PAGE CONTENTS
+	    while ( have_posts() ) : the_post(); ?> <!--Because the_content() works only inside a WP Loop -->
+	        <div class="entry-content-page">
+	            <?php the_content(); ?> <!-- Page Content -->
+	        </div><!-- .entry-content-page -->
+
+	    <?php
+	    endwhile; //resetting the page loop
+	    wp_reset_query(); //resetting the page query
+	    ?>
+
 
       <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.16/datatables.min.css"/>
       <script
@@ -33,8 +45,9 @@ get_header(); ?>
 $(document).ready(function() {
 
     let casesTable = $('table#case-list').DataTable( {
-      "searching": true,
-      "ordering": true
+      'searching': true,
+      'ordering': true,
+			'order': [[ 2, 'desc' ]]
     } );
 
     $('table#case-list').show();
@@ -42,21 +55,21 @@ $(document).ready(function() {
     let filterParam = [];
 
     function casesFilter() {
-      casesTable.columns(3).search( filterParam.join(' ') ).draw();
+      casesTable.columns(4).search( filterParam.join(' ') ).draw();
     }
 
     $('.filter-button').click(function() {
-      $(this).toggleClass('btn-dark');
+      $(this).toggleClass('active-filter');
       filterParam = [];
-      $('.filter-button.btn-dark').each(function(){
-        filterParam.push( $(this).attr('id') )
+      $('.filter-button.active-filter').each(function(){
+        filterParam.push( $(this).attr('id').split('-').join(' ') )
       });
       casesFilter();
     });
 
 
     $('#clear').click(function() {
-      $('.filter-button').removeClass('btn-dark');
+      $('.filter-button').removeClass('active-filter');
       filterParam = [];
       casesFilter();
     });
@@ -73,9 +86,9 @@ $(document).ready(function() {
   // Get all cases
   $args = array(
     'post_type'						=> 'case',
-    'meta_key'						=> 'case_number',
-    'orderby'							=> 'meta_value',
-    'order'								=> 'DESC',
+    //'meta_key'						=> 'date_filed',
+    //'orderby'							=> 'meta_value',
+    //'order'								=> 'DESC',
     'posts_per_page'			=> '-1'
   );
 
@@ -84,16 +97,29 @@ $(document).ready(function() {
   $today = $now_date->getTimestamp();
 
   ?>
-        <button type="button" id="active" class="btn-main filter-button">Active</button>
+
+	<div class="filtering">
+		<span id="filter-label">Filter cases: </span>
+		<span id="active" class="filter-button h-100">Active cases</span>
+		<span id="closed" class="filter-button h-100">Closed cases</span>
+		<span id="opinion" class="filter-button h-100">Opinion issued</span>
+		<span id="pending-argument" class="filter-button h-100">Pending arguments</span>
+		<span id="clear" class="filter-button h-100">Clear filters</span>
+	</div>
+
+				<!--
+			  <button type="button" id="active" class="btn-main filter-button">Active</button>
         <button type="button" id="closed" class="btn-main filter-button">Inactive</button>
         <button type="button" id="opinion" class="btn-main filter-button">Opinions</button>
         <button type="button" id="arguments" class="btn-main filter-button">Arguments</button>
         <button type="button" id="clear" name="button" class="btn-main filter-button">Clear filter</button>
+				-->
 
         <table id="case-list" style="display: none;" data-page-length='25' class="case-table table">
           <thead>
             <th>Case Name</th>
             <th>Case Number</th>
+						<th>Date Filed</th>
             <th>Last Docket Entry</th>
             <th>Status</th>
           </thead>
@@ -110,10 +136,11 @@ $(document).ready(function() {
             <tr>
               <td><a href="<?php the_permalink() ?>"><?php the_title() ?></a></td>
               <td><?php the_field('case_number') ?></td>
+							<td><?php strtotime(the_field('date_filed')) ?></td>
               <td><?php strtotime(the_field('last_docket_entry')) ?></td>
               <td><span class="<?php echo the_field('status') ?>"><?php the_field('status') ?></span>
                   <?php if ( $arg_date >= $today) {
-                    ?><span class="arguments-badge">arguments</span> <?php
+                    ?><span class="arguments-badge">pending&nbsp;argument</span> <?php
                   } ?>
                   <?php if (get_post_meta( $post->ID, 'opinion', true )) {
                     ?><span class="opinion-badge">opinion</span> <?php
