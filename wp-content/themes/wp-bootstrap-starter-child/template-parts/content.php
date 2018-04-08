@@ -31,7 +31,9 @@
 	<div class="entry-content">
 		<?php
         if ( is_single() ) :
-			the_content();
+
+					
+					the_content();
         else :
             the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'wp-bootstrap-starter' ) );
         endif;
@@ -42,9 +44,7 @@
 			) );
 		?>
 
-		<div class="left-side-inset">
 
-		</div>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
