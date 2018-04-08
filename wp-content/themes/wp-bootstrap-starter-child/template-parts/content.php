@@ -41,6 +41,10 @@
 				'after'  => '</div>',
 			) );
 		?>
+
+		<div class="left-side-inset">
+
+		</div>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">

@@ -742,6 +742,18 @@ div.entry-meta {
   }
 }
 
+.post.hentry {
+  margin-bottom: 0;
+}
+
+.entry-content {
+  padding-right: 1rem;
+}
+.entry-content p {
+  font-weight: 300;
+  line-height: 1.8rem;
+}
+
 .entry-footer {
   padding: 0;
   border-top: 1px solid $medium-gray;
@@ -796,4 +808,51 @@ div.entry-meta {
     }
   }
 
+}
+
+.left-side-inset {
+  display: block;
+  width: 30%;
+  height: 300px;
+  background: $light-gray;
+  float: left;
+}
+
+/* Sidebar */
+
+
+aside#secondary {
+  padding-left: 1rem;
+  border-left: 1px solid #eaecef;
+}
+ul.sidebar-list {
+  list-style: none;
+
+  padding: 0;
+
+  li {
+
+
+    a {
+      color: $link-color;
+      font-family: $sans-serif;
+      font-size: 0.9rem;
+      font-weight: 300;
+      display: block;
+      line-height: 1rem;
+
+      &:hover {
+
+      }
+    }
+
+    span.post-date {
+      font-weight: 600;
+      text-transform: uppercase;
+      color: darken($medium-gray, 30%);
+      font-size: 0.5rem;
+      letter-spacing: 0.15rem;
+      line-height: 0.9rem;
+    }
+  }
 }

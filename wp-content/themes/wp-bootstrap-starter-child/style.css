@@ -502,6 +502,16 @@ h1.entry-title {
 div.entry-meta a {
   color: #870075; }
 
+.post.hentry {
+  margin-bottom: 0; }
+
+.entry-content {
+  padding-right: 1rem; }
+
+.entry-content p {
+  font-weight: 300;
+  line-height: 1.8rem; }
+
 .entry-footer {
   padding: 0;
   border-top: 1px solid #dedede;
@@ -539,5 +549,35 @@ div.entry-meta a {
       .entry-footer span.tags-links a:hover {
         background: #f3f3f3;
         text-decoration: none; }
+
+.left-side-inset {
+  display: block;
+  width: 30%;
+  height: 300px;
+  background: #f3f3f3;
+  float: left; }
+
+/* Sidebar */
+aside#secondary {
+  padding-left: 1rem;
+  border-left: 1px solid #eaecef; }
+
+ul.sidebar-list {
+  list-style: none;
+  padding: 0; }
+  ul.sidebar-list li a {
+    color: #870075;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 0.9rem;
+    font-weight: 300;
+    display: block;
+    line-height: 1rem; }
+  ul.sidebar-list li span.post-date {
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #929292;
+    font-size: 0.5rem;
+    letter-spacing: 0.15rem;
+    line-height: 0.9rem; }
 
 /*# sourceMappingURL=style.css.map */
