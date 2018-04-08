@@ -667,3 +667,17 @@ table.case-table {
 .fc-day-grid-event > .fc-content {
     white-space: normal !important;
 }
+
+/* Post view */
+
+h1.entry-title {
+  font-size: 1.75rem;
+}
+
+div.entry-meta {
+  @extend .block-title;
+
+  a {
+    color: $link-color;
+  }
+}

@@ -73,7 +73,7 @@ h1, h2, h3 {
   z-index: 1; }
 
 /* block subheads */
-.block-title {
+.block-title, div.entry-meta {
   font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
   font-size: 0.8rem;
   font-weight: bold;
@@ -463,5 +463,12 @@ table.case-table {
 
 .fc-day-grid-event > .fc-content {
   white-space: normal !important; }
+
+/* Post view */
+h1.entry-title {
+  font-size: 1.75rem; }
+
+div.entry-meta a {
+  color: #870075; }
 
 /*# sourceMappingURL=style.css.map */
