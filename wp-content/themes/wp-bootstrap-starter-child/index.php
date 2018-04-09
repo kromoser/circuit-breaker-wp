@@ -247,7 +247,7 @@ get_header(); ?>
 						<div class="block-title">Video roundups</div>
 						<div class="video-block">
 
-							<?php get_search_form(); ?>
+						<!--	<?php get_search_form(); ?> -->
 
 						</div>
 					</div>
