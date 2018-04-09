@@ -10,9 +10,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<div class="post-thumbnail">
-		<?php the_post_thumbnail(); ?>
-	</div>
+
 	<header class="entry-header">
 		<?php
 		if ( is_single() ) :
@@ -27,12 +25,17 @@
 		</div><!-- .entry-meta -->
 		<?php
 		endif; ?>
+
+		<div class="post-thumbnail">
+			<?php the_post_thumbnail(); ?>
+		</div>
+
 	</header><!-- .entry-header -->
 	<div class="entry-content">
 		<?php
         if ( is_single() ) :
 
-					
+
 					the_content();
         else :
             the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'wp-bootstrap-starter' ) );
@@ -43,6 +46,25 @@
 				'after'  => '</div>',
 			) );
 		?>
+
+		<?php
+
+$posts = get_field('related_cases');
+
+if( $posts ):
+		echo '<div class="footer-block-title">Related cases:</div>';
+    echo '<ul class="relevant-cases">';
+     foreach( $posts as $post): // variable must be called $post (IMPORTANT)
+			  setup_postdata($post);
+        echo '<li><a href="';
+				the_permalink();
+				echo '">';
+        the_title();
+        echo '</a></li>';
+    	endforeach;
+    echo '</ul>';
+     wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly
+ endif; ?>
 
 
 	</div><!-- .entry-content -->

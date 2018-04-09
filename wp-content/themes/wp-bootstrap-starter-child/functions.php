@@ -84,11 +84,11 @@ function wp_bootstrap_starter_entry_footer() {
 endif;
 
 //Insert ads after second paragraph of single post content.
-add_filter( 'the_content', 'prefix_insert_post_ads' );
+/*add_filter( 'the_content', 'prefix_insert_post_ads' );
 function prefix_insert_post_ads( $content ) {
 	if ( get_field('related_cases') ) {
 
-            $ad_code = '<div class="left-side-inset"></div>';
+            $ad_code = get_related_cases();
 
           } else {
             $ad_code = '';
@@ -115,5 +115,8 @@ function prefix_insert_after_paragraph( $insertion, $paragraph_id, $content ) {
 	return implode( '', $paragraphs );
 }
 
+function get_related_cases() {
+  return '<div class="left-side-inset">Hello</div>';
+}*/
 
 ?>
