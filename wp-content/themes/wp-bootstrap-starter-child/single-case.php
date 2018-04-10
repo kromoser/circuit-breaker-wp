@@ -35,11 +35,20 @@ get_header(); ?>
 								<div class="col-sm-12 col-lg-6">
 									<div class="block-title">
 										Opinion:
+
+										<?php foreach( $opinions as $o ): ?>
+											<a href="<?php echo get_field('opinion_file', $o->ID);?>" class="opinion-badge">PDF <i class="material-icons">file_download</i></a>
+
 									</div>
-									<?php foreach( $opinions as $opinion ): ?>
-										<?php $opinion_link = get_attached_file( $opinion->ID, true ); ?>
-									<h5><?php echo print_r( $opinion_link ); ?></h5>
-							<?php endforeach; ?>
+
+										<?php $judge = get_field('judge', $o->ID); ?>
+
+									<?php foreach( $judge as $j) : ?>
+										<?php  ?>
+      							<h5>Issued by <a href="<?php echo get_the_permalink($j->ID); ?>"><?php echo get_the_title($j->ID); ?></a> <br>
+											on <?php echo date('m-d-Y', strtotime( get_field('date_issued', $o->ID) ) ); ?></h5>
+    							<?php endforeach; ?>
+								<?php endforeach; ?>
 							<?php endif; ?>
 						</div>
 					</div>
@@ -61,7 +70,7 @@ get_header(); ?>
 					            'compare' => 'LIKE'
 					          )
 					      ),
-					      'posts_per_page'			=> '-1',
+					      'posts_per_page'			=> '6',
 					      'ignore_sticky_posts' => '1'
 					    );
 
@@ -83,9 +92,9 @@ get_header(); ?>
 					            <header class="entry-header">
 					              <a href="<?php the_permalink() ?>"><h5 class="entry-title related-post-title"><?php the_title() ?></h5></a>
 					            </header>
-					            <!--<div class="entry-content post-list">
-					              <p><?php the_excerpt() ?></p>
-					            </div>-->
+					            <div class="entry-content post-list">
+					             <?php the_excerpt() ?>
+					            </div>
 					          </article>
 
 					      <?php endwhile;
