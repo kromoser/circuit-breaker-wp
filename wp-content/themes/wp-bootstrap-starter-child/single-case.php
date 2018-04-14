@@ -7,7 +7,7 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 
 
-      <h1 class="entry-title"><?php the_title() ?> <span class="<?php echo get_field(status) ?>"><?php the_field(status) ?></span></h1> 
+      <h1 class="entry-title"><?php the_title() ?> <span class="<?php echo get_field('status') ?>"><?php the_field('status') ?></span></h1> 
 
 			<div class="row">
 

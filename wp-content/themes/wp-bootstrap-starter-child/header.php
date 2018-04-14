@@ -21,6 +21,7 @@
     <link rel="profile" href="http://gmpg.org/xfn/11">
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <?php wp_head(); ?>
+
 </head>
 
 <body <?php body_class(); ?>>
@@ -38,7 +39,7 @@
                 <a class="site-title" href="<?php echo esc_url( home_url( '/' )); ?>"><?php esc_url(bloginfo('name')); ?></a>
             <?php endif; ?>
           </div>
-          <nav class="navbar navbar-expand-lg" role="navigation">
+          <nav class="navbar navbar-expand-lg" role="navigation" id="nav" data-spy="affix">
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="material-icons">menu</i>
