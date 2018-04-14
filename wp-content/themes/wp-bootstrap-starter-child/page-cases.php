@@ -48,14 +48,22 @@ get_header(); ?>
 <script>
 $(document).ready(function() {
 
+
     let casesTable = $('table#case-list').DataTable( {
-      'searching': true,
-			fixedHeader : true,
+			'searching': true,
+			'fixedHeader' : true,
       'ordering': true,
 			'order': [[ 2, 'desc' ]]
+
     } );
 
-    $('table#case-list').show();
+		$('table#case-list').show();
+
+		casesTable.draw();
+
+
+
+
 
     let filterParam = [];
 
@@ -83,6 +91,9 @@ $(document).ready(function() {
 
 
 });
+
+
+
 
 
 </script>

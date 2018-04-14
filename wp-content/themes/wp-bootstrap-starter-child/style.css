@@ -92,7 +92,7 @@ h1, h2, h3 {
   padding-top: 0;
   padding: 0 !important;
   background: #ffffff;
-  z-index: 1;
+  z-index: 9999;
   border: none !important;
   box-shadow: 0 0.05rem 0.25rem rgba(0, 0, 0, 0.05), inset 0 -1px 0 rgba(0, 0, 0, 0.1); }
   .navbar-expand-lg ul.navbar-nav {
@@ -123,7 +123,7 @@ h1, h2, h3 {
 #nav {
   position: -webkit-sticky;
   position: sticky;
-  top: 0; }
+  top: -1px; }
 
 /* hero posts blade */
 div.hero-posts {
