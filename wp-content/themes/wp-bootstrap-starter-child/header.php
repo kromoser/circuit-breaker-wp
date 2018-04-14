@@ -29,7 +29,7 @@
     <?php if(!is_page_template( 'blank-page.php' ) && !is_page_template( 'blank-page-with-container.php' )): ?>
       <header id="masthead" class="site-header navbar-static-top" role="banner">
         <div class="container-fluid">
-          <div class="navbar-brand col-sm-10 offset-sm-1 col-md-6 offset-md-3 col-lg-5 offset-lg-1">
+          <div class="navbar-brand col-sm-12">
             <?php if ( get_theme_mod( 'wp_bootstrap_starter_logo' ) ): ?>
                 <a href="<?php echo esc_url( home_url( '/' )); ?>">
                     <img src="<?php echo esc_attr(get_theme_mod( 'wp_bootstrap_starter_logo' )); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" class="branding-logo">

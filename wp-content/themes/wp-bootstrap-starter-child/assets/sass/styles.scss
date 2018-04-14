@@ -57,7 +57,7 @@ p {
   font-family: $sans-serif;
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3 {
   font-family: $serif !important;
 }
 
@@ -106,10 +106,11 @@ h1, h2, h3, h4 {
 
 /* logo and branding */
 .branding-logo {
-  width: 100%;
-  margin-bottom: -1rem;
+  width: 24rem;
   position: relative;
   z-index: 1;
+  margin: 0 auto;
+  display: block;
 }
 
 /* block subheads */
@@ -239,6 +240,7 @@ div.gradient-overlay {
         font-size: 1rem;
         text-align: right;
         margin-bottom: 1.6rem;
+        font-family: $sans-serif;
 
         &:last-child {
           margin-bottom: 0;

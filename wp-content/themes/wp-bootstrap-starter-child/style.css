@@ -29,7 +29,7 @@ header#masthead {
 p {
   font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif; }
 
-h1, h2, h3, h4 {
+h1, h2, h3 {
   font-family: Vollkorn, Georgia, "Adobe Garamond Pro", Garamond, serif !important; }
 
 .small-header {
@@ -67,10 +67,11 @@ h1, h2, h3, h4 {
 
 /* logo and branding */
 .branding-logo {
-  width: 100%;
-  margin-bottom: -1rem;
+  width: 24rem;
   position: relative;
-  z-index: 1; }
+  z-index: 1;
+  margin: 0 auto;
+  display: block; }
 
 /* block subheads */
 .block-title, div.entry-meta, .footer-block-title {
@@ -159,7 +160,8 @@ div.gradient-overlay {
     div.gradient-overlay .secondary-feature-posts h4 {
       font-size: 1rem;
       text-align: right;
-      margin-bottom: 1.6rem; }
+      margin-bottom: 1.6rem;
+      font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif; }
       div.gradient-overlay .secondary-feature-posts h4:last-child {
         margin-bottom: 0; }
       div.gradient-overlay .secondary-feature-posts h4 a {
