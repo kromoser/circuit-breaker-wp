@@ -976,3 +976,42 @@ a.opinion-badge {
     vertical-align: middle;
   }
 }
+.single-case {
+
+
+    span.active {
+      font-family: $sans-serif;
+      text-transform: uppercase;
+      color: $white;
+      font-weight: bold;
+      background: $blue-plum;
+      letter-spacing: 0.15rem;
+      font-size: 0.8rem;
+      border-radius: 3px;
+      padding: 3px 6px 3px 6px;
+      text-align: center;
+      position: relative;
+      display: inline-block;
+      margin: 4px;
+      top: -4px;
+
+    }
+
+    span.closed {
+      font-family: $sans-serif;
+      text-transform: uppercase;
+      color: $white;
+      font-weight: bold;
+      background: darken($medium-gray, 10%);
+      letter-spacing: 0.15rem;
+      font-size: 0.8rem;
+      border-radius: 3px;
+      padding: 3px 6px 3px 6px;
+      text-align: center;
+      position: relative;
+      display: inline-block;
+      margin: 4px;
+      top: -4px;
+    }
+
+}

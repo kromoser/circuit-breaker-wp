@@ -3,11 +3,11 @@
 
 get_header(); ?>
 
-	<section id="primary" class="content-area col-sm-12">
+	<section id="primary" class="content-area col-sm-12 single-case">
 		<main id="main" class="site-main" role="main">
 
 
-      <h1 class="entry-title"><?php the_title() ?></h1>
+      <h1 class="entry-title"><?php the_title() ?> <span class="<?php echo get_field(status) ?>"><?php the_field(status) ?></span></h1> 
 
 			<div class="row">
 
@@ -30,9 +30,14 @@ get_header(); ?>
 						</div>
 						<?php
 							$opinions = get_field('opinion');
+							$one_week_ago = date('m/d/Y', strtotime('-7 days'));
+							$date_scheduled = get_field('argument_date', false, false);
+							$date_scheduled = date('m/d/Y', strtotime($date_scheduled) );
 							?>
-							<?php if( $opinions ): ?>
-								<div class="col-sm-12 col-lg-6">
+
+							<div class="col-sm-12 col-lg-6">
+							<?php if( $opinions ) { ?>
+
 									<div class="block-title">
 										Opinion:
 
@@ -49,7 +54,24 @@ get_header(); ?>
 											on <?php echo date('m-d-Y', strtotime( get_field('date_issued', $o->ID) ) ); ?></h5>
     							<?php endforeach; ?>
 								<?php endforeach; ?>
-							<?php endif; ?>
+
+							<?php
+
+							}
+
+
+								elseif ($date_scheduled >= $one_week_ago) {
+
+
+
+								?> <div class="block-title">oral argument on:</div>
+								<h5><?php echo $date_scheduled ?></h5>	<?php
+							} else {?>
+								<div class="block-title">Status: </div>
+								<h5><?php echo ucfirst(get_field('status')); ?></h5>
+							<?php } ?>
+
+
 						</div>
 					</div>
 

@@ -657,4 +657,35 @@ a.opinion-badge {
     font-size: 1rem;
     vertical-align: middle; }
 
+.single-case span.active {
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
+  text-transform: uppercase;
+  color: #ffffff;
+  font-weight: bold;
+  background: #451b5e;
+  letter-spacing: 0.15rem;
+  font-size: 0.8rem;
+  border-radius: 3px;
+  padding: 3px 6px 3px 6px;
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  margin: 4px;
+  top: -4px; }
+.single-case span.closed {
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
+  text-transform: uppercase;
+  color: #ffffff;
+  font-weight: bold;
+  background: #c5c5c5;
+  letter-spacing: 0.15rem;
+  font-size: 0.8rem;
+  border-radius: 3px;
+  padding: 3px 6px 3px 6px;
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  margin: 4px;
+  top: -4px; }
+
 /*# sourceMappingURL=style.css.map */
