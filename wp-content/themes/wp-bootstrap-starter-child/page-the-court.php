@@ -53,34 +53,40 @@ get_header(); ?>
       <div class="block-title">
         Current judges
       </div>
-      <?php
-        while ( $current_judges->have_posts() ) : $current_judges->the_post();
-      ?>
 
-      <!-- article block -->
-      <article class="post article-post">
-        <header class="entry-header">
-          <img src="<?php the_post_thumbnail_url() ?>" alt=""> 
-          <a href="<?php the_permalink() ?>"><h3 class="entry-title"><?php the_title() ?></h3></a>
-        </header>
-        <div class="entry-content">
-          <?php the_content() ?>
-        </div>
-
-        <div class="opinion-list">
-          <ul>
-            Opinion list TK
-          </ul>
-
-        </div>
-      </article>
-        <?php endwhile;
-        wp_reset_postdata();
+      <div class="row">
+        <?php
+          while ( $current_judges->have_posts() ) : $current_judges->the_post();
         ?>
 
-      <?php else : ?>
-        <p><?php esc_html_e( 'Sorry, there are no current judges.' ); ?></p>
-      <?php endif; ?>
+        <!-- article block -->
+        <article class="col-sm-12 col-md-6">
+          <header class="entry-header">
+            <img src="<?php the_post_thumbnail_url() ?>" alt="" class="headshot">
+            <a href="<?php the_permalink() ?>"><h3 class="entry-title"><?php the_title() ?></h3></a>
+          </header>
+          <div class="entry-content">
+            <?php the_content() ?>
+          </div>
+
+          <div class="opinion-list">
+            <ul>
+              Opinion list TK
+            </ul>
+
+          </div>
+        </article>
+          <?php endwhile;
+          wp_reset_postdata();
+          ?>
+
+        <?php else : ?>
+          <p><?php esc_html_e( 'Sorry, there are no current judges.' ); ?></p>
+        <?php endif; ?>
+
+
+      </div>
+
 
 
 

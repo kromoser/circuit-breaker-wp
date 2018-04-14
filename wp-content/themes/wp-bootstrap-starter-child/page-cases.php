@@ -33,12 +33,16 @@ get_header(); ?>
 
 
       <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.16/datatables.min.css"/>
+			<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/fixedheader/3.1.3/css/fixedHeader.dataTables.min.css">
       <script
         src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.4/moment.min.js"></script>
 <script src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="//cdn.datatables.net/fixedheader/3.1.3/js/dataTables.fixedHeader.min.js">
+
+</script>
 <script src="//cdn.datatables.net/plug-ins/1.10.16/sorting/datetime-moment.js"></script>
 
 <script>
@@ -46,6 +50,7 @@ $(document).ready(function() {
 
     let casesTable = $('table#case-list').DataTable( {
       'searching': true,
+			fixedHeader : true,
       'ordering': true,
 			'order': [[ 2, 'desc' ]]
     } );

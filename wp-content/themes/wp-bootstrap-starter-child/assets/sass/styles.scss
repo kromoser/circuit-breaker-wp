@@ -129,10 +129,24 @@ h1, h2, h3 {
 /* nav styles */
 
 #masthead {
+  box-shadow: none !important;
+}
+//#masthead {
+  .navbar {
+
+  }
+
   .navbar-expand-lg {
 
     padding-bottom: 0;
     padding-top: 0;
+    padding: 0 !important;
+    background: #ffffff;
+    z-index: 1;
+    border: none !important;
+    box-shadow: 0 0.05rem .25rem rgba(0,0,0,.05), inset 0 -1px 0 rgba(0,0,0,.1);
+
+
     //border-top: 1px solid $medium-gray;
 
 
@@ -178,8 +192,13 @@ h1, h2, h3 {
       }
     }
   }
-}
+//}
 
+#nav {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
 
 /* hero posts blade */
 
@@ -475,20 +494,26 @@ footer {
 }
 
 /* Cases table */
+table.fixedHeader-floating {
+  z-index: 9999 !important;
+  top: 2.8rem !important;
+}
+
 table.case-table {
   font-family: $sans-serif;
-
-
 
   th {
 
     padding: 0.5rem;
     font-size: 0.8rem;
+
   }
 
   tbody tr {
     background-color: $white;
     font-size: 0.85rem;
+
+
 
     &:hover {
       background-color: darken($light-gray, 5%);

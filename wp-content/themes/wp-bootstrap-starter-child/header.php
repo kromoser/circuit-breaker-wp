@@ -39,6 +39,9 @@
                 <a class="site-title" href="<?php echo esc_url( home_url( '/' )); ?>"><?php esc_url(bloginfo('name')); ?></a>
             <?php endif; ?>
           </div>
+        </div>
+      </header>
+
           <nav class="navbar navbar-expand-lg" role="navigation" id="nav" data-spy="affix">
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="" aria-expanded="false" aria-label="Toggle navigation">
@@ -60,7 +63,7 @@
                 ?>
 
             </nav>
-        </div>
+      
 	</header><!-- #masthead -->
     <?php if(!is_front_page() && !get_theme_mod( 'header_banner_visibility' )): ?>
       <div id="content" class="site-content">

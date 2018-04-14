@@ -84,33 +84,46 @@ h1, h2, h3 {
   margin: 0 0 1.5rem 0; }
 
 /* nav styles */
-#masthead .navbar-expand-lg {
+#masthead {
+  box-shadow: none !important; }
+
+.navbar-expand-lg {
   padding-bottom: 0;
-  padding-top: 0; }
-  #masthead .navbar-expand-lg ul.navbar-nav {
+  padding-top: 0;
+  padding: 0 !important;
+  background: #ffffff;
+  z-index: 1;
+  border: none !important;
+  box-shadow: 0 0.05rem 0.25rem rgba(0, 0, 0, 0.05), inset 0 -1px 0 rgba(0, 0, 0, 0.1); }
+  .navbar-expand-lg ul.navbar-nav {
     margin: 0 auto;
     font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif; }
-    #masthead .navbar-expand-lg ul.navbar-nav li {
+    .navbar-expand-lg ul.navbar-nav li {
       font-size: .85rem;
       text-transform: uppercase;
       letter-spacing: 0.15rem; }
-      #masthead .navbar-expand-lg ul.navbar-nav li.dropdown:hover .dropdown-menu {
+      .navbar-expand-lg ul.navbar-nav li.dropdown:hover .dropdown-menu {
         display: block; }
-      #masthead .navbar-expand-lg ul.navbar-nav li.active {
+      .navbar-expand-lg ul.navbar-nav li.active {
         color: #6d005f; }
-        #masthead .navbar-expand-lg ul.navbar-nav li.active a.nav-link {
+        .navbar-expand-lg ul.navbar-nav li.active a.nav-link {
           font-weight: 700; }
-          #masthead .navbar-expand-lg ul.navbar-nav li.active a.nav-link:hover {
+          .navbar-expand-lg ul.navbar-nav li.active a.nav-link:hover {
             background: transparent;
             font-weight: 700;
             color: #6d005f; }
-      #masthead .navbar-expand-lg ul.navbar-nav li a.nav-link {
+      .navbar-expand-lg ul.navbar-nav li a.nav-link {
         color: #6b6b6b;
         padding: 1rem 1.5rem; }
-        #masthead .navbar-expand-lg ul.navbar-nav li a.nav-link:hover {
+        .navbar-expand-lg ul.navbar-nav li a.nav-link:hover {
           background: #6d005f;
           color: #f3f3f3;
           font-weight: 400; }
+
+#nav {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0; }
 
 /* hero posts blade */
 div.hero-posts {
@@ -322,6 +335,10 @@ footer {
   font-weight: 300; }
 
 /* Cases table */
+table.fixedHeader-floating {
+  z-index: 9999 !important;
+  top: 2.8rem !important; }
+
 table.case-table {
   font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif; }
   table.case-table th {
