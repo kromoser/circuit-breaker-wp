@@ -13,6 +13,9 @@ Tags: blog, custom-menu, featured-images, threaded-comments, translation-ready, 
 */
 /* colors */
 /* fonts */
+div#wpadminbar {
+  z-index: 9998 !important; }
+
 /* general settings and styles */
 header#masthead {
   background-color: #ffffff;

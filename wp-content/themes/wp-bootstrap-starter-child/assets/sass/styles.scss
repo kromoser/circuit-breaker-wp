@@ -32,6 +32,10 @@ $sans-serif: 'Open Sans', 'Helvetica Neue', Helvetica, sans-serif;
 $serif: Vollkorn, Georgia, 'Adobe Garamond Pro', Garamond, serif;
 
 
+div#wpadminbar {
+  z-index: 9998 !important;
+}
+
 /* general settings and styles */
 header#masthead {
   background-color: $white;

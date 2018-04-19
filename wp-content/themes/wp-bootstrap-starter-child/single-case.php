@@ -7,77 +7,85 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 
 
-      <h1 class="entry-title"><?php the_title() ?> <span class="<?php echo get_field('status') ?>"><?php the_field('status') ?></span></h1> 
+      <h1 class="entry-title"><?php the_title() ?> <span class="<?php echo get_field('status') ?>"><?php the_field('status') ?></span></h1>
 
 			<div class="row">
 
-				<div class="col-sm-12 col-lg-8 details-block">
+				<div class="col-sm-12 col-lg-9 details-block">
 					<div class="row">
-						<div class="col-sm-12 col-lg-6">
+						<div class="col-sm-12 col-lg-4">
 							<div class="block-title">Case number: </div>
 							<h5><?php the_field('case_number') ?></h5>
 						</div>
-						<div class="col-sm-12 col-lg-6">
-							<div class="block-title">Date filed: </div>
-							<h5><?php the_field('date_filed') ?></h5>
-						</div>
-					</div>
 
+
+							<div class="col-sm-12 col-lg-4">
+								<div class="block-title">Date filed: </div>
+								<h5><?php the_field('date_filed') ?></h5>
+							</div>
+
+							<div class="col-sm-12 col-lg-4">
+
+								<?php
+									// Get opinions relationship field and argument date
+									$opinions = get_field('case_number_for_opinion');
+									$one_week_ago = date('m/d/Y', strtotime('-7 days'));
+									$date_scheduled = get_field('argument_date', false, false);
+									$date = new DateTime($date_scheduled);
+									$date_scheduled = date('m/d/Y', strtotime($date_scheduled) );
+
+
+									?>
+
+								<div class="block-title">
+									Opinion:
+									</div>
+									<?php if( $opinions ) { ?>
+									<?php foreach( $opinions as $o ): ?>
+										<a href="<?php echo get_field('opinion_file', $o->ID);?>" class="opinion-badge">PDF <i class="material-icons">file_download</i></a>
+
+
+									<?php $judge = get_field('judge', $o->ID); ?>
+
+								<?php foreach( $judge as $j) : ?>
+									<h5>Issued by <a href="<?php echo get_the_permalink($j->ID); ?>"><?php echo get_the_title($j->ID); ?></a> <br>
+										on <?php echo date('m-d-Y', strtotime( get_field('date_issued', $o->ID) ) ); ?></h5>
+								<?php endforeach; ?>
+							<?php endforeach; ?>
+
+						<?php
+						}	else {
+						?>
+							<h5>No opinion</h5>
+						<?php
+						}
+						?>
+
+						</div>
+						
+					</div>
 					<div class="row">
-						<div class="col-sm-12 col-lg-6">
+
+						<div class="col-sm-12 col-lg-4">
 							<div class="block-title">Last docket entry: </div>
 							<h5><?php the_field('last_docket_entry') ?></h5>
 						</div>
-						<?php
-							$opinions = get_field('opinion');
-							$one_week_ago = date('m/d/Y', strtotime('-7 days'));
-							$date_scheduled = get_field('argument_date', false, false);
-							$date_scheduled = date('m/d/Y', strtotime($date_scheduled) );
-							?>
 
-							<div class="col-sm-12 col-lg-6">
-							<?php if( $opinions ) { ?>
-
+						<div class="col-sm-12 col-lg-4">
+							<?php if ( $date_scheduled >= $one_week_ago ) {	?>
 									<div class="block-title">
-										Opinion:
-
-										<?php foreach( $opinions as $o ): ?>
-											<a href="<?php echo get_field('opinion_file', $o->ID);?>" class="opinion-badge">PDF <i class="material-icons">file_download</i></a>
-
+										Oral argument on:
 									</div>
-
-										<?php $judge = get_field('judge', $o->ID); ?>
-
-									<?php foreach( $judge as $j) : ?>
-										<?php  ?>
-      							<h5>Issued by <a href="<?php echo get_the_permalink($j->ID); ?>"><?php echo get_the_title($j->ID); ?></a> <br>
-											on <?php echo date('m-d-Y', strtotime( get_field('date_issued', $o->ID) ) ); ?></h5>
-    							<?php endforeach; ?>
-								<?php endforeach; ?>
-
-							<?php
-
-							}
-
-
-								elseif ($date_scheduled >= $one_week_ago) {
-
-
-
-								?> <div class="block-title">oral argument on:</div>
-								<h5><?php echo $date_scheduled ?></h5>	<?php
-							} else {?>
-								<div class="block-title">Status: </div>
-								<h5><?php echo ucfirst(get_field('status')); ?></h5>
-							<?php } ?>
-
-
+									<h5><?php echo $date->format('j M Y'); ?></h5>
+								<?php
+							} ?>
 						</div>
-					</div>
-
 
 
 				</div>
+
+					</div>
+
 
 
 					  <?php
@@ -129,7 +137,6 @@ get_header(); ?>
 					    <?php else : ?>
 					      <!--<p><?php esc_html_e( 'Sorry, there are no recent posts.' ); ?></p>-->
 					    <?php endif; ?>
-
 			</div>
 
 

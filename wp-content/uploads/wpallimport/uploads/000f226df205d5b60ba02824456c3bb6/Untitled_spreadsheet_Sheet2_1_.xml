@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data>
+	<node>
+		<case_number><![CDATA[16-1278]]></case_number>
+		<short_title><![CDATA[Opinion present]]></short_title>
+		<opinion><![CDATA[]]></opinion>
+	</node>
+	<node>
+		<case_number><![CDATA[01-1234]]></case_number>
+		<short_title><![CDATA[No opinion]]></short_title>
+		<opinion><![CDATA[]]></opinion>
+	</node>
+</data>
