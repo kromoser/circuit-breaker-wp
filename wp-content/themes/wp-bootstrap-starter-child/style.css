@@ -710,4 +710,13 @@ a.opinion-badge {
   margin: 4px;
   top: -4px; }
 
+.post-grid {
+  padding: 2rem 0 0 0;
+  border-top: 1px solid #eaecef; }
+
+.case-summary {
+  font-size: 0.9rem;
+  color: #6b6b6b;
+  font-weight: 300; }
+
 /*# sourceMappingURL=style.css.map */

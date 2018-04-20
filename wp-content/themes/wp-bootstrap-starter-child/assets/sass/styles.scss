@@ -24,7 +24,9 @@ $blue-plum: #451b5e;
 $white: #ffffff;
 $light-gray: #f3f3f3;
 $medium-gray: #dedede;
+$rule-gray: #eaecef;
 $dark-gray: #6b6b6b;
+
 
 
 /* fonts */
@@ -956,6 +958,7 @@ ul.sidebar-list {
 
 .details-block {
 
+
   .block-title {
     margin: 0 0 .5rem;
   }
@@ -1047,4 +1050,15 @@ a.opinion-badge {
       top: -4px;
     }
 
+}
+
+.post-grid {
+  padding: 2rem 0 0 0;
+  border-top: 1px solid $rule-gray;
+}
+
+.case-summary {
+  font-size: 0.9rem;
+  color: $dark-gray;
+  font-weight: 300;
 }

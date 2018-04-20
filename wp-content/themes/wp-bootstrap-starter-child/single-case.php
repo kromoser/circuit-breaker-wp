@@ -3,7 +3,7 @@
 
 get_header(); ?>
 
-	<section id="primary" class="content-area col-sm-12 single-case">
+	<section id="primary" class="content-area col-sm-12 col-lg-9 single-case">
 		<main id="main" class="site-main" role="main">
 
 
@@ -11,67 +11,38 @@ get_header(); ?>
 
 			<div class="row">
 
-				<div class="col-sm-12 col-lg-9 details-block">
+				<?php
+					// Get opinions relationship field and argument date
+					$opinions = get_field('case_number_for_opinion');
+					$one_week_ago = date('m/d/Y', strtotime('-7 days'));
+					$date_scheduled = get_field('argument_date', false, false);
+					$date = new DateTime($date_scheduled);
+					$date_scheduled = date('m/d/Y', strtotime($date_scheduled) );
+
+				?>
+
+				<div class="col-sm-8 details-block">
 					<div class="row">
-						<div class="col-sm-12 col-lg-4">
+						<div class="col-sm-12 col-lg-6">
 							<div class="block-title">Case number: </div>
 							<h5><?php the_field('case_number') ?></h5>
 						</div>
 
 
-							<div class="col-sm-12 col-lg-4">
+							<div class="col-sm-12 col-lg-6">
 								<div class="block-title">Date filed: </div>
 								<h5><?php the_field('date_filed') ?></h5>
 							</div>
 
-							<div class="col-sm-12 col-lg-4">
-
-								<?php
-									// Get opinions relationship field and argument date
-									$opinions = get_field('case_number_for_opinion');
-									$one_week_ago = date('m/d/Y', strtotime('-7 days'));
-									$date_scheduled = get_field('argument_date', false, false);
-									$date = new DateTime($date_scheduled);
-									$date_scheduled = date('m/d/Y', strtotime($date_scheduled) );
-
-
-									?>
-
-								<div class="block-title">
-									Opinion:
-									</div>
-									<?php if( $opinions ) { ?>
-									<?php foreach( $opinions as $o ): ?>
-										<a href="<?php echo get_field('opinion_file', $o->ID);?>" class="opinion-badge">PDF <i class="material-icons">file_download</i></a>
-
-
-									<?php $judge = get_field('judge', $o->ID); ?>
-
-								<?php foreach( $judge as $j) : ?>
-									<h5>Issued by <a href="<?php echo get_the_permalink($j->ID); ?>"><?php echo get_the_title($j->ID); ?></a> <br>
-										on <?php echo date('m-d-Y', strtotime( get_field('date_issued', $o->ID) ) ); ?></h5>
-								<?php endforeach; ?>
-							<?php endforeach; ?>
-
-						<?php
-						}	else {
-						?>
-							<h5>No opinion</h5>
-						<?php
-						}
-						?>
-
-						</div>
-						
 					</div>
 					<div class="row">
 
-						<div class="col-sm-12 col-lg-4">
+						<div class="col-sm-12 col-lg-6">
 							<div class="block-title">Last docket entry: </div>
 							<h5><?php the_field('last_docket_entry') ?></h5>
 						</div>
 
-						<div class="col-sm-12 col-lg-4">
+						<div class="col-sm-12 col-lg-6">
 							<?php if ( $date_scheduled >= $one_week_ago ) {	?>
 									<div class="block-title">
 										Oral argument on:
@@ -84,7 +55,39 @@ get_header(); ?>
 
 				</div>
 
-					</div>
+			</div>
+			<div class="col-sm-12 col-lg-4 details-block">
+
+					<?php if( $opinions ) { ?>
+						<div class="block-title">
+							Opinion:
+					<?php foreach( $opinions as $o ): ?>
+						<a href="<?php echo get_field('opinion_file', $o->ID);?>" class="opinion-badge">PDF <i class="material-icons">file_download</i></a>
+
+					<?php endforeach; ?>
+						</div>
+					<?php foreach( $opinions as $o ): ?>
+					<?php $judge = get_field('judge', $o->ID); ?>
+
+				<?php foreach( $judge as $j) : ?>
+					<h5>Issued by <a href="<?php echo get_the_permalink($j->ID); ?>"><?php echo get_the_title($j->ID); ?></a> <br>
+						on <?php echo date('m-d-Y', strtotime( get_field('date_issued', $o->ID) ) ); ?></h5>
+			<?php endforeach; ?>
+			<?php endforeach; ?>
+
+		<?php
+		}	else {
+		?>
+		<div class="block-title">
+			Opinion:
+		</div>
+			<h5>No opinion</h5>
+		<?php
+		}
+		?>
+
+		</div>
+
 
 
 
@@ -110,29 +113,38 @@ get_header(); ?>
 					    if ( $related_posts->have_posts() ) :
 
 								?>
-								<div class="col-sm-12 col-lg-4 inline-sidebar">
+								<div class="post-grid col-sm-12">
+
 									<div class="block-title">
 										Posts about this case
 									</div>
-								<?php
 
-					      while ( $related_posts->have_posts() ) : $related_posts->the_post(); ?>
-					          <!-- article block -->
-					          <article class="post article-post">
-					            <header class="entry-header">
-					              <a href="<?php the_permalink() ?>"><h5 class="entry-title related-post-title"><?php the_title() ?></h5></a>
-					            </header>
-					            <div class="entry-content post-list">
-					             <?php the_excerpt() ?>
-					            </div>
-					          </article>
 
-					      <?php endwhile;
+									<div class="row">
 
-					      wp_reset_postdata();
-					      ?>
-								</div>
 
+									<?php
+
+						      while ( $related_posts->have_posts() ) : $related_posts->the_post(); ?>
+						          <!-- article block -->
+											<div class="col-sm-12 col-lg-6">
+						          <article class="post article-post">
+						            <header class="entry-header">
+						              <a href="<?php the_permalink() ?>"><h5 class="entry-title related-post-title"><?php the_title() ?></h5></a>
+						            </header>
+						            <div class="entry-content post-list">
+						             <?php the_excerpt() ?>
+						            </div>
+						          </article>
+										</div>
+
+						      <?php endwhile;
+
+						      wp_reset_postdata();
+						      ?>
+									</div>
+
+							</div>
 
 					    <?php else : ?>
 					      <!--<p><?php esc_html_e( 'Sorry, there are no recent posts.' ); ?></p>-->
@@ -143,8 +155,6 @@ get_header(); ?>
 		</main><!-- #main -->
 	</section><!-- #primary -->
 
-
-
 <?php
-//get_sidebar();
+get_sidebar('cases');
 get_footer();
