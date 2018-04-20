@@ -17,7 +17,6 @@ $main-purple: rgb(109,0,95);
 $black: #000000;
 $link-color: lighten( $main-purple, 5% );
 $white: #ffffff;
-$black: #000000;
 $gold-highlight: #f29f10;
 $accent-turquoise: #278585;
 $blue-plum: #451b5e;
@@ -36,6 +35,7 @@ $serif: Vollkorn, Georgia, 'Adobe Garamond Pro', Garamond, serif;
 
 div#wpadminbar {
   z-index: 9998 !important;
+  //display: none !important;
 }
 
 /* general settings and styles */
@@ -119,6 +119,103 @@ h1, h2, h3 {
   z-index: 1;
   margin: 0 auto;
   display: block;
+}
+
+
+/*Alternate, narrow nav style*/
+.pre-header {
+  font-family: $sans-serif;
+  text-align: center;
+  font-size: 0.8rem;
+  background: darken($main-purple, 10%);
+  color: $medium-gray;
+  text-transform: uppercase;
+  letter-spacing: .15rem;
+  padding: .25rem 0;
+}
+
+header.narrow-header#masthead {
+  background: $white;
+  border-bottom: 1px solid $medium-gray;
+  border-top: 1px solid $medium-gray;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  padding-top: 0;
+
+  .navbar-brand {
+    padding:0;
+
+  }
+
+  .branding-logo {
+    display: inline-block;
+    margin: 0;
+    width: 100%;
+    transition: all .2s;
+    top: -1.5rem;
+
+  }
+
+  .shrink-logo {
+    width: 50%;
+    transition: all .2s;
+    top: 0;
+  }
+
+  nav {
+    -webkit-align-items: flex-start;
+    align-items: flex-start;
+    box-shadow: none;
+
+    #main-nav {
+      -webkit-align-self: flex-end;
+      align-self: flex-end;
+    }
+
+    ul.navbar-nav {
+      margin: 0 0 0 auto;
+
+
+      li {
+
+        font-size: .75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.15rem;
+
+        &.dropdown:hover .dropdown-menu {
+          display: block;
+        }
+
+        &.active {
+          color: $main-purple;
+
+          a.nav-link {
+            font-weight: 700;
+
+            &:hover {
+              background: rgba(0,0,0,0);
+              font-weight: 700;
+              color: $main-purple;
+            }
+          }
+        }
+
+
+        a.nav-link {
+          color: $dark-gray;
+          padding: 1.5rem .75rem;
+
+          &:hover {
+            background: $main-purple;
+            color: $light-gray;
+            font-weight: 400;
+          }
+        }
+      }
+    }
+  }
 }
 
 /* block subheads */
@@ -209,8 +306,10 @@ h1, h2, h3 {
 /* hero posts blade */
 
 div.hero-posts {
-  height: 275px;
+  height: 360px;
   margin-bottom: 3rem;
+  background-size: cover;
+  background-position: center center;
 
   @media screen and (max-width: 991px) {
     height: 350px;
@@ -223,9 +322,9 @@ div.hero-posts {
   }
 }
 div.gradient-overlay {
-  background: -moz-linear-gradient(left, rgba( darken($main-purple, 10%), 0.15) 0%, rgba( darken($main-purple, 10%), 0.95 ) 65%, rgba( darken($main-purple, 10%), 0.95 ) 100%), url(assets/img/detained-fence.jpg) center center; /* FF3.6-15 */
-  background: -webkit-linear-gradient(left, rgba( darken($main-purple, 10%), 0.15) 0%,rgba( darken($main-purple, 10%), 0.95 ) 65%,rgba( darken($main-purple, 10%), 0.95 ) 100%), url(assets/img/detained-fence.jpg) center center; /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to right, rgba( darken($main-purple, 10%), 0.15) 0%,rgba( darken($main-purple, 10%), 0.95 ) 65%,rgba( darken($main-purple, 10%), 0.95 ) 100%), url(assets/img/detained-fence.jpg) center center; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: -moz-linear-gradient(left, rgba( darken($main-purple, 10%), 0) 0%, rgba( darken($main-purple, 10%), .99 ) 65%, rgba( darken($main-purple, 10%), .99 ) 100%), url(assets/img/detained-fence.jpg) center center; /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, rgba( darken($main-purple, 10%), 0) 0%,rgba( darken($main-purple, 10%), .99 ) 65%,rgba( darken($main-purple, 10%), .99 ) 100%), url(assets/img/detained-fence.jpg) center center; /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, rgba( darken($main-purple, 10%), 0) 0%,rgba( darken($main-purple, 10%), .99 ) 65%,rgba( darken($main-purple, 10%), .99 ) 100%), url(assets/img/detained-fence.jpg) center center; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#006d005f', endColorstr='#6d005f',GradientType=0 ); /* IE6-9 */
   background-size: cover;
 
@@ -242,6 +341,9 @@ div.gradient-overlay {
 
   .primary-feature-post {
     text-shadow: 2px 1px 5px rgba( $black, 0.8);
+    -webkit-align-self: flex-end;
+    align-self: flex-end;
+    padding-bottom: 2rem;
 
     h2 {
       font-size: 3rem;
@@ -262,10 +364,17 @@ div.gradient-overlay {
     text-transform: uppercase;
     font-family: $sans-serif;
     letter-spacing: 0.25rem;
+    padding: 2rem 0 .5rem 1.5rem;
+    border-left: 1px solid $medium-gray;
+    -webkit-align-self: flex-end;
+    align-self: flex-end;
+    margin-bottom: 2rem;
+
 
       h4 {
         font-size: 1rem;
-        text-align: right;
+        line-height: 1.5rem;
+        text-align: left;
         margin-bottom: 1.6rem;
         font-family: $sans-serif;
 
@@ -274,12 +383,12 @@ div.gradient-overlay {
         }
 
         a {
-          color: $white;
+          color: $medium-gray;
 
           &:hover {
             color: $light-gray;
             text-decoration: none;
-            border-bottom: 2px solid $light-gray;
+            border-bottom: 1px solid $light-gray;
           }
         }
 

@@ -76,6 +76,69 @@ h1, h2, h3 {
   margin: 0 auto;
   display: block; }
 
+/*Alternate, narrow nav style*/
+.pre-header {
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
+  text-align: center;
+  font-size: 0.8rem;
+  background: #3a0033;
+  color: #dedede;
+  text-transform: uppercase;
+  letter-spacing: .15rem;
+  padding: .25rem 0; }
+
+header.narrow-header#masthead {
+  background: #ffffff;
+  border-bottom: 1px solid #dedede;
+  border-top: 1px solid #dedede;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  padding-top: 0; }
+  header.narrow-header#masthead .navbar-brand {
+    padding: 0; }
+  header.narrow-header#masthead .branding-logo {
+    display: inline-block;
+    margin: 0;
+    width: 100%;
+    transition: all .2s;
+    top: -1.5rem; }
+  header.narrow-header#masthead .shrink-logo {
+    width: 50%;
+    transition: all .2s;
+    top: 0; }
+  header.narrow-header#masthead nav {
+    -webkit-align-items: flex-start;
+    align-items: flex-start;
+    box-shadow: none; }
+    header.narrow-header#masthead nav #main-nav {
+      -webkit-align-self: flex-end;
+      align-self: flex-end; }
+    header.narrow-header#masthead nav ul.navbar-nav {
+      margin: 0 0 0 auto; }
+      header.narrow-header#masthead nav ul.navbar-nav li {
+        font-size: .75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.15rem; }
+        header.narrow-header#masthead nav ul.navbar-nav li.dropdown:hover .dropdown-menu {
+          display: block; }
+        header.narrow-header#masthead nav ul.navbar-nav li.active {
+          color: #6d005f; }
+          header.narrow-header#masthead nav ul.navbar-nav li.active a.nav-link {
+            font-weight: 700; }
+            header.narrow-header#masthead nav ul.navbar-nav li.active a.nav-link:hover {
+              background: transparent;
+              font-weight: 700;
+              color: #6d005f; }
+        header.narrow-header#masthead nav ul.navbar-nav li a.nav-link {
+          color: #6b6b6b;
+          padding: 1.5rem .75rem; }
+          header.narrow-header#masthead nav ul.navbar-nav li a.nav-link:hover {
+            background: #6d005f;
+            color: #f3f3f3;
+            font-weight: 400; }
+
 /* block subheads */
 .block-title, div.entry-meta, .footer-block-title {
   font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
@@ -130,8 +193,10 @@ h1, h2, h3 {
 
 /* hero posts blade */
 div.hero-posts {
-  height: 275px;
-  margin-bottom: 3rem; }
+  height: 360px;
+  margin-bottom: 3rem;
+  background-size: cover;
+  background-position: center center; }
   @media screen and (max-width: 991px) {
     div.hero-posts {
       height: 350px;
@@ -142,11 +207,11 @@ div.hero-posts {
       padding: 3rem 1.5rem; } }
 
 div.gradient-overlay {
-  background: -moz-linear-gradient(left, rgba(58, 0, 51, 0.15) 0%, rgba(58, 0, 51, 0.95) 65%, rgba(58, 0, 51, 0.95) 100%), url(assets/img/detained-fence.jpg) center center;
+  background: -moz-linear-gradient(left, rgba(58, 0, 51, 0) 0%, rgba(58, 0, 51, 0.99) 65%, rgba(58, 0, 51, 0.99) 100%), url(assets/img/detained-fence.jpg) center center;
   /* FF3.6-15 */
-  background: -webkit-linear-gradient(left, rgba(58, 0, 51, 0.15) 0%, rgba(58, 0, 51, 0.95) 65%, rgba(58, 0, 51, 0.95) 100%), url(assets/img/detained-fence.jpg) center center;
+  background: -webkit-linear-gradient(left, rgba(58, 0, 51, 0) 0%, rgba(58, 0, 51, 0.99) 65%, rgba(58, 0, 51, 0.99) 100%), url(assets/img/detained-fence.jpg) center center;
   /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to right, rgba(58, 0, 51, 0.15) 0%, rgba(58, 0, 51, 0.95) 65%, rgba(58, 0, 51, 0.95) 100%), url(assets/img/detained-fence.jpg) center center;
+  background: linear-gradient(to right, rgba(58, 0, 51, 0) 0%, rgba(58, 0, 51, 0.99) 65%, rgba(58, 0, 51, 0.99) 100%), url(assets/img/detained-fence.jpg) center center;
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#006d005f', endColorstr='#6d005f',GradientType=0 );
   /* IE6-9 */
@@ -160,7 +225,10 @@ div.gradient-overlay {
       background: linear-gradient(to bottom, rgba(58, 0, 51, 0.15) 0%, rgba(58, 0, 51, 0.95) 65%, rgba(58, 0, 51, 0.95) 100%), url(assets/img/detained-fence.jpg) center center;
       /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ } }
   div.gradient-overlay .primary-feature-post {
-    text-shadow: 2px 1px 5px rgba(0, 0, 0, 0.8); }
+    text-shadow: 2px 1px 5px rgba(0, 0, 0, 0.8);
+    -webkit-align-self: flex-end;
+    align-self: flex-end;
+    padding-bottom: 2rem; }
     div.gradient-overlay .primary-feature-post h2 {
       font-size: 3rem;
       font-weight: 600;
@@ -172,20 +240,26 @@ div.gradient-overlay {
   div.gradient-overlay .secondary-feature-posts {
     text-transform: uppercase;
     font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
-    letter-spacing: 0.25rem; }
+    letter-spacing: 0.25rem;
+    padding: 2rem 0 .5rem 1.5rem;
+    border-left: 1px solid #dedede;
+    -webkit-align-self: flex-end;
+    align-self: flex-end;
+    margin-bottom: 2rem; }
     div.gradient-overlay .secondary-feature-posts h4 {
       font-size: 1rem;
-      text-align: right;
+      line-height: 1.5rem;
+      text-align: left;
       margin-bottom: 1.6rem;
       font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif; }
       div.gradient-overlay .secondary-feature-posts h4:last-child {
         margin-bottom: 0; }
       div.gradient-overlay .secondary-feature-posts h4 a {
-        color: #ffffff; }
+        color: #dedede; }
         div.gradient-overlay .secondary-feature-posts h4 a:hover {
           color: #f3f3f3;
           text-decoration: none;
-          border-bottom: 2px solid #f3f3f3; }
+          border-bottom: 1px solid #f3f3f3; }
       @media screen and (max-width: 991px) {
         div.gradient-overlay .secondary-feature-posts h4 {
           text-align: center; } }

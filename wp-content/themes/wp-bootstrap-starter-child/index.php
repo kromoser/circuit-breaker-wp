@@ -12,7 +12,7 @@
  * @package WP_Bootstrap_Starter
  */
 
-get_header(); ?>
+get_header('narrow'); ?>
 
 	<section id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
@@ -29,9 +29,9 @@ get_header(); ?>
 										)
 									),
 									'meta_key'						=> 'feature_order',
-									'orderby'							=> 'meta_value',
-									'order'								=> 'ASC',
-									'posts_per_page'			=> '4',
+									'orderby'							=> 'meta_value date',
+									'order'								=> 'DESC',
+									'posts_per_page'			=> '5',
 									'ignore_sticky_posts' => 1
 								);
 								global $post;
@@ -55,7 +55,7 @@ get_header(); ?>
 														<h2><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h2>
 														<p><?php the_excerpt() ?></p>
 													</div>
-											<div class="col-lg-4 col-xs-12 secondary-feature-posts">
+											<div class="col-lg-4 offset-lg-1 col-xs-12 secondary-feature-posts">
 										<?php
 										}
 										else { ?>
