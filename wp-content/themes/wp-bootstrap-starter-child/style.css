@@ -793,4 +793,37 @@ a.opinion-badge {
   color: #6b6b6b;
   font-weight: 300; }
 
+/* Judge List Styles */
+.card-columns {
+  column-count: 1 !important; }
+  @media screen and (min-width: 767px) {
+    .card-columns {
+      column-count: 2 !important; } }
+  .card-columns .card {
+    display: inline-block;
+    padding: 0; }
+    .card-columns .card .card-header {
+      padding: 0; }
+
+.single-judge {
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
+  font-weight: 300; }
+  .single-judge h3 {
+    padding: 1rem 0 0; }
+  .single-judge .entry-content {
+    margin: 0;
+    padding: 0; }
+  .single-judge .block-title, .single-judge div.entry-meta, .single-judge .footer-block-title {
+    font-size: 0.7rem;
+    letter-spacing: 0;
+    margin: .35rem 0; }
+    .single-judge .block-title span, .single-judge div.entry-meta span, .single-judge .footer-block-title span {
+      font-weight: 300;
+      color: #000000;
+      font-size: 1rem;
+      text-transform: none; }
+
+.headshot img {
+  width: 100%; }
+
 /*# sourceMappingURL=style.css.map */

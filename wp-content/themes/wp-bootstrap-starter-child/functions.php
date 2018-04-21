@@ -179,6 +179,7 @@ function bidirectional_acf_update_value( $value, $post_id, $field  ) {
 }
 
 add_filter('acf/update_value/name=case_number_for_opinion', 'bidirectional_acf_update_value', 10, 3);
+add_filter('acf/update_value/name=opinion_name_for_judges', 'bidirectional_acf_update_value', 10, 3);
 
 //Insert ads after second paragraph of single post content.
 /*add_filter( 'the_content', 'prefix_insert_post_ads' );

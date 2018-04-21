@@ -1171,3 +1171,69 @@ a.opinion-badge {
   color: $dark-gray;
   font-weight: 300;
 }
+
+/* Judge List Styles */
+.card-columns {
+
+  column-count: 1 !important;
+
+  @media screen and (min-width: 767px) {
+     column-count: 2 !important;
+  }
+
+  .card {
+    display: inline-block;
+    padding: 0;
+
+    .card-header {
+      padding: 0;
+    }
+  }
+
+}
+
+
+
+.single-judge {
+  //border: 1px solid $medium-gray;
+  //margin: 15px;
+  font-family: $sans-serif;
+  font-weight: 300;
+  //display: flex;
+
+  h3 {
+    padding: 1rem 0 0;
+  }
+
+  .entry-content {
+    margin: 0;
+    padding: 0;
+  }
+
+  .block-title {
+    //font-weight: 300;
+    font-size: 0.7rem;
+    letter-spacing: 0;
+    margin: .35rem 0;
+
+    span {
+      font-weight: 300;
+      color: $black;
+      font-size: 1rem;
+      text-transform: none;
+
+    }
+  }
+}
+.headshot {
+
+  //padding-left: 0 !important;
+
+
+  img {
+
+  width: 100%;
+
+  }
+
+}
