@@ -1188,6 +1188,51 @@ a.opinion-badge {
     .card-header {
       padding: 0;
     }
+
+    .card-footer {
+
+      .opinion-button {
+        text-align: center;
+        text-transform: uppercase;
+        color: $main-purple;
+        letter-spacing: 0.1rem;
+        //margin-bottom: 0.5rem;
+
+        &:hover {
+          cursor: pointer;
+        }
+
+        i {
+          vertical-align: middle;
+          margin-top: -2px;
+          transition: all .2s;
+
+
+        }
+
+        .expand {
+          transform: rotate(90deg);
+          transition: all .2s;
+        }
+      }
+
+      .opinion-list {
+        margin-top: 1rem;
+
+        ul {
+          list-style: none;
+          padding: 0;
+
+          li {
+
+            a {
+              color: $link-color;
+            }
+          }
+        }
+      }
+
+    }
   }
 
 }
@@ -1234,6 +1279,67 @@ a.opinion-badge {
 
   width: 100%;
 
+  }
+}
+
+footer.site-footer {
+
+  #main-nav {
+    display: flex;
+  }
+  //display: none;
+  background: darken($main-purple,10%) !important;
+
+  .block-title {
+    color: $medium-gray
+  }
+
+  nav {
+    ul {
+      li{
+        padding: .25rem 0;
+
+        a {
+          color: $medium-gray !important;
+          padding: 0;
+        }
+      }
+    }
+  }
+
+  .email-form {
+
+    .email-form-group {
+      border-bottom: 2px solid $medium-gray;
+
+      input {
+        background: none;
+        color: $medium-gray;
+      }
+
+      input::placeholder {
+        color: $white;
+      }
+    }
+  }
+
+  .logo-footer {
+    -webkit-align-self: flex-end;
+    align-self: flex-end;
+    padding: 0 0 1.25rem 0;
+    text-align: center;
+
+    img {
+      display: block;
+      margin-bottom: .5rem;
+    }
+  }
+}
+
+#footer-widget {
+  display: none;
+  .bg-light {
+    background: darken($main-purple,10%) !important;
   }
 
 }

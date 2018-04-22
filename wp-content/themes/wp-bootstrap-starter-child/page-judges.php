@@ -14,22 +14,28 @@
 
 get_header(); ?>
 
+<script type="text/javascript">
+
+	jQuery(document).ready(function() {
+		jQuery('div.opinion-list').hide();
+
+		jQuery('.opinion-button').on('click', function(event) {
+			event.preventDefault();
+			jQuery(this).children().toggleClass('expand');
+			//jQuery(this).html('Hide opinions')
+			jQuery(this).next().slideToggle(200);
+		})
+
+
+	})
+
+</script>
+
 	<section id="primary" class="content-area col-sm-12">
 		<main id="main" class="site-main" role="main">
 
 
-      <h3><?php the_title() ?></h3>
-			<?php
-	    // TO SHOW THE PAGE CONTENTS
-	    while ( have_posts() ) : the_post(); ?> <!--Because the_content() works only inside a WP Loop -->
-	        <div class="entry-content-page">
-	            <?php the_content(); ?> <!-- Page Content -->
-	        </div><!-- .entry-content-page -->
 
-	    <?php
-	    endwhile; //resetting the page loop
-	    wp_reset_query(); //resetting the page query
-	    ?>
 
 
 <?php
@@ -65,11 +71,11 @@ get_header(); ?>
 
 						<div class="card-header">
 							<div class="row">
-								<div class="col-sm-12 col-md-4 headshot">
+								<div class="col-sm-12 col-md-3 headshot">
 									<img src="<?php the_post_thumbnail_url() ?>" alt="" class="headshot">
 								</div>
 
-								<div class="col-sm-12 col-md-8">
+								<div class="col-sm-12 col-md-9">
 									<h3 class="entry-title col-sm-12"><?php the_title() ?></h3>
 
 									<div class="block-title">
@@ -84,9 +90,6 @@ get_header(); ?>
 						</div>
 
 						<div class="card-body row">
-							<div class="block-title col-sm-12 col-lg-6">
-								Clerkship: <span><?php echo get_post_meta(get_the_ID(), 'clerkship', true) ?></span>
-							</div>
 
 							<div class="block-title col-sm-12 col-lg-6">
 								Hometown: <span><?php echo get_post_meta(get_the_ID(), 'hometown', true) ?></span>
@@ -94,6 +97,10 @@ get_header(); ?>
 
 							<div class="block-title col-sm-12 col-lg-6">
 								Attended: <span><?php echo get_post_meta(get_the_ID(), 'undergrad', true) ?>, <?php echo get_post_meta(get_the_ID(), 'law_school', true) ?></span>
+							</div>
+
+							<div class="block-title col-sm-12 col-lg-6">
+								Clerkship: <span><?php echo get_post_meta(get_the_ID(), 'clerkship', true) ?></span>
 							</div>
 
 							<div class="block-title col-sm-12 col-lg-6">
@@ -105,25 +112,39 @@ get_header(); ?>
 
 							</div>
 
-							<?php $opinions = get_field('opinion_name_for_judges'); ?>
-							<?php if ( $opinions ) {
-								?>
-								<a href="#" class="btn btn-main">View opinions</a>
+						</div>
+						<?php $opinions = get_field('opinion_name_for_judges'); ?>
+						<?php if ( $opinions ) {
+							?>
+							<div class="card-footer">
+								<div class="opinion-button"><i class="material-icons">keyboard_arrow_right</i> See opinions</div>
 								<div class="opinion-list col-sm-12">
 									<ul>
 										<?php foreach ($opinions as $o ) {
+
+											$case = get_posts(array(
+												'posts_per_page' => 1,
+												'post_type'		=> 'case',
+												'meta_key' 		=> 'case_number',
+												'meta_value'	=> get_the_title($o->ID)
+											));
+
+											foreach ($case as $c) {
+
+
 											?>
-											<li><a href="#"><?php echo get_the_title($o->ID) ?></a></li>
+											<li><a href="<?php echo get_the_permalink($c->ID) ?>"><?php echo get_the_title($c->ID) ?></a></li>
 											<?php
+											}
 										};
 										?>
 									</ul>
 								</div>
-								<?php
+							</div>
 
-							};?>
+							<?php
 
-						</div>
+						};?>
 
 
 

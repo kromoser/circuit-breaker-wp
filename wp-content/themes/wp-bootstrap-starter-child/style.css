@@ -804,6 +804,27 @@ a.opinion-badge {
     padding: 0; }
     .card-columns .card .card-header {
       padding: 0; }
+    .card-columns .card .card-footer .opinion-button {
+      text-align: center;
+      text-transform: uppercase;
+      color: #6d005f;
+      letter-spacing: 0.1rem; }
+      .card-columns .card .card-footer .opinion-button:hover {
+        cursor: pointer; }
+      .card-columns .card .card-footer .opinion-button i {
+        vertical-align: middle;
+        margin-top: -2px;
+        transition: all .2s; }
+      .card-columns .card .card-footer .opinion-button .expand {
+        transform: rotate(90deg);
+        transition: all .2s; }
+    .card-columns .card .card-footer .opinion-list {
+      margin-top: 1rem; }
+      .card-columns .card .card-footer .opinion-list ul {
+        list-style: none;
+        padding: 0; }
+        .card-columns .card .card-footer .opinion-list ul li a {
+          color: #870075; }
 
 .single-judge {
   font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
@@ -825,5 +846,37 @@ a.opinion-badge {
 
 .headshot img {
   width: 100%; }
+
+footer.site-footer {
+  background: #3a0033 !important; }
+  footer.site-footer #main-nav {
+    display: flex; }
+  footer.site-footer .block-title, footer.site-footer div.entry-meta, footer.site-footer .footer-block-title {
+    color: #dedede; }
+  footer.site-footer nav ul li {
+    padding: .25rem 0; }
+    footer.site-footer nav ul li a {
+      color: #dedede !important;
+      padding: 0; }
+  footer.site-footer .email-form .email-form-group {
+    border-bottom: 2px solid #dedede; }
+    footer.site-footer .email-form .email-form-group input {
+      background: none;
+      color: #dedede; }
+    footer.site-footer .email-form .email-form-group input::placeholder {
+      color: #ffffff; }
+  footer.site-footer .logo-footer {
+    -webkit-align-self: flex-end;
+    align-self: flex-end;
+    padding: 0 0 1.25rem 0;
+    text-align: center; }
+    footer.site-footer .logo-footer img {
+      display: block;
+      margin-bottom: .5rem; }
+
+#footer-widget {
+  display: none; }
+  #footer-widget .bg-light {
+    background: #3a0033 !important; }
 
 /*# sourceMappingURL=style.css.map */
