@@ -67,7 +67,7 @@ get_header(); ?>
 					<?php endforeach; ?>
 						</div>
 					<?php foreach( $opinions as $o ): ?>
-					<?php $judge = get_field('judge', $o->ID); ?>
+					<?php $judge = get_field('opinion_name_for_judges', $o->ID); ?>
 
 				<?php foreach( $judge as $j) : ?>
 					<h5>Issued by <a href="<?php echo get_the_permalink($j->ID); ?>"><?php echo get_the_title($j->ID); ?></a> <br>
