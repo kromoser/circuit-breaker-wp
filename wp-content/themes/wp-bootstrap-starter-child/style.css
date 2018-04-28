@@ -338,6 +338,9 @@ form.email-form {
   flex-wrap: wrap;
   font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
   margin-bottom: 2rem; }
+  form.email-form .field-shift {
+    left: -9999px;
+    position: absolute; }
   form.email-form button {
     background: #6d005f;
     border: none;
@@ -794,50 +797,47 @@ a.opinion-badge {
   font-weight: 300; }
 
 /* Judge List Styles */
-.card-columns {
-  column-count: 1 !important; }
-  @media screen and (min-width: 767px) {
-    .card-columns {
-      column-count: 2 !important; } }
-  .card-columns .card {
-    display: inline-block;
+.grid .card {
+  padding: 0;
+  margin: 1rem; }
+  .grid .card.col-lg-6 {
+    width: calc( 50% - 2rem ) !important; }
+  .grid .card .card-header {
     padding: 0; }
-    .card-columns .card .card-header {
+  .grid .card .card-footer .opinion-button {
+    text-align: center;
+    text-transform: uppercase;
+    color: #6d005f;
+    letter-spacing: 0.1rem; }
+    .grid .card .card-footer .opinion-button:hover {
+      cursor: pointer; }
+    .grid .card .card-footer .opinion-button i {
+      vertical-align: middle;
+      margin-top: -2px;
+      transition: all .2s; }
+    .grid .card .card-footer .opinion-button .expand {
+      transform: rotate(90deg);
+      transition: all .2s; }
+  .grid .card .card-footer .opinion-list {
+    margin-top: 1rem; }
+    .grid .card .card-footer .opinion-list ul {
+      list-style: none;
       padding: 0; }
-    .card-columns .card .card-footer .opinion-button {
-      text-align: center;
-      text-transform: uppercase;
-      color: #6d005f;
-      letter-spacing: 0.1rem; }
-      .card-columns .card .card-footer .opinion-button:hover {
-        cursor: pointer; }
-      .card-columns .card .card-footer .opinion-button i {
-        vertical-align: middle;
-        margin-top: -2px;
-        transition: all .2s; }
-      .card-columns .card .card-footer .opinion-button .expand {
-        transform: rotate(90deg);
-        transition: all .2s; }
-    .card-columns .card .card-footer .opinion-list {
-      margin-top: 1rem; }
-      .card-columns .card .card-footer .opinion-list ul {
-        list-style: none;
-        padding: 0; }
-        .card-columns .card .card-footer .opinion-list ul li a {
-          color: #870075; }
+      .grid .card .card-footer .opinion-list ul li a {
+        color: #870075; }
 
 .single-judge {
   font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
   font-weight: 300; }
   .single-judge h3 {
-    padding: 1rem 0 0; }
+    padding: .75rem 0 0; }
   .single-judge .entry-content {
     margin: 0;
     padding: 0; }
   .single-judge .block-title, .single-judge div.entry-meta, .single-judge .footer-block-title {
     font-size: 0.7rem;
     letter-spacing: 0;
-    margin: .35rem 0; }
+    margin: .15rem 0; }
     .single-judge .block-title span, .single-judge div.entry-meta span, .single-judge .footer-block-title span {
       font-weight: 300;
       color: #000000;
@@ -858,6 +858,12 @@ footer.site-footer {
     footer.site-footer nav ul li a {
       color: #dedede !important;
       padding: 0; }
+  footer.site-footer .field-shift {
+    left: -9999px;
+    position: absolute; }
+  footer.site-footer .email-form .field-shift {
+    left: -9999px;
+    position: absolute; }
   footer.site-footer .email-form .email-form-group {
     border-bottom: 2px solid #dedede; }
     footer.site-footer .email-form .email-form-group input {

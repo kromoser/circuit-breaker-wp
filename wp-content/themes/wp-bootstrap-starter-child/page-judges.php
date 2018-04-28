@@ -14,16 +14,31 @@
 
 get_header(); ?>
 
+<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+
 <script type="text/javascript">
 
 	jQuery(document).ready(function() {
+
 		jQuery('div.opinion-list').hide();
+
+
+		jQuery('.grid').masonry({
+		  // options
+		  itemSelector: '.card',
+		  columnWidth: '.col-lg-6',
+			percentPosition: true
+		});
+
 
 		jQuery('.opinion-button').on('click', function(event) {
 			event.preventDefault();
-			jQuery(this).children().toggleClass('expand');
+
 			//jQuery(this).html('Hide opinions')
-			jQuery(this).next().slideToggle(200);
+			jQuery(this).next().toggle(0, function() {
+				jQuery('.grid').masonry({itemSelector: '.card', containerStyle: null});
+			});
+			jQuery(this).children().toggleClass('expand');
 		})
 
 
@@ -60,14 +75,16 @@ get_header(); ?>
         Current judges
       </div>
 
-      <div class="card-columns">
+      <!--<div class="card-columns">-->
+			<div class="grid">
+
 
         <?php
           while ( $current_judges->have_posts() ) : $current_judges->the_post();
         ?>
 
         <!-- article block -->
-        <article class="card col-sm-12 single-judge">
+        <article class="card col-sm-12 col-lg-6 single-judge">
 
 						<div class="card-header">
 							<div class="row">
