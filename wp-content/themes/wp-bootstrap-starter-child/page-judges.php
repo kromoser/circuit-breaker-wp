@@ -88,11 +88,11 @@ get_header(); ?>
 
 						<div class="card-header">
 							<div class="row">
-								<div class="col-sm-12 col-md-3 headshot">
+								<div class="col-4 col-md-3  headshot">
 									<img src="<?php the_post_thumbnail_url() ?>" alt="" class="headshot">
 								</div>
 
-								<div class="col-sm-12 col-md-9">
+								<div class="col-8 col-md-9">
 									<h3 class="entry-title col-sm-12"><?php the_title() ?></h3>
 
 									<div class="block-title">

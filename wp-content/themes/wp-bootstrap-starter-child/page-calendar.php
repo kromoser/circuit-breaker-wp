@@ -54,13 +54,15 @@ get_header(); ?>
 			?>
 
 
-			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.css" integrity="sha256-IGidWbiBOL+/w1glLnZWR5dCXpBrtQbY3XOUt2TTQOM=" crossorigin="anonymous" />
+			<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.css" integrity="sha256-IGidWbiBOL+/w1glLnZWR5dCXpBrtQbY3XOUt2TTQOM=" crossorigin="anonymous" />
 			<script
-        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        src="//code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.0/locale/af.js" integrity="sha256-I5ZXO8KcMnqNkrXU7baGig70nATYjNDnxxA2d40PcR8=" crossorigin="anonymous"></script>
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.js" integrity="sha256-uKe4jCg18Q60qLNG8dIei2y3ZVhcHADuEQFlpQ/hBRY=" crossorigin="anonymous"></script>
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.js"></script>
+
+				<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.0/locale/af.js" integrity="sha256-I5ZXO8KcMnqNkrXU7baGig70nATYjNDnxxA2d40PcR8=" crossorigin="anonymous"></script>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.js" integrity="sha256-uKe4jCg18Q60qLNG8dIei2y3ZVhcHADuEQFlpQ/hBRY=" crossorigin="anonymous"></script>
 
 			<script type="text/javascript">
 				$(document).ready(function() {

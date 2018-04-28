@@ -801,7 +801,10 @@ a.opinion-badge {
   padding: 0;
   margin: 1rem; }
   .grid .card.col-lg-6 {
-    width: calc( 50% - 2rem ) !important; }
+    width: calc( 50% - 2rem ); }
+    @media screen and (max-width: 767px) {
+      .grid .card.col-lg-6 {
+        width: calc( 100% - 2rem ); } }
   .grid .card .card-header {
     padding: 0; }
   .grid .card .card-footer .opinion-button {

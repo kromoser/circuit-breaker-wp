@@ -1188,7 +1188,13 @@ a.opinion-badge {
     margin: 1rem;
 
     &.col-lg-6 {
-      width: calc( 50% - 2rem ) !important;
+      width: calc( 50% - 2rem );
+
+
+      @media screen and (max-width: 767px) {
+          width: calc( 100% - 2rem ); 
+      }
+
     }
 
 
