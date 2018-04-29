@@ -31,18 +31,16 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 
 	//Start loop
 	if ( $latest_posts->have_posts() ) :
-
+		?><ul class="sidebar-list"><?php
 		while ( $latest_posts->have_posts() ) : $latest_posts->the_post(); ?>
-				<!-- article block -->
-				<ul class="sidebar-list">
+
 					<li>
 						<a href="<?php the_permalink() ?>"><?php the_title() ?></a>
 						<span class="post-date"><?php echo get_the_date() ?></span>
 					</li>
-				</ul>
 
 		<?php endwhile;
-
+		?></ul><?php
 		wp_reset_postdata();
 		?>
 

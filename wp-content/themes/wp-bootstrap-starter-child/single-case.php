@@ -155,6 +155,26 @@ get_header(); ?>
 		</main><!-- #main -->
 	</section><!-- #primary -->
 
+		<?php
+		// TO SHOW THE PAGE CONTENTS
+		while ( have_posts() ) : the_post(); ?> <!--Because the_content() works only inside a WP Loop -->
+			<?php
+			$the_content = get_the_content();
+			if ( !empty($the_content) ) { ?>
+				<aside id="secondary" class="widget-area col-sm-12 col-lg-3" role="complementary">
+				<div class="block-title">
+					Case Summary
+				</div>
+				<div class="case-summary">
+						<?php echo the_content(); ?> <!-- Post Content -->
+				</div>
+				</aside><!-- #secondary -->
+				<?php
+				}; //endif
+				endwhile; //resetting the page loop
+				wp_reset_query(); //resetting the page query
+				?>
+
 <?php
-get_sidebar('cases');
+//get_sidebar('cases');
 get_footer();

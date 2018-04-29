@@ -57,10 +57,21 @@ get_header(); ?>
   // Get all current judges
   $args = array(
     'post_type'						=> 'judge',
-    'meta_key'						=> 'current',
-    'orderby'							=> 'title',
-    'order'								=> 'DESC',
-    'posts_per_page'			=> '-1'
+    //'meta_key'						=> 'current',
+    //'orderby'							=> 'title',
+    //'order'								=> 'ASC',
+    'posts_per_page'			=> '-1',
+		'meta_query'					=> array(
+			array(
+				'key'							=> 'current',
+				'compare'					=> '=',
+				'value'						=> true
+			)
+		),
+		'meta_key'						=> 'force_order',
+		'orderby'							=> 'meta_value_num',
+		'order'								=> 'ASC'
+
   );
 
   $current_judges = new WP_Query( $args );
@@ -88,13 +99,15 @@ get_header(); ?>
 
 						<div class="card-header">
 							<div class="row">
-								<div class="col-4 col-md-3  headshot">
+								<div class="col-4   headshot">
 									<img src="<?php the_post_thumbnail_url() ?>" alt="" class="headshot">
 								</div>
 
-								<div class="col-8 col-md-9">
+								<div class="col-8 ">
 									<h3 class="entry-title col-sm-12"><?php the_title() ?></h3>
-
+									<div class="status-badge">
+										<?php echo get_field('judge_status')?>
+									</div>
 									<div class="block-title">
 										Assumed office: <span><?php echo get_post_meta(get_the_ID(), 'assumed_office', true) ?></span>
 									</div>

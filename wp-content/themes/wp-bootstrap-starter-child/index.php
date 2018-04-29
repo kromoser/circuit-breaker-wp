@@ -125,7 +125,7 @@ get_header('narrow'); ?>
 											'post_type'						=> 'case',
 											'meta_key'						=> 'featured',
 											'meta_value'					=> '1',
-											'posts_per_page'			=> '10'
+											'posts_per_page'			=> '5'
 										);
 										$latest_posts = new WP_Query( $args );
 
