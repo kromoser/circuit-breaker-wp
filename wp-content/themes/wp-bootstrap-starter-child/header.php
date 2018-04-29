@@ -61,9 +61,9 @@
                 'walker'          => new wp_bootstrap_navwalker()
                 ));
                 ?>
-
+            
             </nav>
-      
+
 	</header><!-- #masthead -->
     <?php if(!is_front_page() && !get_theme_mod( 'header_banner_visibility' )): ?>
       <div id="content" class="site-content">

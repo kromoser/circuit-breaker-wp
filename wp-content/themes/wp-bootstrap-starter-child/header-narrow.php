@@ -22,6 +22,11 @@
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <?php wp_head(); ?>
 
+<script
+src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+crossorigin="anonymous"></script>
+
   <script type="text/javascript">
 
     jQuery(document).ready(function() {
@@ -39,6 +44,25 @@
            logo.removeClass('shrink-logo');
          }
       }
+
+      const searchButton = jQuery('.search-nav i.search-button');
+      const searchContainer = jQuery('.search-form-container');
+
+
+      searchButton.on('click', function() {
+        searchContainer.slideToggle(200);
+      //  jQuery('.search form input').focus();
+      });
+
+      //jQuery('.search form input').on('change', function() {
+      //  if ( !jQuery(this).is(':focus') ) {
+      //    searchContainer.hide();
+      //  }
+      //})
+
+      jQuery('i[type="submit"]').on('click', function() {
+        jQuery('.search-nav form').submit();
+      })
 
     });
 
@@ -88,11 +112,26 @@
                   ));
                   ?>
 
+
+                  <div class="search-nav">
+
+
+
+                    <i class="material-icons search-button">search</i>
+
+
+                  </div>
               </nav>
+
+
             </div>
           </div>
         </div>
+        <div class="search-form-container">
+          <?php echo get_search_form(); ?>
+        </div>
       </header>
+
 
 
 

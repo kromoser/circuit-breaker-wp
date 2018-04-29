@@ -225,6 +225,85 @@ header.narrow-header#masthead {
   }
 }
 
+/* Menu Search */
+  .search-nav {
+    //position: relative;
+    font-family: $sans-serif;
+    font-size: .5rem;
+    color: $link-color;
+    display: flex;
+    margin-left: auto;
+    padding: 1.5rem .75rem;
+    -webkit-align-self: flex-end;
+    align-self: flex-end;
+
+
+    i {
+      cursor: pointer;
+    }
+
+
+
+  }
+
+  .search-form-container {
+    position: relative;
+    right: 0rem;
+    width: 100%;
+
+
+    //background: blue;
+    display: none;
+
+    form.search-form {
+      background: none;
+      border-top: 1px solid $rule-gray;
+    }
+
+    label {
+      width: 80%;
+      border: none;
+      margin-bottom: 0;
+
+
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 0.75rem;
+      display: inline;
+      border-radius: 0;
+      border: none;
+      background: none;
+      }
+
+      input[type="submit"] {
+        width: 10%;
+        display: inline;
+        float: right;
+        padding: 0.75rem;
+        margin-left: auto;
+        box-sizing: border-box;
+        background: $main-purple;
+        color: $light-gray;
+        text-align: center;
+        border-radius: 0;
+        border: none;
+
+      }
+
+
+
+    i[type="submit"] {
+      display: inline;
+      background: none;
+      float: right;
+      padding: .25rem;
+      -webkit-appearance: none;
+      right: .5rem;
+    }
+  }
+
 /* block subheads */
 .block-title {
   font-family: $sans-serif;
