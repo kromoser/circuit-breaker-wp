@@ -1452,3 +1452,20 @@ article.block-list-single {
       }
     }
   }
+
+/*  SCOTUSTracker */
+h4.section-subhead {
+  font-family: $serif !important;
+  color: $main-purple;
+}
+
+article.scotus-case {
+  p {
+    border-bottom: none;
+    margin-bottom: 0
+
+  }
+
+  border-bottom: 1px solid $rule-gray;
+  margin-bottom: 1rem;
+}

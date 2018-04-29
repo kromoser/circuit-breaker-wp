@@ -947,4 +947,16 @@ article.block-list-single {
     font-weight: 400;
     margin-bottom: 0; }
 
+/*  SCOTUSTracker */
+h4.section-subhead {
+  font-family: Vollkorn, Georgia, "Adobe Garamond Pro", Garamond, serif !important;
+  color: #6d005f; }
+
+article.scotus-case {
+  border-bottom: 1px solid #eaecef;
+  margin-bottom: 1rem; }
+  article.scotus-case p {
+    border-bottom: none;
+    margin-bottom: 0; }
+
 /*# sourceMappingURL=style.css.map */
