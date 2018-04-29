@@ -174,6 +174,13 @@ header.narrow-header#masthead {
       align-self: flex-end;
     }
 
+    .dropdown-menu {
+      margin: 0;
+      border-radius: 0;
+      border: none;
+      min-width: 260px;
+    }
+
     ul.navbar-nav {
       margin: 0 0 0 auto;
 
@@ -1405,6 +1412,19 @@ article.block-list-single {
     color: $link-color;
   }
 
+  span.post-date {
+    font-family: $sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: $gold-highlight;
+    font-size: .8rem;
+    letter-spacing: 0.1rem;
+    line-height: 0.9rem;
+    display: block;
+    margin: .25rem 0 .5rem;
+
+    }
+
   &.case {
     h3 {
       font-family: $sans-serif !important;
@@ -1418,20 +1438,17 @@ article.block-list-single {
         font-weight: 600;
         color: $dark-gray;
         letter-spacing: 0.05rem;
+        }
       }
     }
 
-    span.post-date {
-      font-family: $sans-serif;
-      font-weight: 400;
-      text-transform: uppercase;
-      color: $gold-highlight;
-      font-size: .8rem;
-      letter-spacing: 0.1rem;
-      line-height: 0.9rem;
-      display: block;
-      margin: .25rem 0 .5rem;
-
+    &.news {
+      h3 {
+        font-family: $serif !important;
+        color: $link-color;
+        font-size: 1.35rem;
+        font-weight: 400;
+        margin-bottom: 0;
       }
     }
   }

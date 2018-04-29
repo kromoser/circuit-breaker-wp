@@ -14,7 +14,7 @@
 
 get_header('full-width'); ?>
 
-<div class="col-sm-12 col-lg-10 offset-lg-1">
+<div class="col-sm-12 col-lg-8 offset-lg-1">
 	<h3><?php the_title() ?></h3>
 	<?php
 	// TO SHOW THE PAGE CONTENTS
