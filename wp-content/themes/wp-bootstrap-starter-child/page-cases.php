@@ -54,18 +54,25 @@ get_header('full-width'); ?>
 $(document).ready(function() {
 
 
-    let casesTable = $('table#case-list').DataTable( {
-			'searching': true,
-			'fixedHeader' : true,
-      'ordering': true,
-			'order': [[ 2, 'desc' ]]
+    //let casesTable = $('table#case-list').DataTable( {
+		//	'searching': true,
+		//	'fixedHeader' : true,
+    //  'ordering': true,
+		//	'order': [[ 2, 'desc' ]]
 
-    } );
+    //} );
 
-		$('table#case-list').show();
+		//$('table#case-list').show();
 
-		casesTable.draw();
+		//casesTable.draw();
 
+
+		//	var ajaxurl = '<?php echo admin_url( 'script-test/ajax-test.php' ); ?>';
+	  //  $('table#case-list').DataTable( {
+	  //      "processing": true,
+	  //      "serverSide": true,
+	  //      "ajax": ajaxurl
+	  //  } );
 
 
 
@@ -111,7 +118,7 @@ $(document).ready(function() {
     'meta_key'						=> 'status',
     'meta_value'							=> 'active',
     //'order'								=> 'DESC',
-    'posts_per_page'			=> '-1'
+    'posts_per_page'			=> '0'
   );
 
   $all_cases = new WP_Query( $args );
@@ -128,7 +135,7 @@ $(document).ready(function() {
 		<span id="pending-argument" class="filter-button h-100">Pending arguments</span>
 		<span id="clear" class="filter-button h-100">Clear filters</span>
 	</div>
-
+<?php echo do_shortcode("[case_datatables]"); ?>
 				<!--
 			  <button type="button" id="active" class="btn-main filter-button">Active</button>
         <button type="button" id="closed" class="btn-main filter-button">Inactive</button>
@@ -137,7 +144,7 @@ $(document).ready(function() {
         <button type="button" id="clear" name="button" class="btn-main filter-button">Clear filter</button>
 				-->
 
-        <table id="case-list" style="display: none;" data-page-length='25' class="case-table table">
+  <!--      <table id="case-list" style="display: none;" data-page-length='25' class="case-table table">
           <thead>
             <th>Case Name</th>
             <th>Case Number</th>
@@ -147,6 +154,7 @@ $(document).ready(function() {
           </thead>
           <tbody>
             <?php
+
             //Start loop and put into datatables table
             if ( $all_cases->have_posts() ) :
 
@@ -179,7 +187,7 @@ $(document).ready(function() {
             <?php endif; ?>
           </tbody>
         </table>
-
+-->
 
 
 		</main><!-- #main -->

@@ -9,8 +9,151 @@ function my_theme_enqueue_styles() {
         array( $parent_style ),
         wp_get_theme()->get('Version')
     );
+    wp_localize_script( 'ajax-pagination', 'ajaxpagination', array(
+    	'ajaxurl' => admin_url( 'admin-ajax.php' )
+    ));
 }
 add_action( 'wp_enqueue_scripts', 'my_theme_enqueue_styles' );
+
+
+// SERVER SIDE DATATABLES TESTING
+// Add Post title to custom meta
+
+add_action( 'transition_post_status', 'duplicate_title', 10, 3 );
+
+function duplicate_title( $new, $old, $post ) {
+    if ( $post->post_type == 'case' ) {
+        update_post_meta( $post->ID, 'd_title', $post->post_title );
+    }
+}
+
+function case_datatables_scripts() {
+    wp_enqueue_script( 'case_datatables', get_stylesheet_directory_uri(). '/js/casetable.js', array(), '1.0', true );
+    wp_localize_script( 'case_datatables', 'ajax_url', admin_url('admin-ajax.php?action=case_datatables') );
+}
+
+function case_datatables() {
+
+    case_datatables_scripts();
+
+    ob_start(); ?>
+
+    <table id="case-list" class="table case-table">
+        <thead>
+            <tr>
+                <th>Case Name</th>
+                <th>Case Number</th>
+                <th>Date Filed</th>
+                <th>Last Docket Entry</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+    </table>
+
+    <?php
+    return ob_get_clean();
+}
+
+add_shortcode ('case_datatables', 'case_datatables');
+
+add_action('wp_ajax_case_datatables', 'datatables_server_side_callback');
+add_action('wp_ajax_nopriv_case_datatables', 'datatables_server_side_callback');
+
+function datatables_server_side_callback() {
+
+    header("Content-Type: application/json");
+
+    $request= $_GET;
+
+    $columns = array(
+        0 => 'post_title',
+        1 => 'case_number',
+        2 => 'date_filed',
+        3 => 'last_docket_entry',
+        4 => 'status'
+    );
+
+    $args = array(
+        'post_type' => 'case',
+        'post_status' => 'publish',
+        'posts_per_page' => $request['length'],
+        'offset' => $request['start'],
+        'order' => $request['order'][0]['dir'],
+    );
+
+    if ($request['order'][0]['column'] == 0) {
+
+        $args['orderby'] = $columns[$request['order'][0]['column']];
+
+    } elseif ($request['order'][0]['column'] == 1 || $request['order'][0]['column'] == 2) {
+
+        $args['orderby'] = 'meta_value_num';
+        $args['meta_key'] = $columns[$request['order'][0]['column']];
+
+    }
+
+    //$request['search']['value'] <= Value from search
+
+    if( !empty($request['search']['value']) ) { // When datatables search is used
+        $args['meta_query'] = array(
+            'relation' => 'OR',
+            array(
+                'key' => 'd_title',
+                'value' => sanitize_text_field($request['search']['value']),
+                'compare' => 'LIKE'
+            ),
+            array(
+                'key' => 'case_number',
+                'value' => sanitize_text_field($request['search']['value']),
+                'compare' => 'LIKE'
+            ),
+            array(
+                'key' => 'date_filed',
+                'value' => sanitize_text_field($request['search']['value']),
+                'compare' => 'LIKE'
+            )
+        );
+    }
+
+    $cases_query = new WP_Query($args);
+    $totalData = $cases_query->found_posts;
+
+    if ( $cases_query->have_posts() ) {
+        while ( $cases_query->have_posts() ) {
+            $cases_query->the_post();
+
+            $nestedData = array();
+            $nestedData[] = get_the_title();
+            $nestedData[] = get_field('case_number');
+            $nestedData[] = get_field('date_filed');
+            $nestedData[] = get_field('last_docket_entry');
+            $nestedData[] = get_field('status');
+
+            $data[] = $nestedData;
+        }
+        wp_reset_query();
+
+        $json_data = array(
+            "draw" => intval($request['draw']),
+            "recordsTotal" => intval($totalData),
+            "recordsFiltered" => intval($totalData),
+            "data" => $data
+        );
+
+        echo json_encode($json_data);
+
+    } else {
+
+        $json_data = array(
+            "data" => array()
+        );
+
+        echo json_encode($json_data);
+    }
+    wp_die();
+}
+
+// END DATATABLES TESTING
 
 
 if ( ! function_exists( 'wp_bootstrap_starter_child_posted_on' ) ) :
@@ -217,4 +360,21 @@ function get_related_cases() {
   return '<div class="left-side-inset">Hello</div>';
 }*/
 
+
+
+
+//function update_my_metadata(){
+//    $args = array(
+//        'post_type' => 'case', // Only get the posts
+//        'post_status' => 'publish', // Only the posts that are published
+//        'posts_per_page'   => -1 // Get every post
+//    );
+//    $posts = get_posts($args);
+//    foreach ( $posts as $post ) {
+//        // Run a loop and update every meta data
+//        update_post_meta( $post->ID, 'd_title', $post->post_title );
+//    }
+//}
+// Hook into init action and run our function
+//add_action('init','update_my_metadata');
 ?>
