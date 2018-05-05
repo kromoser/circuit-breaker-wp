@@ -106,9 +106,10 @@ $(document).ready(function() {
 <?php
   // Get all cases
   $args = array(
+		'no_found_rows'				=> true,
     'post_type'						=> 'case',
-    //'meta_key'						=> 'date_filed',
-    //'orderby'							=> 'meta_value',
+    'meta_key'						=> 'status',
+    'meta_value'							=> 'active',
     //'order'								=> 'DESC',
     'posts_per_page'			=> '-1'
   );
