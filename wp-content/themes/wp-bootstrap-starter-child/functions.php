@@ -122,12 +122,45 @@ function datatables_server_side_callback() {
         while ( $cases_query->have_posts() ) {
             $cases_query->the_post();
 
+            // Get status field for badge
+            $status = get_field('status');
+            $arg_scheduled = get_field('argument_date');
+
+
+
+            // Return arguments badge HTML if argurment date is in future
+            //function arg_date_in_future() {
+            //  Get arg date for badge
+
+            $arg_date = strtotime( $arg_scheduled );
+            $now_date = new DateTime();
+            $today = $now_date->getTimestamp(); // Get today's date for comparison
+
+            if ( $arg_date >= $today ) {
+              $arg_badge = "<span class='arguments-badge'>pending argument</span>";
+            };
+              //if ( $arg_scheduled ) {
+
+
+              //  if ($arg_date >= $today) {
+              //    $arg_badge = "<span class='arguments-badge'>pending argument</span>";
+              //  }
+              //  else {
+              //    $arg_badge = "";
+              //  };
+              //} else {
+              //  $arg_badge = "";
+              //};
+
+
+            //}
+
             $nestedData = array();
-            $nestedData[] = get_the_title();
+            $nestedData[] = '<a href="'.get_the_permalink().'">'.get_the_title().'</a>';
             $nestedData[] = get_field('case_number');
             $nestedData[] = get_field('date_filed');
             $nestedData[] = get_field('last_docket_entry');
-            $nestedData[] = get_field('status');
+            $nestedData[] = '<span class="'.$status.'">'.$status.'</span>'.$arg_badge;
 
             $data[] = $nestedData;
         }
