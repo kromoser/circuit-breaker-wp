@@ -138,6 +138,8 @@ function datatables_server_side_callback() {
 
             if ( $arg_date >= $today ) {
               $arg_badge = "<span class='arguments-badge'>pending argument</span>";
+            } else {
+              $arg_badge = "";
             };
               //if ( $arg_scheduled ) {
 

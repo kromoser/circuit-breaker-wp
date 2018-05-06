@@ -175,7 +175,7 @@ class acf_field_relationship extends acf_field
 		// title
 
 		if ( get_field('case_number', $post->ID) ) {
-			$post_title = get_field('case_number', $post->ID);
+			$post_title = get_field('case_number', $post->ID).' - '.get_the_title( $post->ID );
 		} else {
 			$post_title = get_the_title( $post->ID );
 
