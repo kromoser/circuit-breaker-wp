@@ -1,12 +1,15 @@
+
 $ = jQuery;
 $(document).ready(function() {
 
-    $('table#case-list').dataTable({
+    let casesTable = $('table#case-list').DataTable({
         "processing": true,
         "serverSide": true,
         "ordering": true,
         "order": [[ 2, 'desc' ]],
         "ajax": ajax_url
-    } );
+    });
+
+
 
 } );

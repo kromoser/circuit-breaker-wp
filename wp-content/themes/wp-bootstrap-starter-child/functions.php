@@ -12,6 +12,7 @@ function my_theme_enqueue_styles() {
     wp_localize_script( 'ajax-pagination', 'ajaxpagination', array(
     	'ajaxurl' => admin_url( 'admin-ajax.php' )
     ));
+
 }
 add_action( 'wp_enqueue_scripts', 'my_theme_enqueue_styles' );
 
@@ -65,6 +66,7 @@ function datatables_server_side_callback() {
 
     $request= $_GET;
 
+    $time_set = strtotime('meta_value_num');
     $columns = array(
         0 => 'post_title',
         1 => 'case_number',
@@ -85,14 +87,22 @@ function datatables_server_side_callback() {
 
         $args['orderby'] = $columns[$request['order'][0]['column']];
 
-    } elseif ($request['order'][0]['column'] == 1 || $request['order'][0]['column'] == 2) {
+    } elseif ($request['order'][0]['column'] == 1 ){
 
-        $args['orderby'] = 'meta_value_num';
+      $args['orderby'] = 'meta_value';
+      $args['meta_key'] = $columns[$request['order'][0]['column']];
+
+    } elseif ( $request['order'][0]['column'] == 2 || $request['order'][0]['column'] == 3 ) {
+
+        $args['orderby'] = 'meta_value';
         $args['meta_key'] = $columns[$request['order'][0]['column']];
+        $args['meta_type'] = 'DATE';
 
-    }
+    };
+
 
     //$request['search']['value'] <= Value from search
+
 
     if( !empty($request['search']['value']) ) { // When datatables search is used
         $args['meta_query'] = array(
@@ -107,8 +117,13 @@ function datatables_server_side_callback() {
                 'value' => sanitize_text_field($request['search']['value']),
                 'compare' => 'LIKE'
             ),
+            //array(
+            //    'key' => 'case_number_for_opinion',
+                //'value' => sanitize_text_field($request['search']['value']),
+            //    'compare' => 'EXISTS'
+            //),
             array(
-                'key' => 'date_filed',
+                'key' => 'status',
                 'value' => sanitize_text_field($request['search']['value']),
                 'compare' => 'LIKE'
             )
@@ -141,6 +156,12 @@ function datatables_server_side_callback() {
             } else {
               $arg_badge = "";
             };
+
+            if (get_field('case_number_for_opinion', $post->ID)) {
+              $opinion_badge = "<span class='opinion-badge'>opinion</span>";
+            } else {
+              $opinion_badge = "";
+            }
               //if ( $arg_scheduled ) {
 
 
@@ -162,7 +183,7 @@ function datatables_server_side_callback() {
             $nestedData[] = get_field('case_number');
             $nestedData[] = get_field('date_filed');
             $nestedData[] = get_field('last_docket_entry');
-            $nestedData[] = '<span class="'.$status.'">'.$status.'</span>'.$arg_badge;
+            $nestedData[] = '<span class="'.$status.'">'.$status.'</span>'.' '.$arg_badge.' '.$opinion_badge;
 
             $data[] = $nestedData;
         }
@@ -398,6 +419,8 @@ function get_related_cases() {
 
 
 
+// USE BELOW FOR SERVER-SIDE CASES SEARCH
+
 //function update_my_metadata(){
 //    $args = array(
 //        'post_type' => 'case', // Only get the posts
@@ -412,4 +435,48 @@ function get_related_cases() {
 //}
 // Hook into init action and run our function
 //add_action('init','update_my_metadata');
+
+
+
+//USE BELOW TO UPDATE POST_CONTENT WITH CASE_NUMBER
+
+//function add_case_number_to_content(){
+//    $args = array(
+//        'post_type' => 'case', // Only get the posts
+//        'post_status' => 'publish', // Only the posts that are published
+//        'posts_per_page'   => -1 // Get every post
+//    );
+//    $posts = get_posts($args);
+//    foreach ( $posts as $post ) {
+        // Run a loop and update every meta data
+//        update_post_meta( $post->ID, 'post_content', get_field('case_number') );
+//    }
+//}
+// Hook into init action and run our function
+//add_action('init','add_case_number_to_content');
+
+
+// USE BELOW TO REFORMAT LAST DOCKET ENTRY AS YYYY-MM-DD
+
+function reformat_docket_date(){
+
+    $args = array(
+        'post_type' => 'case', // Only get the posts
+        'post_status' => 'publish', // Only the posts that are published
+        'posts_per_page'   => -1 // Get every post
+    );
+    $posts = get_posts($args);
+    foreach ( $posts as $post ) {
+        // Run a loop and update every meta data
+        $date = get_field('last_docket_entry');
+        $formatted_date = strtotime($date);
+        $final_date = date('Y-m-d', strtotime(get_field('last_docket_entry', $post->ID)) );
+        update_post_meta( $post->ID, 'date_testing_field', $final_date );
+    }
+}
+
+//add_action('init','reformat_docket_date');
+
+
+
 ?>

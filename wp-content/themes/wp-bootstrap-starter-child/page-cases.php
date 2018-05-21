@@ -77,11 +77,15 @@ $(document).ready(function() {
 
 
 
-    let filterParam = [];
+		let filterParam = [];
 
     function casesFilter() {
-      casesTable.columns(4).search( filterParam.join(' ') ).draw();
-    }
+      //casesTable.columns(4).search( filterParam.join(' ') ).draw();
+			$('#case-list_filter input').val( function() {
+				return filterParam.join(' ');
+
+			})
+		}
 
     $('.filter-button').click(function() {
       $(this).toggleClass('active-filter');
@@ -90,6 +94,7 @@ $(document).ready(function() {
         filterParam.push( $(this).attr('id').split('-').join(' ') )
       });
       casesFilter();
+			$('#case-list_filter input').keyup();
     });
 
 
@@ -97,6 +102,8 @@ $(document).ready(function() {
       $('.filter-button').removeClass('active-filter');
       filterParam = [];
       casesFilter();
+			$('#case-list_filter input').keyup();
+
     });
 
 
