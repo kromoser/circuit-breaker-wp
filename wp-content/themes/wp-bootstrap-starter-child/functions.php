@@ -103,8 +103,25 @@ function datatables_server_side_callback() {
 
     //$request['search']['value'] <= Value from search
 
-
-    if( !empty($request['search']['value']) ) { // When datatables search is used
+    if( $request['search']['value'] === 'opinion' ) {
+      $args['meta_query'] = array(
+        //'relation' => 'AND',
+        array(
+          'key' => 'case_number_for_opinion',
+          'value' => '', //The value of the field.
+          'compare' => '!=', //Conditional statement used on the value.
+        )
+      );
+    } elseif( $request['search']['value'] === 'pending argument' ) {
+      $args['meta_query'] = array(
+        //'relation' => 'AND',
+        array(
+          'key' => 'argument_date',
+          'value' => '', //The value of the field.
+          'compare' => '!=', //Conditional statement used on the value.
+        )
+      );
+    } elseif( !empty($request['search']['value']) ) { // When datatables search is used
         $args['meta_query'] = array(
             'relation' => 'OR',
             array(
@@ -183,7 +200,7 @@ function datatables_server_side_callback() {
             $nestedData[] = get_field('case_number');
             $nestedData[] = get_field('date_filed');
             $nestedData[] = get_field('last_docket_entry');
-            $nestedData[] = '<span class="'.$status.'">'.$status.'</span>'.' '.$arg_badge.' '.$opinion_badge;
+            $nestedData[] = '<span class="'.$status.'">'.$status.'</span>'.$arg_badge.$opinion_badge;
 
             $data[] = $nestedData;
         }
