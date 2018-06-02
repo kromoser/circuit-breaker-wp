@@ -95,7 +95,8 @@ header.narrow-header#masthead {
   position: sticky;
   top: 0;
   z-index: 9999;
-  padding-top: 0; }
+  padding-top: 0;
+  padding: 0; }
   header.narrow-header#masthead .navbar-brand {
     padding: 0; }
   header.narrow-header#masthead .branding-logo {
@@ -108,13 +109,28 @@ header.narrow-header#masthead {
     width: 50%;
     transition: all .2s;
     top: 0; }
+    @media screen and (max-width: 767px) {
+      header.narrow-header#masthead .shrink-logo {
+        width: 100%;
+        top: -1.5rem; } }
+  @media (min-width: 992px) {
+    header.narrow-header#masthead .navbar-toggler {
+      display: none; } }
   header.narrow-header#masthead nav {
     -webkit-align-items: flex-start;
     align-items: flex-start;
-    box-shadow: none; }
+    box-shadow: none;
+    /*  &.navbar-expand-lg .navbar-toggler {
+          @media (min-width: 950px) {
+            display: none;
+          }
+      }
+    */ }
     header.narrow-header#masthead nav #main-nav {
       -webkit-align-self: flex-end;
       align-self: flex-end; }
+    header.narrow-header#masthead nav .navbar-toggler {
+      margin-top: 1rem; }
     header.narrow-header#masthead nav .dropdown-menu {
       margin: 0;
       border-radius: 0;
@@ -139,6 +155,9 @@ header.narrow-header#masthead {
         header.narrow-header#masthead nav ul.navbar-nav li a.nav-link {
           color: #6b6b6b;
           padding: 1.5rem .75rem; }
+          @media screen and (max-width: 1100px) {
+            header.narrow-header#masthead nav ul.navbar-nav li a.nav-link {
+              padding: 1.5rem .5rem; } }
           header.narrow-header#masthead nav ul.navbar-nav li a.nav-link:hover {
             background: #6d005f;
             color: #f3f3f3;
@@ -166,7 +185,7 @@ header.narrow-header#masthead {
     background: none;
     border-top: 1px solid #eaecef; }
   .search-form-container label {
-    width: 80%;
+    width: 90%;
     border: none;
     margin-bottom: 0; }
   .search-form-container .form-control {
@@ -176,6 +195,10 @@ header.narrow-header#masthead {
     border-radius: 0;
     border: none;
     background: none; }
+  .search-form-container input[type="search"]:focus {
+    outline: none;
+    border: none;
+    box-shadow: none; }
   .search-form-container input[type="submit"] {
     width: 10%;
     display: inline;

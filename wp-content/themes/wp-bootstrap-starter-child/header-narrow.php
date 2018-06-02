@@ -85,14 +85,14 @@ crossorigin="anonymous"></script>
           <div class="navbar-brand col-sm-12">
             <div class="row">
             <?php if ( get_theme_mod( 'wp_bootstrap_starter_logo' ) ): ?>
-                <a href="<?php echo esc_url( home_url( '/' )); ?>" class="col-lg-4 col-sm-12">
+                <a href="<?php echo esc_url( home_url( '/' )); ?>" class="col-sm-4 col-xs-8">
                     <img src="<?php echo esc_attr(get_theme_mod( 'wp_bootstrap_starter_logo' )); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" class="branding-logo" id="logo">
                 </a>
             <?php else : ?>
                 <a class="site-title" href="<?php echo esc_url( home_url( '/' )); ?>"><?php esc_url(bloginfo('name')); ?></a>
             <?php endif; ?>
 
-            <nav class="navbar navbar-expand-lg col-sm-12 col-lg-8" role="navigation" id="nav" data-spy="affix">
+            <nav class="navbar navbar-expand-lg col-12 col-sm-8" role="navigation" id="nav" data-spy="affix">
 
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="" aria-expanded="false" aria-label="Toggle navigation">
                   <i class="material-icons">menu</i>
