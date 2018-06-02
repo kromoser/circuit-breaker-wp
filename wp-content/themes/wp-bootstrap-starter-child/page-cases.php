@@ -12,7 +12,7 @@
  * @package WP_Bootstrap_Starter
  */
 
-get_header('full-width'); ?>
+get_header('narrow'); ?>
 
 <div class="col-sm-12 col-lg-8 offset-lg-1">
 	<h3><?php the_title() ?></h3>

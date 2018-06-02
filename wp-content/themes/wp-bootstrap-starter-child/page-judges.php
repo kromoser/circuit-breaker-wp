@@ -12,7 +12,7 @@
  * @package WP_Bootstrap_Starter
  */
 
-get_header(); ?>
+get_header('narrow'); ?>
 
 <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
 

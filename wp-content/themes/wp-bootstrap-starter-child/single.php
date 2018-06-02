@@ -7,7 +7,7 @@
  * @package WP_Bootstrap_Starter
  */
 
-get_header(); ?>
+get_header('narrow'); ?>
 
 	<section id="primary" class="content-area col-sm-12 col-lg-9">
 		<main id="main" class="site-main" role="main">
