@@ -134,48 +134,15 @@ get_header('narrow'); ?>
 							</div>
 
 							<div class="block-title col-sm-12 col-lg-6">
-								Trivia: <span><?php echo get_post_meta(get_the_ID(), 'trivia', true) ?></span>
+								Career: <span><?php the_content() ?></span>
 							</div>
 
 							<div class="block-title col-sm-12">
-								Career: <span><?php the_content() ?></span>
-
+								Trivia: <span><?php echo get_post_meta(get_the_ID(), 'trivia', true) ?></span>
 							</div>
 
 						</div>
-						<?php $opinions = get_field('opinion_name_for_judges'); ?>
-						<?php if ( $opinions ) {
-							?>
-							<div class="card-footer">
-								<div class="opinion-button"><i class="material-icons">keyboard_arrow_right</i> See opinions</div>
-								<div class="opinion-list col-sm-12">
-									<ul>
-										<?php foreach ($opinions as $o ) {
-
-											$case = get_posts(array(
-												'posts_per_page' => 1,
-												'post_type'		=> 'case',
-												'meta_key' 		=> 'case_number',
-												'meta_value'	=> get_the_title($o->ID)
-											));
-
-											foreach ($case as $c) {
-
-
-											?>
-											<li><a href="<?php echo get_the_permalink($c->ID) ?>"><?php echo get_the_title($c->ID) ?></a></li>
-											<?php
-											}
-										};
-										?>
-									</ul>
-								</div>
-							</div>
-
-							<?php
-
-						};?>
-
+						
 
 
 
