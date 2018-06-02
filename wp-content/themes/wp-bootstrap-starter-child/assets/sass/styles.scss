@@ -145,6 +145,10 @@ header.narrow-header#masthead {
   padding-top: 0;
   padding: 0;
 
+  @media screen and (max-width: 767px) {
+    position: relative;
+  }
+
   .navbar-brand {
     padding:0;
 
@@ -294,6 +298,9 @@ header.narrow-header#masthead {
       border: none;
       margin-bottom: 0;
 
+      @media screen and (max-width: 767px) {
+        width: 70%;
+      }
 
     }
 
@@ -327,7 +334,12 @@ header.narrow-header#masthead {
         border-radius: 0;
         border: none;
 
+        @media screen and (max-width: 767px) {
+          width: 30%;
+        }
+
       }
+
 
 
 
@@ -426,6 +438,8 @@ header.narrow-header#masthead {
   position: -webkit-sticky;
   position: sticky;
   top: -1px;
+
+
 }
 
 /* hero posts blade */

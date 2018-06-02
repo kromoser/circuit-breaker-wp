@@ -97,6 +97,9 @@ header.narrow-header#masthead {
   z-index: 9999;
   padding-top: 0;
   padding: 0; }
+  @media screen and (max-width: 767px) {
+    header.narrow-header#masthead {
+      position: relative; } }
   header.narrow-header#masthead .navbar-brand {
     padding: 0; }
   header.narrow-header#masthead .branding-logo {
@@ -188,6 +191,9 @@ header.narrow-header#masthead {
     width: 90%;
     border: none;
     margin-bottom: 0; }
+    @media screen and (max-width: 767px) {
+      .search-form-container label {
+        width: 70%; } }
   .search-form-container .form-control {
     width: 100%;
     padding: 0.75rem;
@@ -211,6 +217,9 @@ header.narrow-header#masthead {
     text-align: center;
     border-radius: 0;
     border: none; }
+    @media screen and (max-width: 767px) {
+      .search-form-container input[type="submit"] {
+        width: 30%; } }
   .search-form-container i[type="submit"] {
     display: inline;
     background: none;
