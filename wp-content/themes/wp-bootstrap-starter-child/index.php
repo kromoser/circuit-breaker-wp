@@ -49,13 +49,17 @@ get_header('narrow'); ?>
 
 											$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
 											<!-- FEATURED POST/IMG HERO -->
-											<div class="container-fluid hero-posts align-items-center" style="background-image: url('<?php echo $image[0] ?>'); ">
+											<div class="container-fluid hero-posts align-items-center" >
 												<div class="row align-items-center h-100 text-white gradient-overlay">
-													<div class="col-lg-6 offset-lg-1 col-12 primary-feature-post">
-														<h2><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h2>
-														<p><?php the_excerpt() ?></p>
+
+													<div class="col-lg-8 h-100 col-12 primary-feature-post" style="">
+														<div class="post-background" style="background-image: url('<?php echo $image[0] ?>');">
+
+														</div>
+														<h2 class=""><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h2>
+														<p class=""><?php the_excerpt() ?></p>
 													</div>
-											<div class="col-lg-4 offset-lg-1 col-12 secondary-feature-posts">
+											<div class="col-lg-4 col-12 secondary-feature-posts">
 										<?php
 										}
 										else { ?>

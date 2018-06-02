@@ -288,7 +288,7 @@ div.hero-posts {
   background-position: center center; }
   @media screen and (max-width: 991px) {
     div.hero-posts {
-      height: 350px;
+      height: auto;
       text-align: center; } }
   @media screen and (max-width: 767px) {
     div.hero-posts {
@@ -310,28 +310,61 @@ div.gradient-overlay {
       margin: 0; } }
   @media screen and (max-width: 991px) {
     div.gradient-overlay {
-      background: -moz-linear-gradient(top, rgba(58, 0, 51, 0.15) 0%, rgba(58, 0, 51, 0.95) 65%, rgba(58, 0, 51, 0.95) 100%), url(assets/img/detained-fence.jpg) center center;
+      background: -moz-linear-gradient(top, rgba(58, 0, 51, 0.15) 0%, #3a0033 55%, #3a0033 100%), url(assets/img/detained-fence.jpg) center center;
       /* FF3.6-15 */
-      background: -webkit-linear-gradient(top, rgba(58, 0, 51, 0.15) 0%, rgba(58, 0, 51, 0.95) 65%, rgba(58, 0, 51, 0.95) 100%), url(assets/img/detained-fence.jpg) center center;
+      background: -webkit-linear-gradient(top, rgba(58, 0, 51, 0.15) 0%, #3a0033 55%, #3a0033 100%), url(assets/img/detained-fence.jpg) center center;
       /* Chrome10-25,Safari5.1-6 */
-      background: linear-gradient(to bottom, rgba(58, 0, 51, 0.15) 0%, rgba(58, 0, 51, 0.95) 65%, rgba(58, 0, 51, 0.95) 100%), url(assets/img/detained-fence.jpg) center center;
+      background: linear-gradient(to bottom, rgba(58, 0, 51, 0.15) 0%, #3a0033 55%, #3a0033 100%), url(assets/img/detained-fence.jpg) center center;
       /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ } }
+  div.gradient-overlay .post-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-size: cover;
+    background-position: 0% 50%; }
   div.gradient-overlay .primary-feature-post {
     text-shadow: 2px 1px 5px rgba(0, 0, 0, 0.8);
     -webkit-align-self: flex-end;
     align-self: flex-end;
-    padding-bottom: 2rem; }
+    padding: 0 0 2rem 0;
+    background: -moz-linear-gradient(left, rgba(58, 0, 51, 0) 0%, rgba(58, 0, 51, 0.1) 85%, rgba(58, 0, 51, 0.99) 100%), url(assets/img/detained-fence.jpg) center center;
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, rgba(58, 0, 51, 0) 0%, rgba(58, 0, 51, 0.1) 85%, rgba(58, 0, 51, 0.99) 100%), url(assets/img/detained-fence.jpg) center center;
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, rgba(58, 0, 51, 0) 0%, rgba(58, 0, 51, 0.1) 85%, rgba(58, 0, 51, 0.99) 100%), url(assets/img/detained-fence.jpg) center center;
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#006d005f', endColorstr='#6d005f',GradientType=0 );
+    /* IE6-9 */
+    background-size: cover;
+    background-position: 0% 50%; }
+    @media screen and (max-width: 991px) {
+      div.gradient-overlay .primary-feature-post {
+        background: none; } }
     div.gradient-overlay .primary-feature-post h2 {
       font-size: 3rem;
       font-weight: 600;
-      letter-spacing: 0.06rem; }
+      letter-spacing: 0.06rem;
+      -webkit-align-self: flex-end;
+      align-self: flex-end;
+      padding-left: calc( 100% / 12 );
+      padding-right: 2rem;
+      padding-top: 12rem;
+      text-align: left;
+      margin-bottom: 0 !important;
+      padding-bottom: 0 !important;
+      z-index: 9999; }
       @media screen and (max-width: 767px) {
         div.gradient-overlay .primary-feature-post h2 {
           padding-top: 5rem; } }
       div.gradient-overlay .primary-feature-post h2 a {
         color: #ffffff; }
     div.gradient-overlay .primary-feature-post p {
-      font-size: 1.1rem; }
+      font-size: 1.1rem;
+      padding-left: calc( 100% / 12 );
+      position: relative;
+      z-index: 9999;
+      padding-right: 2rem; }
   div.gradient-overlay .secondary-feature-posts {
     text-transform: uppercase;
     font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
@@ -341,10 +374,10 @@ div.gradient-overlay {
     -webkit-align-self: flex-end;
     align-self: flex-end;
     margin-bottom: 2rem; }
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: 991px) {
       div.gradient-overlay .secondary-feature-posts {
         border-left: none;
-        border-top: 1px solid #dedede;
+        border-top: none;
         padding: 2rem 1rem; } }
     div.gradient-overlay .secondary-feature-posts h4 {
       font-size: 1rem;
@@ -717,42 +750,58 @@ div.entry-meta a {
   line-height: 1.8rem; }
 
 .entry-footer {
+  display: none !important;
   padding: 0;
   border-top: 1px solid #dedede;
   border-bottom: 1px solid #dedede;
-  background: none; }
-  .entry-footer span.cat-links {
+  background: none;
+  /*span.cat-links {
     display: inline-block;
-    border-right: 1px solid #dedede; }
-    .entry-footer span.cat-links a {
+
+    border-right: 1px solid $medium-gray;
+
+
+    a {
       display: inline-block;
-      background: #870075;
+      background: $link-color;
       padding: 0.25rem 1.25rem;
-      color: #ffffff;
+      color: $white;
       font-size: 0.8rem;
       line-height: 1.2rem;
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.15rem;
-      box-sizing: border-box; }
-      .entry-footer span.cat-links a:hover {
+      box-sizing: border-box;
+
+      &:hover {
         text-decoration: none;
-        background: #6d005f; }
-  .entry-footer span.tags-links {
+        background: $main-purple;
+      }
+    }
+
+  }
+
+  span.tags-links {
     display: inline-block;
-    padding: 0; }
-    .entry-footer span.tags-links a {
+    padding: 0;
+
+    a {
       display: inline-block;
       padding: 0.25rem 1.25rem 0.25rem 1.25rem;
-      border-right: 1px solid #dedede;
-      color: #870075;
+      border-right: 1px solid $medium-gray;
+      color: $link-color;
       text-transform: uppercase;
       font-size: 0.8rem;
       line-height: 1.2rem;
-      letter-spacing: 0.15rem; }
-      .entry-footer span.tags-links a:hover {
-        background: #f3f3f3;
-        text-decoration: none; }
+      letter-spacing: 0.15rem;
+
+      &:hover {
+        background: $light-gray;
+        text-decoration: none;
+      }
+
+    }
+  }*/ }
 
 .left-side-inset {
   display: inline-block;
