@@ -457,7 +457,7 @@ div.hero-posts {
 
   @media screen and (max-width: 767px) {
     height: auto;
-    padding: 3rem 1.5rem;
+    padding: 0;
   }
 }
 div.gradient-overlay {
@@ -466,6 +466,10 @@ div.gradient-overlay {
   background: linear-gradient(to right, rgba( darken($main-purple, 10%), 0) 0%,rgba( darken($main-purple, 10%), .99 ) 65%,rgba( darken($main-purple, 10%), .99 ) 100%), url(assets/img/detained-fence.jpg) center center; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#006d005f', endColorstr='#6d005f',GradientType=0 ); /* IE6-9 */
   background-size: cover;
+
+  @media screen and (max-width: 767px) {
+    margin: 0;
+  }
 
 
   @media screen and (max-width: 991px) {
@@ -489,6 +493,10 @@ div.gradient-overlay {
       font-weight: 600;
       letter-spacing: 0.06rem;
 
+      @media screen and (max-width: 767px) {
+        padding-top: 5rem;
+      }
+
       a {
         color: $white;
       }
@@ -508,6 +516,12 @@ div.gradient-overlay {
     -webkit-align-self: flex-end;
     align-self: flex-end;
     margin-bottom: 2rem;
+
+    @media screen and (max-width: 767px) {
+      border-left: none;
+      border-top: 1px solid $medium-gray;
+      padding: 2rem 1rem;
+    }
 
 
       h4 {
