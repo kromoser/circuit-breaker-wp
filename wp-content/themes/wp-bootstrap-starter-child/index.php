@@ -59,17 +59,18 @@ get_header('narrow'); ?>
 														<h2 class=""><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h2>
 														<p class=""><?php the_excerpt() ?></p>
 													</div>
-											<div class="col-lg-4 col-12 secondary-feature-posts">
-										<?php
-										}
-										else { ?>
-											<h4><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h4>
-											<?php
-										}
-										}
-										wp_reset_postdata();
-									} ?>
-												</div> <!-- End secondary featured posts -->
+
+													<div class="col-lg-4 col-12 secondary-feature-posts">
+														<?php
+														}
+														else { ?>
+															<h4><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h4>
+															<?php
+														}
+														}
+														wp_reset_postdata();
+													} ?>
+													</div> <!-- End secondary featured posts -->
 											</div>
 										</div>
 										<!-- END POST/IMG HERO -->

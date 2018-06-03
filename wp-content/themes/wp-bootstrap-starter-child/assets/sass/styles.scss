@@ -77,6 +77,14 @@ h1, h2, h3 {
   letter-spacing: 0.2rem;
 }
 
+.alert-note {
+  padding: 1.25rem;
+  font-size: 1.25rem;
+  border-radius: 3px;
+  background: $medium-gray;
+  color: $main-purple;
+  margin: 2rem 0;
+}
 
 
 .btn-main {
@@ -365,6 +373,10 @@ header.narrow-header#masthead {
 }
 
 /* nav styles */
+
+.gold-text {
+  color: $gold-highlight;
+}
 
 #masthead {
   box-shadow: none !important;

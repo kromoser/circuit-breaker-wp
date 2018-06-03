@@ -44,6 +44,14 @@ h1, h2, h3 {
   color: #9e9e9e;
   letter-spacing: 0.2rem; }
 
+.alert-note {
+  padding: 1.25rem;
+  font-size: 1.25rem;
+  border-radius: 3px;
+  background: #dedede;
+  color: #6d005f;
+  margin: 2rem 0; }
+
 .btn-main {
   background: #f3f3f3;
   color: #6d005f;
@@ -239,6 +247,9 @@ header.narrow-header#masthead {
   margin: 0 0 1.5rem 0; }
 
 /* nav styles */
+.gold-text {
+  color: #f29f10; }
+
 #masthead {
   box-shadow: none !important; }
 
