@@ -31,15 +31,15 @@ get_header('narrow'); ?>
 		});
 
 
-		jQuery('.opinion-button').on('click', function(event) {
-			event.preventDefault();
+		//jQuery('.opinion-button').on('click', function(event) {
+		//	event.preventDefault();
 
 			//jQuery(this).html('Hide opinions')
-			jQuery(this).next().toggle(0, function() {
-				jQuery('.grid').masonry({itemSelector: '.card', containerStyle: null});
-			});
-			jQuery(this).children().toggleClass('expand');
-		})
+		//	jQuery(this).next().toggle(0, function() {
+		//		jQuery('.grid').masonry({itemSelector: '.card', containerStyle: null});
+		//	});
+		//	jQuery(this).children().toggleClass('expand');
+		//})
 
 
 	})
@@ -104,7 +104,7 @@ get_header('narrow'); ?>
 								</div>
 
 								<div class="col-8 ">
-									<h3 class="entry-title col-sm-12"><?php the_title() ?></h3>
+									<h3 class="entry-title col-sm-12"><a href="<?php echo get_the_permalink( get_the_ID() ) ?>"><?php the_title() ?></a></h3>
 									<div class="status-badge">
 										<?php echo get_field('judge_status')?>
 									</div>
@@ -141,6 +141,10 @@ get_header('narrow'); ?>
 								Trivia: <span><?php echo get_post_meta(get_the_ID(), 'trivia', true) ?></span>
 							</div>
 
+						</div>
+
+						<div class="card-footer">
+							<div class="opinion-button"><a href="<?php echo get_the_permalink( get_the_ID() ) ?>"><i class="material-icons">keyboard_arrow_right</i> See opinions</a></div>
 						</div>
 
 

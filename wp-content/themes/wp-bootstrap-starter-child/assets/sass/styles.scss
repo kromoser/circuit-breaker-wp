@@ -1395,17 +1395,34 @@ a.opinion-badge {
   font-size: 0.9rem;
   color: $black;
   font-weight: 300;
+
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+
+      padding: .5rem 0 0 0;
+
+      a {
+        color: $link-color;
+      }
+    }
+
+  }
 }
 
 /* Judge List Styles */
 .grid {
 
-
-
   .card {
     //display: inline-block;
     padding: 0;
     margin: 1rem;
+
+    h3 a:hover {
+      color: $link-color;
+    }
 
     &.col-lg-6 {
       width: calc( 50% - 2rem );
@@ -1428,12 +1445,11 @@ a.opinion-badge {
       .opinion-button {
         text-align: center;
         text-transform: uppercase;
-        color: $main-purple;
         letter-spacing: 0.1rem;
         //margin-bottom: 0.5rem;
 
-        &:hover {
-          cursor: pointer;
+        a {
+          color: $main-purple;
         }
 
         i {

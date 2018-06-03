@@ -973,11 +973,20 @@ a.opinion-badge {
   font-size: 0.9rem;
   color: #000000;
   font-weight: 300; }
+  .case-summary ul {
+    list-style: none;
+    padding: 0; }
+    .case-summary ul li {
+      padding: .5rem 0 0 0; }
+      .case-summary ul li a {
+        color: #870075; }
 
 /* Judge List Styles */
 .grid .card {
   padding: 0;
   margin: 1rem; }
+  .grid .card h3 a:hover {
+    color: #870075; }
   .grid .card.col-lg-6 {
     width: calc( 50% - 2rem ); }
     @media screen and (max-width: 767px) {
@@ -988,10 +997,9 @@ a.opinion-badge {
   .grid .card .card-footer .opinion-button {
     text-align: center;
     text-transform: uppercase;
-    color: #6d005f;
     letter-spacing: 0.1rem; }
-    .grid .card .card-footer .opinion-button:hover {
-      cursor: pointer; }
+    .grid .card .card-footer .opinion-button a {
+      color: #6d005f; }
     .grid .card .card-footer .opinion-button i {
       vertical-align: middle;
       margin-top: -2px;
