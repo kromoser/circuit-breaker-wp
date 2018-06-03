@@ -134,7 +134,7 @@ get_header('narrow'); ?>
 							</div>
 
 							<div class="block-title col-sm-12 col-lg-6">
-								Career: <span><?php the_content() ?></span>
+								Before the Bench: <span><?php the_content() ?></span>
 							</div>
 
 							<div class="block-title col-sm-12">
@@ -142,7 +142,7 @@ get_header('narrow'); ?>
 							</div>
 
 						</div>
-						
+
 
 
 

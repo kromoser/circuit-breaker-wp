@@ -27,7 +27,12 @@
 		endif; ?>
 
 		<div class="post-thumbnail">
-			<?php the_post_thumbnail(); ?>
+			<div class="" style="width: auto; display: inline-block;">
+				<?php the_post_thumbnail(); ?>
+				<p class="caption"><?php the_post_thumbnail_caption() ?></p>
+			</div>
+
+
 		</div>
 
 	</header><!-- .entry-header -->
