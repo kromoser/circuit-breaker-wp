@@ -37,15 +37,31 @@
 
 						<div class="col-sm-12 col-lg-3">
 							<div class="block-title">Sign up for our list</div>
-							<form action="#" method="POST" class="email-form">
+							<form action="https://dccircuitbreaker.us18.list-manage.com/subscribe/post" method="POST" class="email-form">
+
+								<input type="hidden" name="u" value="dc86b249040dc18466c405e49">
+								<input type="hidden" name="id" value="f9c6edc91d">
+
+								<!-- people should not fill these in and expect good things -->
+						    <div class="field-shift" aria-label="Please leave the following three fields empty">
+						        <label for="b_name">Name: </label>
+						        <input type="text" name="b_name" tabindex="-1" value="" placeholder="Freddie" id="b_name">
+
+						        <label for="b_email">Email: </label>
+						        <input type="email" name="b_email" tabindex="-1" value="" placeholder="youremail@gmail.com" id="b_email">
+
+						        <label for="b_comment">Comment: </label>
+						        <textarea name="b_comment" tabindex="-1" placeholder="Please comment" id="b_comment"></textarea>
+						    </div>
+
 								<div class="email-form-group w-50">
-									<input type="text" id="first_name" class="w-100" placeholder="First name">
+									<input type="text" id="MERGE1" name="MERGE1" class="w-100" placeholder="First name">
 								</div>
 								<div class="email-form-group w-50">
-									<input type="text" id="last_name" class="w-100" placeholder="Last name">
+									<input type="text" id="MERGE2" name="MERGE2" class="w-100" placeholder="Last name">
 								</div>
 								<div class="email-form-group w-100">
-									<input type="email" id="e-mail" class="w-100" placeholder="E-mail address">
+									<input type="email" id="MERGE0" name="MERGE0" class="w-100" placeholder="E-mail address">
 								</div>
 								<div class="w-100">
 								<button type="submit" class="w-100">Sign up</button>
@@ -55,7 +71,7 @@
 
             <div class="col-sm-12 col-lg-4 offset-lg-2 logo-footer">
 							<div class="">
-								<a href="<?php echo home_url() ?>"><img src="<?php echo wp_get_attachment_url( '1668' ); ?>" alt="DC Circuit Breaker"></a> 
+								<a href="<?php echo home_url() ?>"><img src="<?php echo wp_get_attachment_url( '1668' ); ?>" alt="DC Circuit Breaker"></a>
 									&copy; <?php echo date('Y'); ?> <?php echo '<a href="'.home_url().'">'.get_bloginfo('name').'</a>'; ?>
 
 							</div>

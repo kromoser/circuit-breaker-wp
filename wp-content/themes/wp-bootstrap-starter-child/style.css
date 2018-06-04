@@ -1045,6 +1045,14 @@ a.opinion-badge {
 .headshot img {
   width: 100%; }
 
+h1 .judge-name {
+  display: inline-block;
+  vertical-align: bottom;
+  margin: 0 0 0 2rem;
+  font-family: Vollkorn, Georgia, "Adobe Garamond Pro", Garamond, serif; }
+  h1 .judge-name span {
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif; }
+
 footer.site-footer {
   background: #3a0033 !important; }
   footer.site-footer #main-nav {

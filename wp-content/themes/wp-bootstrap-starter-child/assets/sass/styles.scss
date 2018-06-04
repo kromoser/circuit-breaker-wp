@@ -1489,6 +1489,7 @@ a.opinion-badge {
 
 
 
+
 .single-judge {
   //border: 1px solid $medium-gray;
   //margin: 15px;
@@ -1540,6 +1541,18 @@ a.opinion-badge {
 
   width: 100%;
 
+  }
+}
+
+h1 .judge-name {
+
+  display: inline-block;
+  vertical-align: bottom;
+  margin: 0 0 0 2rem;
+  font-family: $serif;
+
+  span {
+    font-family: $sans-serif;
   }
 }
 
