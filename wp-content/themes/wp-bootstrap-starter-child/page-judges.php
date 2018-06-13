@@ -18,9 +18,9 @@ get_header('narrow'); ?>
 
 <script type="text/javascript">
 
-	jQuery(document).ready(function() {
+	jQuery(window).on('load', function() {
 
-		jQuery('div.opinion-list').hide();
+
 
 
 		jQuery('.grid').masonry({
@@ -129,15 +129,17 @@ get_header('narrow'); ?>
 								Attended: <span><?php echo get_post_meta(get_the_ID(), 'undergrad', true) ?>, <?php echo get_post_meta(get_the_ID(), 'law_school', true) ?></span>
 							</div>
 
+							<?php if ( get_field('clerkship') ) { ?>
 							<div class="block-title col-sm-12 col-lg-6">
 								Clerkship: <span><?php echo get_post_meta(get_the_ID(), 'clerkship', true) ?></span>
 							</div>
+						<?php } ?>
 
 							<div class="block-title col-sm-12 col-lg-6">
 								Before the Bench: <span><?php the_content() ?></span>
 							</div>
 
-							<div class="block-title col-sm-12">
+							<div class="block-title col-sm-12" style="flex: 1;">
 								Trivia: <span><?php echo get_post_meta(get_the_ID(), 'trivia', true) ?></span>
 							</div>
 

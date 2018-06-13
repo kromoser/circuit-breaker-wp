@@ -56,13 +56,14 @@ get_header('narrow'); ?>
 
 
 
-
+			<?php if (get_field('clerkship') ) { ?>
 			<div class="col-sm-12 col-lg-6 details-block">
 				<div class="block-title">
 					Clerkship:
 				</div>
 				<h5><?php echo get_post_meta(get_the_ID(), 'clerkship', true) ?></h5>
 			</div>
+			<?php } ?>
 
 			<div class="col-sm-12 col-lg-6 details-block">
 				<div class="block-title">

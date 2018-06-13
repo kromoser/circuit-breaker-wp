@@ -154,8 +154,11 @@ get_header('narrow'); ?>
 									</ul>
 									<a href="cases" class="btn btn-main">View all cases</a>
 
-								<div class="block-title">Upcoming arguments</div>
+								<!--<div class="block-title">Upcoming arguments</div>
 		                <div class="calendar">
+											<p class="alert-note">
+												Note: The court does not typically hold arguments during the summer. When the court resumes arguments in September, the calendar will be updated.
+											</p>
 											<ul>
 												<?php
 												// Upcoming arguments case list
@@ -192,13 +195,12 @@ get_header('narrow'); ?>
 													?>
 
 												<?php else : ?>
-													<p><?php esc_html_e( 'Sorry, there are no recent posts.' ); ?></p>
 												<?php endif; ?>
 											</ul>
 
 											<a href="calendar" class="btn btn-main">View all upcoming arguments</a>
 
-		                </div>
+		                </div>-->
 					</div>
 
 					<!-- right column / sidebar -->
