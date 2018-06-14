@@ -254,7 +254,9 @@ function wp_bootstrap_starter_child_posted_on() {
 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	);
 
-	echo '<span class="posted-on">' . $posted_on . '</span> | <span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
+
+
+	echo '<span class="posted-on">' . $posted_on . '</span> | <span class="byline"> ' . $byline .'</span>';
 
     if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
         echo ' | <span class="comments-link"><i class="fa fa-comments" aria-hidden="true"></i> ';
@@ -495,5 +497,49 @@ function reformat_docket_date(){
 //add_action('init','reformat_docket_date');
 
 
+ //ADD RELEVANSSI SEARCH TO RELATIONSHIP FIELD FOR OPINION RELATIONSHIP
+//add_filter('relevanssi_content_to_index', 'rlv_relationship_content', 10, 2);
+//function rlv_relationship_content($content, $post) {
+//	 Fetching the post data by the relationship field
+//	$relationships = get_post_meta($post->ID, 'case_number_for_opinion', true);
+//	if (!is_array($relationships)) $relationships = array($relationships);
+//	foreach ($relationships as $related_post) {
+//		$content .= " " . get_post_meta($related_post->ID, 'case_number', true);
+//	}
+
+
+
+//	return $content;
+//}
+
+
+//add_action( 'pre_get_posts', 'wpsx_185734_acf_search_relationship' );
+
+//function wpsx_185734_acf_search_relationship( $q ) {
+
+//    $screen = get_current_screen();
+//    $s = $q->get('s');
+//    $post_type = $q->get('post_type');
+
+    // Be very selective when running code at the pre_get_posts hook
+//    if ( ! is_admin() || empty( $s ) || ( isset( $screen->post_type ) && 'opinion' != $screen->post_type ) || 'opinion' != $post_type ) {
+//        return;
+//    }
+
+    // get all artists that match the search parameter $s
+//    $found_artists = get_posts( array('post_type' => 'case', 'nopaging' => true, 's' => $s, 'fields' => 'ids') );
+
+    // build a meta query to include all posts that contain the matching artist IDs in their custom fields
+//    $meta_query = array();
+//    foreach ( $found_artists as $artist_id ) {
+//        $meta_query[] = array(
+//            'key' => 'case_number_for_opinion', // name of custom field
+//            'value' => '"' . intval($artist_id) . '"', // matches exactly "123", not just 123. This prevents a match for "1234"
+//            'compare' => 'OR'
+//        );
+//    }
+//    $q->set( 'meta_query', $meta_query );
+//    $q->set( 's', '' ); // unset the original query parameter to avoid errors
+//}
 
 ?>

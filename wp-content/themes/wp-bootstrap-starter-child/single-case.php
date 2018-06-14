@@ -70,8 +70,12 @@ get_header('narrow'); ?>
 					<?php $judge = get_field('opinion_name_for_judges', $o->ID); ?>
 
 				<?php foreach( $judge as $j) : ?>
-					<h5>Issued by <a href="<?php echo get_the_permalink($j->ID); ?>"><?php echo get_the_title($j->ID); ?></a> <br>
-						on <?php echo date('m-d-Y', strtotime( get_field('date_issued', $o->ID) ) ); ?></h5>
+					<h5>
+						Issued on <?php echo date('m-d-Y', strtotime( get_field('date_issued', $o->ID) ) ); ?> <br>
+						<?php if ( get_the_title($j->ID) != 'Per curiam' ) { ?>Written by <?php } ?>
+
+							<a href="<?php echo get_the_permalink($j->ID); ?>"><?php echo get_the_title($j->ID); ?></a>
+					</h5>
 			<?php endforeach; ?>
 			<?php endforeach; ?>
 
