@@ -20,6 +20,18 @@
 			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		endif;
 
+		?>
+
+		<div class="post-thumbnail">
+			<?php $image_data = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "thumbnail" ); ?>
+			<?php $image_width = $image_data[1]; ?>
+			<div class="" style="width: auto; display: inline-block;">
+				<?php the_post_thumbnail(); ?>
+				<p class="caption" style="max-width: <?php echo $image_width ?>"><?php the_post_thumbnail_caption() ?></p>
+			</div>
+		</div>
+
+		<?php
 		if ( 'post' === get_post_type() ) : ?>
 		<div class="entry-meta">
 			<?php wp_bootstrap_starter_child_posted_on(); ?>
@@ -27,14 +39,7 @@
 		<?php
 		endif; ?>
 
-		<div class="post-thumbnail">
-			<div class="" style="width: auto; display: inline-block;">
-				<?php the_post_thumbnail(); ?>
-				<p class="caption"><?php the_post_thumbnail_caption() ?></p>
-			</div>
 
-
-		</div>
 
 	</header><!-- .entry-header -->
 	<div class="entry-content">
@@ -43,6 +48,22 @@
 
 
 					the_content();
+					$posts = get_field('related_cases');
+
+					if( $posts ):
+							echo '<div class="footer-block-title">Related cases:</div>';
+					    echo '<ul class="relevant-cases">';
+					     foreach( $posts as $post): // variable must be called $post (IMPORTANT)
+								  setup_postdata($post);
+					        echo '<li><a href="';
+									the_permalink();
+									echo '">';
+					        the_title();
+					        echo '</a></li>';
+					    	endforeach;
+					    echo '</ul>';
+					     wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly
+					 endif;
         else :
             the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'wp-bootstrap-starter' ) );
         endif;
@@ -55,22 +76,7 @@
 
 		<?php
 
-$posts = get_field('related_cases');
-
-if( $posts ):
-		echo '<div class="footer-block-title">Related cases:</div>';
-    echo '<ul class="relevant-cases">';
-     foreach( $posts as $post): // variable must be called $post (IMPORTANT)
-			  setup_postdata($post);
-        echo '<li><a href="';
-				the_permalink();
-				echo '">';
-        the_title();
-        echo '</a></li>';
-    	endforeach;
-    echo '</ul>';
-     wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly
- endif; ?>
+?>
 
 
 	</div><!-- .entry-content -->

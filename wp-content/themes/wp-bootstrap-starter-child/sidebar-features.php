@@ -17,9 +17,9 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 <aside id="secondary" class="widget-area col-sm-12 col-lg-3" role="complementary">
 
 
-	<div class="block-title">
+	<h4 class="sidebar-header">
 		Cases We're Watching
-	</div>
+	</h4>
 
 	<?php
 	$args = array(

@@ -95,7 +95,7 @@ crossorigin="anonymous"></script>
             <button class="navbar-toggler col-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="material-icons">menu</i>
             </button>
-            <nav class="navbar navbar-expand-lg col-11 col-sm-7" role="navigation" id="nav" data-spy="affix">
+            <nav class="navbar navbar-expand-lg col-11 col-sm-7 col-lg-8" role="navigation" id="nav" data-spy="affix">
 
 
 

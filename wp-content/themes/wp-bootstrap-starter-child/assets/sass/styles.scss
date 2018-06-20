@@ -17,7 +17,9 @@ $main-purple: rgb(109,0,95);
 $black: #000000;
 $link-color: lighten( $main-purple, 5% );
 $white: #ffffff;
-$gold-highlight: #f29f10;
+//$gold-highlight: #f29f10;
+$gold-highlight: #e8d41a;
+$lighter-gold: #e8d41a;
 $accent-turquoise: #278585;
 $blue-plum: #451b5e;
 $white: #ffffff;
@@ -48,6 +50,11 @@ p {
   strong, b {
     font-weight: 700;
   }
+
+  @media screen and (max-width: 767px ) {
+    font-size: 1.7rem;
+    line-height: 2.7rem !important;
+  }
 }
 
 .entry-header {
@@ -62,6 +69,8 @@ p {
 
   h3 {
     font-family: $serif;
+
+
   }
 }
 
@@ -71,6 +80,22 @@ p {
 
 h1, h2, h3 {
   font-family: $serif !important;
+}
+
+h3 {
+  @media screen and (max-width: 767px) {
+    font-size: 2.25rem !important;
+  }
+}
+
+h5 {
+  font-family: $sans-serif !important;
+  font-size: 1.4rem !important;
+  margin-top: 2rem !important;
+
+  @media screen and (max-width: 767px) {
+    font-size: 2rem !important;
+  }
 }
 
 .small-header {
@@ -258,7 +283,7 @@ header.narrow-header#masthead {
 
       li {
 
-        font-size: .75rem;
+
         text-transform: uppercase;
         letter-spacing: 0.15rem;
 
@@ -272,6 +297,7 @@ header.narrow-header#masthead {
           a.nav-link {
             font-weight: 700;
 
+
             &:hover {
               background: rgba(0,0,0,0);
               font-weight: 700;
@@ -280,7 +306,7 @@ header.narrow-header#masthead {
           }
         }
 
-        @media screen and (max-width: 767px) {
+        @media screen and (max-width: 991px) {
           border-bottom: 1px solid $light-gray;
           padding-left: 1.5rem;
           text-align: left;
@@ -299,15 +325,21 @@ header.narrow-header#masthead {
         a.nav-link {
           color: $dark-gray;
           padding: 1.5rem .75rem;
+          font-size: 1rem !important;
 
-          @media screen and (max-width: 1100px) {
-            padding: 1.5rem .5rem;
+          @media screen and (max-width: 1350px) {
+            padding: 1.5rem .5rem
+            //font-size: .85rem !important;
+          }
+
+          @media screen and (max-width: 1200px) {
+            font-size: 0.85rem !important;
+            padding: 1.25rem .5rem;
+            letter-spacing: .05rem;
 
           }
 
-          @media screen and (max-width: 991px) {
-              font-size: 1.3rem;
-          }
+
 
           &:hover {
             background: $main-purple;
@@ -432,7 +464,7 @@ header.narrow-header#masthead {
 /* nav styles */
 
 .gold-text {
-  color: $gold-highlight;
+  color: $lighter-gold;
 }
 
 #masthead {
@@ -1169,7 +1201,7 @@ div.filtering {
 /* Post view */
 
 h1.entry-title {
-  font-size: 1.75rem;
+  font-size: 2rem;
 }
 
 .post-template-default {
@@ -1178,14 +1210,21 @@ h1.entry-title {
   }
 
   .dek {
-    border-bottom: 1px solid $rule-gray;
+    //border-bottom: 1px solid $rule-gray;
     font-size: 1.1rem;
-    padding: 0 0 1rem 0;
+    line-height: 2rem;
+    padding-bottom: .2rem;
+    padding-left: .6rem;
+    color: $gold-highlight;
+    border-left: 8px solid $gold-highlight;
+
   }
 }
 
 div.entry-meta {
   display: flex;
+  border-bottom: 1px solid $rule-gray;
+  padding-bottom: 1rem;
 
   @extend .block-title;
 
@@ -1322,15 +1361,31 @@ ul.relevant-cases {
 }
 
 .post-thumbnail {
-  margin-bottom: 2rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+
 }
 
 /* Sidebar */
 
 
+h4.sidebar-header {
+  font-family: $serif;
+  font-size: 1.35rem;
+
+  @media screen and (max-width: 767px ) {
+    font-size: 2rem;
+    margin-top: 1.5rem;
+  }
+}
+
 aside#secondary {
   padding-left: 1rem;
   border-left: 1px solid #eaecef;
+
+  @media screen and (max-width: 767px) {
+    margin-top: 2rem;
+  }
 }
 ul.sidebar-list {
   list-style: none;
@@ -1350,6 +1405,10 @@ ul.sidebar-list {
       display: block;
       line-height: 1rem;
 
+      @media screen and (max-width: 767px ) {
+        font-size: 1.4rem;
+      }
+
       &:hover {
 
       }
@@ -1367,7 +1426,7 @@ ul.sidebar-list {
       font-weight: 600;
       text-transform: uppercase;
       color: darken($medium-gray, 30%);
-      font-size: 0.5rem;
+      font-size: 0.7rem;
       letter-spacing: 0.15rem;
       line-height: 0.9rem;
     }

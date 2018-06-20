@@ -23,6 +23,10 @@ header#masthead {
 
 p strong, p b {
   font-weight: 700; }
+@media screen and (max-width: 767px) {
+  p {
+    font-size: 1.7rem;
+    line-height: 2.7rem !important; } }
 
 .entry-header a {
   color: #000000; }
@@ -37,6 +41,18 @@ p {
 
 h1, h2, h3 {
   font-family: Vollkorn, Georgia, "Adobe Garamond Pro", Garamond, serif !important; }
+
+@media screen and (max-width: 767px) {
+  h3 {
+    font-size: 2.25rem !important; } }
+
+h5 {
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif !important;
+  font-size: 1.4rem !important;
+  margin-top: 2rem !important; }
+  @media screen and (max-width: 767px) {
+    h5 {
+      font-size: 2rem !important; } }
 
 .small-header {
   font-size: 0.7rem;
@@ -169,7 +185,6 @@ header.narrow-header#masthead {
     header.narrow-header#masthead nav ul.navbar-nav {
       margin: 0 0 0 auto; }
       header.narrow-header#masthead nav ul.navbar-nav li {
-        font-size: .75rem;
         text-transform: uppercase;
         letter-spacing: 0.15rem; }
         header.narrow-header#masthead nav ul.navbar-nav li.dropdown:hover .dropdown-menu {
@@ -182,7 +197,7 @@ header.narrow-header#masthead {
               background: transparent;
               font-weight: 700;
               color: #6d005f; }
-        @media screen and (max-width: 767px) {
+        @media screen and (max-width: 991px) {
           header.narrow-header#masthead nav ul.navbar-nav li {
             border-bottom: 1px solid #f3f3f3;
             padding-left: 1.5rem;
@@ -193,13 +208,16 @@ header.narrow-header#masthead {
               border-bottom: none; } }
         header.narrow-header#masthead nav ul.navbar-nav li a.nav-link {
           color: #6b6b6b;
-          padding: 1.5rem .75rem; }
-          @media screen and (max-width: 1100px) {
+          padding: 1.5rem .75rem;
+          font-size: 1rem !important; }
+          @media screen and (max-width: 1350px) {
             header.narrow-header#masthead nav ul.navbar-nav li a.nav-link {
-              padding: 1.5rem .5rem; } }
-          @media screen and (max-width: 991px) {
+              padding: 1.5rem 0.5rem; } }
+          @media screen and (max-width: 1200px) {
             header.narrow-header#masthead nav ul.navbar-nav li a.nav-link {
-              font-size: 1.3rem; } }
+              font-size: 0.85rem !important;
+              padding: 1.25rem .5rem;
+              letter-spacing: .05rem; } }
           header.narrow-header#masthead nav ul.navbar-nav li a.nav-link:hover {
             background: #6d005f;
             color: #f3f3f3;
@@ -279,7 +297,7 @@ header.narrow-header#masthead {
 
 /* nav styles */
 .gold-text {
-  color: #f29f10; }
+  color: #e8d41a; }
 
 #masthead {
   box-shadow: none !important; }
@@ -474,7 +492,7 @@ ul.case-list {
       text-transform: uppercase;
       color: #ffffff;
       font-weight: bold;
-      background: #f29f10;
+      background: #e8d41a;
       letter-spacing: 0.15rem;
       font-size: 0.6rem;
       border-radius: 3px;
@@ -629,7 +647,7 @@ table.case-table {
         text-transform: uppercase;
         color: #ffffff;
         font-weight: bold;
-        background: #f29f10;
+        background: #e8d41a;
         letter-spacing: 0.1rem;
         font-size: 0.5rem;
         border-radius: 3px;
@@ -749,7 +767,7 @@ div.filtering {
     div.filtering .active-filter#closed {
       background: #c5c5c5; }
     div.filtering .active-filter#opinion {
-      background: #f29f10; }
+      background: #e8d41a; }
     div.filtering .active-filter#pending-argument {
       background: #278585; }
   div.filtering #filter-label, div.filtering #clear {
@@ -786,17 +804,22 @@ div.filtering {
 
 /* Post view */
 h1.entry-title {
-  font-size: 1.75rem; }
+  font-size: 2rem; }
 
 .post-template-default h1.entry-title {
   border-bottom: none; }
 .post-template-default .dek {
-  border-bottom: 1px solid #eaecef;
   font-size: 1.1rem;
-  padding: 0 0 1rem 0; }
+  line-height: 2rem;
+  padding-bottom: .2rem;
+  padding-left: .6rem;
+  color: #e8d41a;
+  border-left: 8px solid #e8d41a; }
 
 div.entry-meta {
-  display: flex; }
+  display: flex;
+  border-bottom: 1px solid #eaecef;
+  padding-bottom: 1rem; }
   div.entry-meta a {
     color: #870075; }
   div.entry-meta p.byline-wrap {
@@ -907,12 +930,24 @@ ul.relevant-cases {
       font-size: 0.8rem; }
 
 .post-thumbnail {
-  margin-bottom: 2rem; }
+  margin-top: 1.5rem;
+  margin-bottom: 1rem; }
 
 /* Sidebar */
+h4.sidebar-header {
+  font-family: Vollkorn, Georgia, "Adobe Garamond Pro", Garamond, serif;
+  font-size: 1.35rem; }
+  @media screen and (max-width: 767px) {
+    h4.sidebar-header {
+      font-size: 2rem;
+      margin-top: 1.5rem; } }
+
 aside#secondary {
   padding-left: 1rem;
   border-left: 1px solid #eaecef; }
+  @media screen and (max-width: 767px) {
+    aside#secondary {
+      margin-top: 2rem; } }
 
 ul.sidebar-list {
   list-style: none;
@@ -926,6 +961,9 @@ ul.sidebar-list {
       font-weight: 300;
       display: block;
       line-height: 1rem; }
+      @media screen and (max-width: 767px) {
+        ul.sidebar-list li a {
+          font-size: 1.4rem; } }
     ul.sidebar-list li p {
       font-weight: 300;
       font-size: 0.8rem;
@@ -935,7 +973,7 @@ ul.sidebar-list {
       font-weight: 600;
       text-transform: uppercase;
       color: #929292;
-      font-size: 0.5rem;
+      font-size: 0.7rem;
       letter-spacing: 0.15rem;
       line-height: 0.9rem; }
 
@@ -971,7 +1009,7 @@ a.opinion-badge {
   text-transform: uppercase;
   color: #ffffff;
   font-weight: bold;
-  background: #f29f10;
+  background: #e8d41a;
   letter-spacing: 0.1rem;
   font-size: 0.7rem;
   border-radius: 3px;
@@ -984,7 +1022,7 @@ a.opinion-badge {
   a.opinion-badge:hover {
     color: #ffffff;
     text-decoration: none;
-    background: #f5b240; }
+    background: #eddd48; }
   a.opinion-badge i.material-icons {
     font-size: 1rem;
     vertical-align: middle; }
@@ -1080,7 +1118,7 @@ a.opinion-badge {
   .single-judge .status-badge {
     font-size: .85rem;
     letter-spacing: .15rem;
-    color: #f29f10;
+    color: #e8d41a;
     font-weight: 400;
     text-transform: uppercase;
     margin: 0 0 .25rem; }
@@ -1161,7 +1199,7 @@ article.block-list-single {
     font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
     font-weight: 400;
     text-transform: uppercase;
-    color: #f29f10;
+    color: #e8d41a;
     font-size: .8rem;
     letter-spacing: 0.1rem;
     line-height: 0.9rem;
