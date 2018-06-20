@@ -1051,26 +1051,37 @@ div.filtering {
   padding: 0;
   border-top: 1px solid $medium-gray;
   border-bottom: 1px solid $medium-gray;
-  margin: 4rem auto 2rem;
+  margin: 2rem auto 2rem;
   font-family: $sans-serif;
   display: flex;
   text-transform: uppercase;
   letter-spacing: 0.15rem;
   font-size: .8rem;
 
+
+
   span {
-    display: inline-block;
+
+    flex: 1;
     border-right: 1px solid $medium-gray;
     padding: 0.25rem 1.25rem 0.25rem 1.25rem;
     background: $light-gray;
 
     &:first-child {
       padding-left: 0;
+
     }
 
     &:hover {
       cursor: pointer;
       background: $medium-gray;
+    }
+
+    @media screen and (max-width: 767px) {
+      padding: .25rem;
+      letter-spacing: 0.05rem;
+      font-size: .7rem;
+
     }
 
   }

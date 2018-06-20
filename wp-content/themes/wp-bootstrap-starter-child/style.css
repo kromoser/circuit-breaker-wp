@@ -718,14 +718,14 @@ div.filtering {
   padding: 0;
   border-top: 1px solid #dedede;
   border-bottom: 1px solid #dedede;
-  margin: 4rem auto 2rem;
+  margin: 2rem auto 2rem;
   font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
   display: flex;
   text-transform: uppercase;
   letter-spacing: 0.15rem;
   font-size: .8rem; }
   div.filtering span {
-    display: inline-block;
+    flex: 1;
     border-right: 1px solid #dedede;
     padding: 0.25rem 1.25rem 0.25rem 1.25rem;
     background: #f3f3f3; }
@@ -734,6 +734,11 @@ div.filtering {
     div.filtering span:hover {
       cursor: pointer;
       background: #dedede; }
+    @media screen and (max-width: 767px) {
+      div.filtering span {
+        padding: .25rem;
+        letter-spacing: 0.05rem;
+        font-size: .7rem; } }
   div.filtering .active-filter {
     color: #ffffff; }
     div.filtering .active-filter#active {
