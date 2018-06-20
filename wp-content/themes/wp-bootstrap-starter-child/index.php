@@ -57,7 +57,7 @@ get_header('narrow'); ?>
 
 														</div>
 														<h2 class=""><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h2>
-														<p class=""><?php the_excerpt() ?></p>
+														<?php the_excerpt() ?>
 													</div>
 
 													<div class="col-lg-4 col-12 secondary-feature-posts">
