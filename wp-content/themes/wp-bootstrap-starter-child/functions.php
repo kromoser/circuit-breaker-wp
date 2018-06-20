@@ -245,7 +245,7 @@ function wp_bootstrap_starter_child_posted_on() {
 	);
 
 	$posted_on = sprintf(
-		esc_html_x( 'Posted on %s', 'post date', 'wp-bootstrap-starter' ),
+		esc_html_x( '%s', 'post date', 'wp-bootstrap-starter' ),
 		$time_string
 	);
 
@@ -255,8 +255,8 @@ function wp_bootstrap_starter_child_posted_on() {
 	);
 
 
-
-	echo '<span class="posted-on">' . $posted_on . '</span> | <span class="byline"> ' . $byline .'</span>';
+  echo '<img src="'.get_avatar_url(get_the_author()).'" class="author-thumbnail">';
+	echo '<p class="byline-wrap"><span class="byline"> ' . $byline . '</span> <br> <span class="posted-on">' . $posted_on .'</span></p>';
 
     if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
         echo ' | <span class="comments-link"><i class="fa fa-comments" aria-hidden="true"></i> ';

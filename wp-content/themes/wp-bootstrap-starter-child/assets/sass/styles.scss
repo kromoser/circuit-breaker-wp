@@ -44,6 +44,12 @@ header#masthead {
   padding-bottom: 0;
 }
 
+p {
+  strong, b {
+    font-weight: 700;
+  }
+}
+
 .entry-header {
   a {
     color: $black;
@@ -1166,11 +1172,32 @@ h1.entry-title {
   font-size: 1.75rem;
 }
 
+.post-template-default {
+  h1.entry-title {
+    border-bottom: none;
+  }
+
+  .dek {
+    border-bottom: 1px solid $rule-gray;
+    font-size: 1.1rem;
+    padding: 0 0 1rem 0;
+  }
+}
+
 div.entry-meta {
+  display: flex;
+
   @extend .block-title;
 
   a {
     color: $link-color;
+  }
+
+  p.byline-wrap {
+    -webkit-align-self: flex-end;
+    align-self: flex-end;
+    margin-bottom: 0;
+    padding-left: 1rem;
   }
 }
 

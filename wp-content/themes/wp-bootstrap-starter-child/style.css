@@ -21,6 +21,9 @@ header#masthead {
   background-color: #ffffff;
   padding-bottom: 0; }
 
+p strong, p b {
+  font-weight: 700; }
+
 .entry-header a {
   color: #000000; }
 .entry-header a:hover {
@@ -785,8 +788,22 @@ div.filtering {
 h1.entry-title {
   font-size: 1.75rem; }
 
-div.entry-meta a {
-  color: #870075; }
+.post-template-default h1.entry-title {
+  border-bottom: none; }
+.post-template-default .dek {
+  border-bottom: 1px solid #eaecef;
+  font-size: 1.1rem;
+  padding: 0 0 1rem 0; }
+
+div.entry-meta {
+  display: flex; }
+  div.entry-meta a {
+    color: #870075; }
+  div.entry-meta p.byline-wrap {
+    -webkit-align-self: flex-end;
+    align-self: flex-end;
+    margin-bottom: 0;
+    padding-left: 1rem; }
 
 p.caption {
   font-weight: 400;
