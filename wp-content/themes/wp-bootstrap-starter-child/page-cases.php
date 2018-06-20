@@ -88,6 +88,7 @@ $(document).ready(function() {
 		}
 
     $('.filter-button').click(function() {
+			$('.filter-button').removeClass('active-filter');
       $(this).toggleClass('active-filter');
       filterParam = [];
       $('.filter-button.active-filter').each(function(){
