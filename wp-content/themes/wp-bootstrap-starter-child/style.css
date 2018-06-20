@@ -303,6 +303,7 @@ div.hero-posts {
       text-align: center; } }
   @media screen and (max-width: 767px) {
     div.hero-posts {
+      min-height: 600px;
       height: auto;
       padding: 0; } }
 
@@ -321,11 +322,11 @@ div.gradient-overlay {
       margin: 0; } }
   @media screen and (max-width: 991px) {
     div.gradient-overlay {
-      background: -moz-linear-gradient(top, rgba(58, 0, 51, 0) 0%, #3a0033 55%, #3a0033 100%), url(assets/img/detained-fence.jpg) center center;
+      background: -moz-linear-gradient(top, rgba(58, 0, 51, 0) 40%, #3a0033 55%, #3a0033 100%), url(assets/img/detained-fence.jpg) center center;
       /* FF3.6-15 */
-      background: -webkit-linear-gradient(top, rgba(58, 0, 51, 0) 0%, #3a0033 55%, #3a0033 100%), url(assets/img/detained-fence.jpg) center center;
+      background: -webkit-linear-gradient(top, rgba(58, 0, 51, 0) 40%, #3a0033 55%, #3a0033 100%), url(assets/img/detained-fence.jpg) center center;
       /* Chrome10-25,Safari5.1-6 */
-      background: linear-gradient(to bottom, rgba(58, 0, 51, 0) 0%, #3a0033 55%, #3a0033 100%), url(assets/img/detained-fence.jpg) center center;
+      background: linear-gradient(to bottom, rgba(58, 0, 51, 0) 40%, #3a0033 55%, #3a0033 100%), url(assets/img/detained-fence.jpg) center center;
       /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ } }
   div.gradient-overlay .post-background {
     position: absolute;
@@ -339,11 +340,11 @@ div.gradient-overlay {
     -webkit-align-self: flex-end;
     align-self: flex-end;
     padding: 0 0 2rem 0;
-    background: -moz-linear-gradient(left, rgba(58, 0, 51, 0) 0%, rgba(58, 0, 51, 0.5) 90%, rgba(58, 0, 51, 0.99) 100%), url(assets/img/detained-fence.jpg) center center;
+    background: -moz-linear-gradient(left, rgba(58, 0, 51, 0) 0%, rgba(58, 0, 51, 0) 85%, rgba(58, 0, 51, 0.99) 98%), url(assets/img/detained-fence.jpg) center center;
     /* FF3.6-15 */
-    background: -webkit-linear-gradient(left, rgba(58, 0, 51, 0) 0%, rgba(58, 0, 51, 0.5) 90%, rgba(58, 0, 51, 0.99) 100%), url(assets/img/detained-fence.jpg) center center;
+    background: -webkit-linear-gradient(left, rgba(58, 0, 51, 0) 0%, rgba(58, 0, 51, 0) 85%, rgba(58, 0, 51, 0.99) 98%), url(assets/img/detained-fence.jpg) center center;
     /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to right, rgba(58, 0, 51, 0) 0%, rgba(58, 0, 51, 0.5) 90%, rgba(58, 0, 51, 0.99) 100%), url(assets/img/detained-fence.jpg) center center;
+    background: linear-gradient(to right, rgba(58, 0, 51, 0) 0%, rgba(58, 0, 51, 0) 85%, rgba(58, 0, 51, 0.99) 98%), url(assets/img/detained-fence.jpg) center center;
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#006d005f', endColorstr='#6d005f',GradientType=0 );
     /* IE6-9 */
@@ -351,6 +352,7 @@ div.gradient-overlay {
     background-position: 50% 50%; }
     @media screen and (max-width: 991px) {
       div.gradient-overlay .primary-feature-post {
+        min-height: 300px;
         background: none; } }
     div.gradient-overlay .primary-feature-post h2 {
       font-size: 3rem;
@@ -360,14 +362,18 @@ div.gradient-overlay {
       align-self: flex-end;
       padding-left: calc( 100% / 12 );
       padding-right: 2rem;
-      padding-top: 12rem;
+      padding-top: 13rem;
       text-align: left;
       margin-bottom: 0 !important;
       padding-bottom: 0 !important;
       z-index: 9999; }
+      @media screen and (max-width: 991px) {
+        div.gradient-overlay .primary-feature-post h2 {
+          text-align: center; } }
       @media screen and (max-width: 767px) {
         div.gradient-overlay .primary-feature-post h2 {
-          padding-top: 5rem; } }
+          -webkit-align-self: flex-end;
+          align-self: flex-end; } }
       div.gradient-overlay .primary-feature-post h2 a {
         color: #ffffff; }
     div.gradient-overlay .primary-feature-post p {
