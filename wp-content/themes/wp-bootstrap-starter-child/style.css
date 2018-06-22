@@ -809,17 +809,17 @@ h1.entry-title {
 .post-template-default h1.entry-title {
   border-bottom: none; }
 .post-template-default .dek {
-  font-size: 1.1rem;
-  line-height: 2rem;
+  font-size: 1rem;
   padding-bottom: .2rem;
-  padding-left: .6rem;
-  color: #e8d41a;
-  border-left: 8px solid #e8d41a; }
+  margin-bottom: 0.25rem;
+  color: #6b6b6b; }
 
 div.entry-meta {
   display: flex;
   border-bottom: 1px solid #eaecef;
-  padding-bottom: 1rem; }
+  border-top: 1px solid #eaecef;
+  padding: 0.5rem 0;
+  margin-bottom: 0.25rem; }
   div.entry-meta img.avatar {
     width: auto;
     height: auto; }
@@ -828,8 +828,7 @@ div.entry-meta {
   div.entry-meta p.byline-wrap {
     -webkit-align-self: flex-end;
     align-self: flex-end;
-    margin-bottom: 0;
-    padding-left: 1rem; }
+    margin-bottom: 0; }
 
 p.caption {
   font-weight: 400;
@@ -916,8 +915,7 @@ p.caption {
   margin: 0 1rem 0 0; }
 
 .footer-block-title {
-  margin: 3rem 0 0;
-  font-size: 0.7rem; }
+  margin: 3rem 0 0; }
 
 ul.relevant-cases {
   list-style: none;
@@ -933,7 +931,7 @@ ul.relevant-cases {
       font-size: 0.8rem; }
 
 .post-thumbnail {
-  margin-top: 1.5rem;
+  margin-top: .75rem;
   margin-bottom: 1rem; }
 
 /* Sidebar */

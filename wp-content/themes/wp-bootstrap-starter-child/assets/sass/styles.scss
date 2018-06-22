@@ -1211,12 +1211,13 @@ h1.entry-title {
 
   .dek {
     //border-bottom: 1px solid $rule-gray;
-    font-size: 1.1rem;
-    line-height: 2rem;
+    font-size: 1rem;
+    //line-height: 2rem;
     padding-bottom: .2rem;
-    padding-left: .6rem;
-    color: $gold-highlight;
-    border-left: 8px solid $gold-highlight;
+    margin-bottom: 0.25rem;
+    //padding-left: .6rem;
+    color: $dark-gray;
+    //border-left: 8px solid $gold-highlight;
 
   }
 }
@@ -1224,7 +1225,9 @@ h1.entry-title {
 div.entry-meta {
   display: flex;
   border-bottom: 1px solid $rule-gray;
-  padding-bottom: 1rem;
+  border-top: 1px solid $rule-gray;
+  padding: 0.5rem 0;
+  margin-bottom: 0.25rem;
 
   @extend .block-title;
 
@@ -1241,7 +1244,7 @@ div.entry-meta {
     -webkit-align-self: flex-end;
     align-self: flex-end;
     margin-bottom: 0;
-    padding-left: 1rem;
+    //padding-left: 1rem;
   }
 }
 
@@ -1341,7 +1344,7 @@ p.caption {
 .footer-block-title {
   @extend .block-title;
   margin: 3rem 0 0;
-  font-size: 0.7rem;
+  //font-size: 0.7rem;
 }
 
 ul.relevant-cases {
@@ -1366,7 +1369,7 @@ ul.relevant-cases {
 }
 
 .post-thumbnail {
-  margin-top: 1.5rem;
+  margin-top: .75rem;
   margin-bottom: 1rem;
 
 }

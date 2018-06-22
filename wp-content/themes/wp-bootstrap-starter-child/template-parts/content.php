@@ -17,6 +17,12 @@
 			the_title( '<h1 class="entry-title">', '</h1>' );
 			?><p class="dek"><?php echo get_the_excerpt() ?></p>
 
+			<?php
+			if ( 'post' === get_post_type() ) : ?>
+			<div class="entry-meta">
+				<?php wp_bootstrap_starter_child_posted_on(); ?>
+			</div><!-- .entry-meta -->
+
 			<div class="post-thumbnail">
 				<?php $image_data = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "full" ); ?>
 				<?php $image_width = $image_data[1]; ?>
@@ -25,12 +31,6 @@
 					<p class="caption" style="max-width: <?php echo $image_width ?>px"><?php the_post_thumbnail_caption() ?></p>
 				</div>
 			</div>
-
-			<?php
-			if ( 'post' === get_post_type() ) : ?>
-			<div class="entry-meta">
-				<?php wp_bootstrap_starter_child_posted_on(); ?>
-			</div><!-- .entry-meta -->
 			<?php
 			endif;
 		else :

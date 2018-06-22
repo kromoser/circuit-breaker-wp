@@ -255,8 +255,8 @@ function wp_bootstrap_starter_child_posted_on() {
 	);
 
 
-  echo get_avatar(get_the_author_meta('ID'),'thumbnail');
-	echo '<p class="byline-wrap"><span class="byline"> ' . $byline . '</span> <br> <span class="posted-on">' . $posted_on .'</span></p>';
+  //echo get_avatar(get_the_author_meta('ID'),'thumbnail');
+	echo '<p class="byline-wrap"><span class="byline"> ' . $byline . '</span> | <span class="posted-on">' . $posted_on .'</span></p>';
 
     if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
         echo ' | <span class="comments-link"><i class="fa fa-comments" aria-hidden="true"></i> ';
