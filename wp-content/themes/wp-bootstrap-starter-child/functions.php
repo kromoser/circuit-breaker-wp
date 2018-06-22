@@ -249,14 +249,18 @@ function wp_bootstrap_starter_child_posted_on() {
 		$time_string
 	);
 
-	$byline = sprintf(
-		esc_html_x( 'by %s', 'post author', 'wp-bootstrap-starter' ),
-		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
-	);
+	//$byline = sprintf(
+	//	esc_html_x( 'by %s', 'post author', 'wp-bootstrap-starter' ),
+	//	'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
+	//);
+
+  //$coauthor = get_author_posts_url(get_the_author_meta( get_field('co_author') ) );
+  //$coauthor = ' and <a class="url fn n" href="'. esc_url( get_author_posts_url( get_field('co_author')[ID] ) ).'">'.esc_html( get_field('co_author')[user_firstname] ).' '. esc_html( get_field('co_author')[user_lastname] ) .'</a>';
+
 
 
   //echo get_avatar(get_the_author_meta('ID'),'thumbnail');
-	echo '<p class="byline-wrap"><span class="byline"> ' . $byline . '</span> | <span class="posted-on">' . $posted_on .'</span></p>';
+	echo '<p class="byline-wrap"><span class="byline"> ' . coauthors_posts_links(null, null, null, null, false) .'</span> | <span class="posted-on">' . $posted_on .'</span></p>';
 
     if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
         echo ' | <span class="comments-link"><i class="fa fa-comments" aria-hidden="true"></i> ';
