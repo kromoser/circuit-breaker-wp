@@ -820,6 +820,9 @@ div.entry-meta {
   display: flex;
   border-bottom: 1px solid #eaecef;
   padding-bottom: 1rem; }
+  div.entry-meta img.avatar {
+    width: auto;
+    height: auto; }
   div.entry-meta a {
     color: #870075; }
   div.entry-meta p.byline-wrap {
@@ -1205,23 +1208,29 @@ article.block-list-single {
     line-height: 0.9rem;
     display: block;
     margin: .25rem 0 .5rem; }
-  article.block-list-single.case h3 {
-    font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif !important;
-    color: #870075;
-    font-size: 1.15rem;
-    font-weight: 400;
-    margin-bottom: 0; }
-    article.block-list-single.case h3 span.case-number {
-      font-size: 0.75rem;
-      font-weight: 600;
-      color: #6b6b6b;
-      letter-spacing: 0.05rem; }
-  article.block-list-single.news h3 {
-    font-family: Vollkorn, Georgia, "Adobe Garamond Pro", Garamond, serif !important;
-    color: #870075;
-    font-size: 1.35rem;
-    font-weight: 400;
-    margin-bottom: 0; }
+article h3 {
+  font-family: Vollkorn, Georgia, "Adobe Garamond Pro", Garamond, serif !important;
+  color: #870075;
+  font-size: 1.35rem;
+  font-weight: 400;
+  margin-bottom: 0; }
+article.case h3 {
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif !important;
+  color: #870075;
+  font-size: 1.15rem;
+  font-weight: 400;
+  margin-bottom: 0; }
+  article.case h3 span.case-number {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #6b6b6b;
+    letter-spacing: 0.05rem; }
+article.news h3 {
+  font-family: Vollkorn, Georgia, "Adobe Garamond Pro", Garamond, serif !important;
+  color: #870075;
+  font-size: 1.35rem;
+  font-weight: 400;
+  margin-bottom: 0; }
 
 /*  SCOTUSTracker */
 h4.section-subhead {
@@ -1234,5 +1243,23 @@ article.scotus-case {
   article.scotus-case p {
     border-bottom: none;
     margin-bottom: 0; }
+
+/* Archive Styles */
+body.archive article.post {
+  margin: .25rem 0 1rem;
+  border-bottom: 1px solid #eaecef; }
+  body.archive article.post span.post-date {
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #e8d41a;
+    font-size: .8rem;
+    letter-spacing: 0.1rem;
+    line-height: 0.9rem;
+    display: block;
+    margin: .25rem 0 .5rem; }
+
+h3.page-title {
+  margin-bottom: 2rem; }
 
 /*# sourceMappingURL=style.css.map */

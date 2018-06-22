@@ -1228,6 +1228,11 @@ div.entry-meta {
 
   @extend .block-title;
 
+  img.avatar {
+    width: auto;
+    height: auto;
+  }
+
   a {
     color: $link-color;
   }
@@ -1788,11 +1793,11 @@ footer.site-footer {
 }
 
 /* Cases We're Watching Page */
-article.block-list-single {
+article {
+
+  &.block-list-single {
 
   margin-top: .5rem;
-
-
 
   p {
     color: darken($dark-gray, 10%);
@@ -1818,6 +1823,18 @@ article.block-list-single {
     display: block;
     margin: .25rem 0 .5rem;
 
+    }
+
+  }
+
+
+
+    h3 {
+      font-family: $serif !important;
+      color: $link-color;
+      font-size: 1.35rem;
+      font-weight: 400;
+      margin-bottom: 0;
     }
 
   &.case {
@@ -1863,4 +1880,30 @@ article.scotus-case {
 
   border-bottom: 1px solid $rule-gray;
   margin-bottom: 1rem;
+}
+
+/* Archive Styles */
+
+body.archive {
+
+  article.post {
+    margin: .25rem 0 1rem;
+    border-bottom: 1px solid $rule-gray;
+
+    span.post-date {
+      font-family: $sans-serif;
+      font-weight: 400;
+      text-transform: uppercase;
+      color: $gold-highlight;
+      font-size: .8rem;
+      letter-spacing: 0.1rem;
+      line-height: 0.9rem;
+      display: block;
+      margin: .25rem 0 .5rem;
+
+      }
+  }
+}
+h3.page-title {
+  margin-bottom: 2rem;
 }

@@ -255,7 +255,7 @@ function wp_bootstrap_starter_child_posted_on() {
 	);
 
 
-  echo '<img src="'.get_avatar_url(get_the_author()).'" class="author-thumbnail">';
+  echo get_avatar(get_the_author_meta('ID'),'thumbnail');
 	echo '<p class="byline-wrap"><span class="byline"> ' . $byline . '</span> <br> <span class="posted-on">' . $posted_on .'</span></p>';
 
     if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
@@ -493,6 +493,18 @@ function reformat_docket_date(){
         update_post_meta( $post->ID, 'date_testing_field', $final_date );
     }
 }
+
+add_filter( 'get_the_archive_title', function ( $title ) {
+
+
+
+        $title = 'Stories by '.get_the_author();
+
+
+
+    return $title;
+
+});
 
 //add_action('init','reformat_docket_date');
 
