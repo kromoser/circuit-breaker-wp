@@ -26,7 +26,7 @@ p strong, p b {
   font-weight: 700; }
 @media screen and (max-width: 767px) {
   p {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     line-height: 2.3rem !important; } }
 
 .entry-header a {
@@ -49,11 +49,12 @@ h1, h2, h3 {
 
 h5 {
   font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif !important;
-  font-size: 1.4rem !important;
-  margin-top: 2rem !important; }
+  font-size: 1.25rem !important;
+  margin-top: 1rem !important; }
   @media screen and (max-width: 767px) {
     h5 {
-      font-size: 2rem !important; } }
+      font-size: 1.4rem !important;
+      line-height: 2.5rem !important; } }
 
 .small-header {
   font-size: 0.7rem;
@@ -130,7 +131,8 @@ header.narrow-header#masthead {
       position: relative;
       text-align: center; } }
   header.narrow-header#masthead .navbar-brand {
-    padding: 0; }
+    padding: 0;
+    margin-right: 0 !important; }
   header.narrow-header#masthead .branding-logo {
     display: inline-block;
     margin: 0 auto;
@@ -303,6 +305,9 @@ header.narrow-header#masthead {
   letter-spacing: 0.25rem;
   color: #6b6b6b;
   margin: 0 0 1.5rem 0; }
+  @media (max-width: 767px) {
+    .block-title, div.entry-meta, .footer-block-title {
+      font-size: 1rem; } }
 
 /* nav styles */
 .gold-text {
@@ -814,6 +819,9 @@ div.filtering {
 /* Post view */
 h1.entry-title {
   font-size: 2rem; }
+  @media (max-width: 767px) {
+    h1.entry-title {
+      font-size: 2.4rem; } }
 
 .post-template-default h1.entry-title {
   border-bottom: none; }
@@ -951,7 +959,7 @@ ul.relevant-cases {
       font-size: 0.8rem; }
       @media (max-width: 767px) {
         ul.relevant-cases li a {
-          font-size: 1.2rem; } }
+          font-size: 1.4rem; } }
 
 .post-thumbnail {
   margin-top: .75rem;
@@ -1150,7 +1158,6 @@ a.opinion-badge {
     margin: 0;
     padding: 0; }
   .single-judge .block-title, .single-judge div.entry-meta, .single-judge .footer-block-title {
-    font-size: 0.7rem;
     letter-spacing: 0;
     margin: .15rem 0; }
     .single-judge .block-title span, .single-judge div.entry-meta span, .single-judge .footer-block-title span {

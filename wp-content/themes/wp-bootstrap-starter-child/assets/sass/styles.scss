@@ -72,7 +72,7 @@ p {
   }
 
   @media screen and (max-width: 767px ) {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     line-height: 2.3rem !important;
   }
 }
@@ -110,11 +110,12 @@ h3 {
 
 h5 {
   font-family: $sans-serif !important;
-  font-size: 1.4rem !important;
-  margin-top: 2rem !important;
+  font-size: 1.25rem !important;
+  margin-top: 1rem !important;
 
   @media screen and (max-width: 767px) {
-    font-size: 2rem !important;
+    font-size: 1.4rem !important;
+    line-height: 2.5rem !important;
   }
 }
 
@@ -213,6 +214,7 @@ header.narrow-header#masthead {
 
   .navbar-brand {
     padding:0;
+    margin-right: 0 !important;
 
   }
 
@@ -487,6 +489,10 @@ header.narrow-header#masthead {
   letter-spacing: 0.25rem;
   color: $dark-gray;
   margin: 0 0 1.5rem 0;
+
+  @include breakpoint(mobileonly) {
+    font-size: 1rem;
+  }
 }
 
 /* nav styles */
@@ -1230,6 +1236,10 @@ div.filtering {
 
 h1.entry-title {
   font-size: 2rem;
+
+  @include breakpoint(mobileonly) {
+    font-size: 2.4rem;
+  }
 }
 
 .post-template-default {
@@ -1411,7 +1421,7 @@ ul.relevant-cases {
       font-size: 0.8rem;
 
       @include breakpoint(mobileonly) {
-        font-size: 1.2rem;
+        font-size: 1.4rem;
 
       }
 
@@ -1737,7 +1747,7 @@ a.opinion-badge {
 
   .block-title {
     //font-weight: 300;
-    font-size: 0.7rem;
+    //font-size: 0.7rem;
     letter-spacing: 0;
     margin: .15rem 0;
 

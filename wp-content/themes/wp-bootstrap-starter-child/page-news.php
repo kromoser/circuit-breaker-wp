@@ -15,25 +15,25 @@
 get_header('narrow'); ?>
 
 
-<h3><?php the_title() ?></h3>
-<?php
-// TO SHOW THE PAGE CONTENTS
-while ( have_posts() ) : the_post(); ?> <!--Because the_content() works only inside a WP Loop -->
-		<div class="entry-content-page mb-5">
-				<?php the_content(); ?> <!-- Page Content -->
-		</div><!-- .entry-content-page -->
-
-<?php
-endwhile; //resetting the page loop
-wp_reset_query(); //resetting the page query
-?>
 
 
 
-	<section id="primary" class="content-area col-sm-12 col-lg-9 mt-5">
+
+	<section id="primary" class="content-area col-sm-12 col-lg-9">
 		<main id="main" class="site-main" role="main">
 
+			<h3><?php the_title() ?></h3>
+			<?php
+			// TO SHOW THE PAGE CONTENTS
+			while ( have_posts() ) : the_post(); ?> <!--Because the_content() works only inside a WP Loop -->
+					<div class="entry-content-page mb-5">
+							<?php the_content(); ?> <!-- Page Content -->
+					</div><!-- .entry-content-page -->
 
+			<?php
+			endwhile; //resetting the page loop
+			wp_reset_query(); //resetting the page query
+			?>
 
 			<?php
 			$args = array(

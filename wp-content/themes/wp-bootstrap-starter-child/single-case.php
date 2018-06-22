@@ -117,7 +117,7 @@ get_header('narrow'); ?>
 					    if ( $related_posts->have_posts() ) :
 
 								?>
-								<div class="post-grid col-sm-12">
+								<div class="post-grid col-sm-12 order-sm-last">
 
 									<div class="block-title">
 										Posts about this case
