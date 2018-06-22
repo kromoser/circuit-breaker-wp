@@ -119,6 +119,10 @@ h5 {
   }
 }
 
+h6 {
+  font-family: $sans-serif;
+}
+
 .small-header {
   font-size: 0.7rem;
   font-weight: 700;
@@ -1962,6 +1966,45 @@ body.archive {
   }
 
   article.post {
+    margin: .25rem 0 1rem;
+    border-bottom: 1px solid $rule-gray;
+
+    span.post-date {
+      font-family: $sans-serif;
+      font-weight: 400;
+      text-transform: uppercase;
+      color: $gold-highlight;
+      font-size: .8rem;
+      letter-spacing: 0.1rem;
+      line-height: 0.9rem;
+      display: block;
+      margin: .25rem 0 .5rem;
+
+      }
+  }
+
+  h3.page-title {
+    display: flex;
+  }
+}
+
+/* Search Styles */
+
+body.search {
+
+  .entry-summary {
+    margin: 0;
+  }
+
+  span.archive-name {
+    -webkit-align-self: flex-end;
+    align-self: flex-end;
+  }
+  article.post h3, article.case h3, article.judge h3 {
+    font-family: $serif !important;
+    font-size: 1.3rem !important;
+  }
+  article {
     margin: .25rem 0 1rem;
     border-bottom: 1px solid $rule-gray;
 

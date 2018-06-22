@@ -49,6 +49,9 @@
 
 
 					the_content();
+
+
+
 					$posts = get_field('related_cases');
 
 					if( $posts ):

@@ -56,6 +56,9 @@ h5 {
       font-size: 1.4rem !important;
       line-height: 2.5rem !important; } }
 
+h6 {
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif; }
+
 .small-header {
   font-size: 0.7rem;
   font-weight: 700;
@@ -1294,6 +1297,31 @@ body.archive article.post {
     display: block;
     margin: .25rem 0 .5rem; }
 body.archive h3.page-title {
+  display: flex; }
+
+/* Search Styles */
+body.search .entry-summary {
+  margin: 0; }
+body.search span.archive-name {
+  -webkit-align-self: flex-end;
+  align-self: flex-end; }
+body.search article.post h3, body.search article.case h3, body.search article.judge h3 {
+  font-family: Vollkorn, Georgia, "Adobe Garamond Pro", Garamond, serif !important;
+  font-size: 1.3rem !important; }
+body.search article {
+  margin: .25rem 0 1rem;
+  border-bottom: 1px solid #eaecef; }
+  body.search article span.post-date {
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #e8d41a;
+    font-size: .8rem;
+    letter-spacing: 0.1rem;
+    line-height: 0.9rem;
+    display: block;
+    margin: .25rem 0 .5rem; }
+body.search h3.page-title {
   display: flex; }
 
 h3.page-title {
