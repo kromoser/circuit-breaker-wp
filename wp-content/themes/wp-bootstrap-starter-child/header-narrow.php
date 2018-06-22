@@ -33,12 +33,20 @@ crossorigin="anonymous"></script>
 
       const logo = jQuery("#logo");
 
+      //jQuery(window).on('scroll', function() {
+      //  console.log('scrolllll')
+      //});
+
       window.onscroll = function() {
+        //console.log('scroll');
+        //logo.addClass('shrink-logo');
+        //console.log(jQuery('div.pre-header').scrollTop())
         growShrinkLogo()
       };
 
       function growShrinkLogo() {
-        if (document.documentElement.scrollTop > 5) {
+        if ( jQuery(document).scrollTop() > 5) {
+
            logo.addClass('shrink-logo');
          } else {
            logo.removeClass('shrink-logo');

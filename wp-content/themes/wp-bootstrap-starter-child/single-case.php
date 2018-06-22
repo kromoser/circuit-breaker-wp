@@ -85,7 +85,7 @@ get_header('narrow'); ?>
 		<div class="block-title">
 			Opinion:
 		</div>
-			<h5>No opinion</h5>
+			<h5>None</h5>
 		<?php
 		}
 		?>

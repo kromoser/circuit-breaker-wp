@@ -12,6 +12,7 @@ Text Domain: wp-bootstrap-starter-child
 Tags: blog, custom-menu, featured-images, threaded-comments, translation-ready, right-sidebar, custom-background, e-commerce, theme-options, sticky-post, full-width-template
 */
 /* colors */
+/*breakpoints*/
 /* fonts */
 div#wpadminbar {
   z-index: 9998 !important; }
@@ -25,8 +26,8 @@ p strong, p b {
   font-weight: 700; }
 @media screen and (max-width: 767px) {
   p {
-    font-size: 1.7rem;
-    line-height: 2.7rem !important; } }
+    font-size: 1.3rem;
+    line-height: 2.3rem !important; } }
 
 .entry-header a {
   color: #000000; }
@@ -134,6 +135,10 @@ header.narrow-header#masthead {
     display: inline-block;
     margin: 0 auto;
     width: 100%;
+    -webkit-transition: all .2s;
+    -moz-transition: all .2s;
+    -ms-transition: all .2s;
+    -o-transition: all .2s;
     transition: all .2s;
     top: -1.5rem; }
     @media screen and (max-width: 767px) {
@@ -144,6 +149,10 @@ header.narrow-header#masthead {
         top: 0; } }
   header.narrow-header#masthead .shrink-logo {
     width: 50%;
+    -webkit-transition: all .2s;
+    -moz-transition: all .2s;
+    -ms-transition: all .2s;
+    -o-transition: all .2s;
     transition: all .2s;
     top: 0; }
     @media screen and (max-width: 767px) {
@@ -813,6 +822,10 @@ h1.entry-title {
   padding-bottom: .2rem;
   margin-bottom: 0.25rem;
   color: #6b6b6b; }
+  @media screen and (max-width: 767px) {
+    .post-template-default .dek {
+      font-size: 1.4rem;
+      margin-bottom: .5rem; } }
 
 div.entry-meta {
   display: flex;
@@ -826,6 +839,9 @@ div.entry-meta {
     -webkit-align-self: flex-end;
     align-self: flex-end;
     margin-bottom: 0; }
+    @media screen and (max-width: 767px) {
+      div.entry-meta p.byline-wrap {
+        font-size: 0.9rem; } }
 
 p.caption {
   font-weight: 400;
@@ -838,6 +854,9 @@ p.caption {
     text-align: right;
     text-transform: uppercase;
     padding: 0.25rem 0 .1rem 0; }
+  @media screen and (max-width: 767px) {
+    p.caption {
+      line-height: 1.6rem !important; } }
 
 .post.hentry {
   margin-bottom: 0; }
@@ -921,11 +940,18 @@ ul.relevant-cases {
   ul.relevant-cases li {
     display: inline-block;
     padding: 0 .75rem; }
+    @media (max-width: 767px) {
+      ul.relevant-cases li {
+        display: block;
+        padding: .5rem 0; } }
     ul.relevant-cases li:first-child {
       padding-left: 0; }
     ul.relevant-cases li a {
       color: #870075;
       font-size: 0.8rem; }
+      @media (max-width: 767px) {
+        ul.relevant-cases li a {
+          font-size: 1.2rem; } }
 
 .post-thumbnail {
   margin-top: .75rem;

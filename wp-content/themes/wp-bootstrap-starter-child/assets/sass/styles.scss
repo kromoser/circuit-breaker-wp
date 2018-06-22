@@ -28,6 +28,26 @@ $medium-gray: #dedede;
 $rule-gray: #eaecef;
 $dark-gray: #6b6b6b;
 
+/*breakpoints*/
+@mixin breakpoint($point) {
+   @if $point == desktop {
+     @media (min-width: 1400px) { @content ; }
+  }
+   @else if $point == laptop {
+     @media (min-width: 1250px) { @content ; }
+  }
+    @else if $point == tablet {
+     @media (min-width: 991px) { @content ; }
+  }
+   @else if $point == phablet {
+     @media (min-width: 850px)  { @content ; }
+  }
+  @else if $point == mobileonly {
+     @media (max-width: 767px)  { @content ; }
+
+  }
+}
+
 
 
 /* fonts */
@@ -52,8 +72,8 @@ p {
   }
 
   @media screen and (max-width: 767px ) {
-    font-size: 1.7rem;
-    line-height: 2.7rem !important;
+    font-size: 1.3rem;
+    line-height: 2.3rem !important;
   }
 }
 
@@ -200,6 +220,10 @@ header.narrow-header#masthead {
     display: inline-block;
     margin: 0 auto;
     width: 100%;
+    -webkit-transition: all .2s;
+    -moz-transition: all .2s;
+    -ms-transition: all .2s;
+    -o-transition: all .2s;
     transition: all .2s;
     top: -1.5rem;
 
@@ -216,6 +240,10 @@ header.narrow-header#masthead {
 
   .shrink-logo {
     width: 50%;
+    -webkit-transition: all .2s;
+    -moz-transition: all .2s;
+    -ms-transition: all .2s;
+    -o-transition: all .2s;
     transition: all .2s;
     top: 0;
 
@@ -1219,6 +1247,11 @@ h1.entry-title {
     color: $dark-gray;
     //border-left: 8px solid $gold-highlight;
 
+    @media screen and (max-width: 767px) {
+      font-size: 1.4rem;
+      margin-bottom: .5rem;
+    }
+
   }
 }
 
@@ -1242,7 +1275,13 @@ div.entry-meta {
     align-self: flex-end;
     margin-bottom: 0;
     //padding-left: 1rem;
+
+    @media screen and (max-width: 767px) {
+      font-size: 0.9rem;
+    }
   }
+
+
 }
 
 p.caption {
@@ -1257,6 +1296,10 @@ p.caption {
     text-align: right;
     text-transform: uppercase;
     padding: 0.25rem 0 .1rem 0;
+  }
+
+  @media screen and (max-width: 767px) {
+    line-height: 1.6rem !important;
   }
 }
 
@@ -1353,13 +1396,24 @@ ul.relevant-cases {
     display: inline-block;
     padding: 0 .75rem;
 
+    @include breakpoint(mobileonly) {
+      display: block;
+      padding: .5rem 0;
+    }
+
     &:first-child {
       padding-left: 0;
     }
 
+
     a {
       color: $link-color;
       font-size: 0.8rem;
+
+      @include breakpoint(mobileonly) {
+        font-size: 1.2rem;
+
+      }
 
     }
   }
