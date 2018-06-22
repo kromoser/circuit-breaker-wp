@@ -48,7 +48,7 @@ get_header('narrow'); ?>
 
 	<section id="primary" class="content-area col-sm-12">
 		<main id="main" class="site-main" role="main">
-
+			<h3><?php the_title() ?></h3>
 
 
 
@@ -79,12 +79,7 @@ get_header('narrow'); ?>
 
   ?>
   <?php
-      //Start loop and put into datatables table
       if ( $current_judges->have_posts() ) :?>
-
-      <div class="block-title">
-        Current judges
-      </div>
 
       <!--<div class="card-columns">-->
 			<div class="grid">
