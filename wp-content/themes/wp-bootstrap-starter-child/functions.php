@@ -498,7 +498,7 @@ add_filter( 'get_the_archive_title', function ( $title ) {
 
 
 
-        $title = get_avatar(get_the_author_meta('ID'),'thumbnail').'<span class="archive-name">Stories by '.get_the_author().'</span>';
+        $title = get_avatar(get_the_author_meta('ID'),'thumbnail').'<span class="archive-name">Stories by <br>'.get_the_author().'</span>';
 
 
 
