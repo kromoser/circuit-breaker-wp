@@ -820,9 +820,6 @@ div.entry-meta {
   border-top: 1px solid #eaecef;
   padding: 0.5rem 0;
   margin-bottom: 0.25rem; }
-  div.entry-meta img.avatar {
-    width: auto;
-    height: auto; }
   div.entry-meta a {
     color: #870075; }
   div.entry-meta p.byline-wrap {
@@ -1243,6 +1240,13 @@ article.scotus-case {
     margin-bottom: 0; }
 
 /* Archive Styles */
+body.archive img.avatar {
+  width: auto;
+  height: auto;
+  margin-right: 1rem; }
+body.archive span.archive-name {
+  -webkit-align-self: flex-end;
+  align-self: flex-end; }
 body.archive article.post {
   margin: .25rem 0 1rem;
   border-bottom: 1px solid #eaecef; }
@@ -1256,6 +1260,8 @@ body.archive article.post {
     line-height: 0.9rem;
     display: block;
     margin: .25rem 0 .5rem; }
+body.archive h3.page-title {
+  display: flex; }
 
 h3.page-title {
   margin-bottom: 2rem; }

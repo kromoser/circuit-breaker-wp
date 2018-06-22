@@ -1231,10 +1231,7 @@ div.entry-meta {
 
   @extend .block-title;
 
-  img.avatar {
-    width: auto;
-    height: auto;
-  }
+
 
   a {
     color: $link-color;
@@ -1889,6 +1886,17 @@ article.scotus-case {
 
 body.archive {
 
+  img.avatar {
+    width: auto;
+    height: auto;
+    margin-right: 1rem;
+  }
+
+  span.archive-name {
+    -webkit-align-self: flex-end;
+    align-self: flex-end;
+  }
+
   article.post {
     margin: .25rem 0 1rem;
     border-bottom: 1px solid $rule-gray;
@@ -1906,7 +1914,12 @@ body.archive {
 
       }
   }
+
+  h3.page-title {
+    display: flex;
+  }
 }
+
 h3.page-title {
   margin-bottom: 2rem;
 }
