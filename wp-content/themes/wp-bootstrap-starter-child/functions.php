@@ -559,4 +559,25 @@ add_filter( 'get_the_archive_title', function ( $title ) {
 //    $q->set( 's', '' ); // unset the original query parameter to avoid errors
 //}
 
+
+add_filter('the_content', 'ata_the_content_filter', 10, 1);
+
+function ata_the_content_filter($content)
+{
+  if ('post' === get_post_type() ) {
+    $parags = explode('</p>', $content);
+    $parags[-1] .= '<img class="endcap-icon" src="https://dccircuitbreaker.org/wp-content/uploads/2018/06/dc-gavel-icon.png">';// add whatever you want after first paragraph
+
+    $content_new = '';
+
+    foreach ($parags as $parag) {
+        $content_new .= $parag;
+    }
+
+    return $content_new;
+  } else {
+    return $content;
+  }
+}
+
 ?>

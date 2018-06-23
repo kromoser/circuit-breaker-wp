@@ -16,7 +16,7 @@
 
 	<div class="entry-summary">
 		<?php if ( 'post' === get_post_type() ) : ?>
-			<?php  echo '<span class="post-date">Posted on: '. get_the_date() .'</span>';
+			<?php  echo '<span class="post-date">Posted on '. get_the_date() .'</span>';
 			?>
 		<?php endif;
 		echo the_excerpt();

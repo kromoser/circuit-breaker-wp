@@ -60,7 +60,8 @@ get_header('narrow'); ?>
 														<?php the_excerpt() ?>
 													</div>
 
-													<div class="col-lg-4 col-12 secondary-feature-posts">
+													<div class="col-lg-4 col-12 secondary-feature-posts h-100">
+														<div class="secondary-container">
 														<?php
 														}
 														else { ?>
@@ -70,6 +71,7 @@ get_header('narrow'); ?>
 														}
 														wp_reset_postdata();
 													} ?>
+														</div>
 													</div> <!-- End secondary featured posts -->
 											</div>
 										</div>

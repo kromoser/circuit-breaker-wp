@@ -374,26 +374,11 @@ div.hero-posts {
       padding: 0; } }
 
 div.gradient-overlay {
-  background: -moz-linear-gradient(left, rgba(58, 0, 51, 0) 0%, rgba(58, 0, 51, 0) 65%, #3a0033 66%, rgba(58, 0, 51, 0.99) 100%), url(assets/img/detained-fence.jpg) center center;
-  /* FF3.6-15 */
-  background: -webkit-linear-gradient(left, rgba(58, 0, 51, 0) 0%, rgba(58, 0, 51, 0) 65%, #3a0033 66%, rgba(58, 0, 51, 0.99) 100%), url(assets/img/detained-fence.jpg) center center;
-  /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to right, rgba(58, 0, 51, 0) 0%, rgba(58, 0, 51, 0) 65%, #3a0033 66%, rgba(58, 0, 51, 0.99) 100%), url(assets/img/detained-fence.jpg) center center;
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#006d005f', endColorstr='#6d005f',GradientType=0 );
-  /* IE6-9 */
-  background-size: cover; }
+  background-size: cover;
+  display: flex; }
   @media screen and (max-width: 767px) {
     div.gradient-overlay {
       margin: 0; } }
-  @media screen and (max-width: 991px) {
-    div.gradient-overlay {
-      background: -moz-linear-gradient(top, rgba(58, 0, 51, 0) 40%, #3a0033 55%, #3a0033 100%), url(assets/img/detained-fence.jpg) center center;
-      /* FF3.6-15 */
-      background: -webkit-linear-gradient(top, rgba(58, 0, 51, 0) 40%, #3a0033 55%, #3a0033 100%), url(assets/img/detained-fence.jpg) center center;
-      /* Chrome10-25,Safari5.1-6 */
-      background: linear-gradient(to bottom, rgba(58, 0, 51, 0) 40%, #3a0033 55%, #3a0033 100%), url(assets/img/detained-fence.jpg) center center;
-      /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ } }
   div.gradient-overlay .post-background {
     position: absolute;
     width: 100%;
@@ -406,14 +391,6 @@ div.gradient-overlay {
     -webkit-align-self: flex-end;
     align-self: flex-end;
     padding: 0 0 2rem 0;
-    background: -moz-linear-gradient(left, rgba(58, 0, 51, 0) 0%, rgba(58, 0, 51, 0) 85%, rgba(58, 0, 51, 0.99) 98%), url(assets/img/detained-fence.jpg) center center;
-    /* FF3.6-15 */
-    background: -webkit-linear-gradient(left, rgba(58, 0, 51, 0) 0%, rgba(58, 0, 51, 0) 85%, rgba(58, 0, 51, 0.99) 98%), url(assets/img/detained-fence.jpg) center center;
-    /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to right, rgba(58, 0, 51, 0) 0%, rgba(58, 0, 51, 0) 85%, rgba(58, 0, 51, 0.99) 98%), url(assets/img/detained-fence.jpg) center center;
-    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#006d005f', endColorstr='#6d005f',GradientType=0 );
-    /* IE6-9 */
     background-size: cover;
     background-position: 50% 50%; }
     @media screen and (max-width: 991px) {
@@ -447,26 +424,34 @@ div.gradient-overlay {
       padding-left: calc( 100% / 12 );
       position: relative;
       padding-right: 2rem; }
+      @media (max-width: 767px) {
+        div.gradient-overlay .primary-feature-post p {
+          font-size: 1.4rem; } }
   div.gradient-overlay .secondary-feature-posts {
-    text-transform: uppercase;
-    font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
-    letter-spacing: 0.15rem;
-    padding: 2rem 1rem .5rem 1.5rem;
+    font-family: Vollkorn, Georgia, "Adobe Garamond Pro", Garamond, serif;
+    color: #6b6b6b;
+    padding: 2rem 1.5rem 2rem 1.5rem;
     border-left: 1px solid #dedede;
-    -webkit-align-self: flex-end;
-    align-self: flex-end;
-    margin-bottom: 2rem; }
+    display: flex;
+    background: #3a0033; }
     @media screen and (max-width: 991px) {
       div.gradient-overlay .secondary-feature-posts {
         border-left: none;
-        border-top: none;
+        border-top: 1px solid #eaecef;
         padding: 2rem 1rem; } }
+    div.gradient-overlay .secondary-feature-posts .secondary-container {
+      -webkit-align-self: flex-end;
+      align-self: flex-end;
+      width: 100%;
+      margin: 0 auto; }
     div.gradient-overlay .secondary-feature-posts h4 {
-      font-size: 1rem;
+      font-size: 1.1rem;
       line-height: 1.5rem;
       text-align: left;
       margin-bottom: 1.6rem;
-      font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif; }
+      font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
+      -webkit-align-self: flex-end;
+      align-self: flex-end; }
       div.gradient-overlay .secondary-feature-posts h4:last-child {
         margin-bottom: 0; }
       div.gradient-overlay .secondary-feature-posts h4 a {
@@ -477,7 +462,9 @@ div.gradient-overlay {
           border-bottom: 1px solid #f3f3f3; }
       @media screen and (max-width: 991px) {
         div.gradient-overlay .secondary-feature-posts h4 {
-          text-align: center; } }
+          text-align: center;
+          font-size: 1.5rem;
+          padding: .5rem 0; } }
 
 /* end hero posts blade */
 /* case list */
@@ -998,7 +985,8 @@ ul.sidebar-list {
       line-height: 1rem; }
       @media screen and (max-width: 767px) {
         ul.sidebar-list li a {
-          font-size: 1.4rem; } }
+          font-size: 1.4rem;
+          line-height: 2rem; } }
     ul.sidebar-list li p {
       font-weight: 300;
       font-size: 0.8rem;
@@ -1326,5 +1314,28 @@ body.search h3.page-title {
 
 h3.page-title {
   margin-bottom: 2rem; }
+
+article.post blockquote {
+  padding-left: 2rem;
+  margin-left: 3rem;
+  border-left: 4px solid #eaecef;
+  padding-right: 2rem; }
+article.post div.contact-wrap {
+  border-bottom: 1px solid #e8d41a;
+  border-top: 1px solid #e8d41a; }
+article.post p.author-contact {
+  font-family: Vollkorn, Georgia, "Adobe Garamond Pro", Garamond, serif;
+  color: #6d005f;
+  font-size: 0.95rem;
+  margin-bottom: 0rem;
+  padding: .15rem 0; }
+  @media (max-width: 767px) {
+    article.post p.author-contact {
+      font-size: 1.25rem; } }
+
+.endcap-icon {
+  width: auto;
+  height: 1.8rem;
+  margin-top: -.15rem; }
 
 /*# sourceMappingURL=style.css.map */

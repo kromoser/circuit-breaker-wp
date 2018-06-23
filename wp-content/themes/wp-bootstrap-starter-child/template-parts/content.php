@@ -47,8 +47,17 @@
 		<?php
         if ( is_single() ) :
 
-
 					the_content();
+					//echo the_content().' <img class="endcap-icon" src="https://dccircuitbreaker.org/wp-content/uploads/2018/06/dc-gavel-icon.png">';
+
+					$bios = get_the_coauthor_meta('bio');
+					//echo print_r($bios);
+					echo '<div class="contact-wrap">';
+					foreach ( $bios as $bio ) {
+						echo '<p class="author-contact">'.$bio.'</p>';
+					};
+					echo '</div>';
+
 
 
 
@@ -69,7 +78,7 @@
 					     wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly
 					 endif;
         else :
-						echo '<span class="post-date">Posted on: '. get_the_date() .'</span>';
+						echo '<span class="post-date">Posted on '. get_the_date() .'</span>';
             the_excerpt();
         endif;
 
