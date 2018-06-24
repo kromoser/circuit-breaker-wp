@@ -100,7 +100,8 @@ get_header('narrow'); ?>
 
 								while ( $latest_posts->have_posts() ) : $latest_posts->the_post(); ?>
 										<!-- article block -->
-										<article class="post article-post">
+
+										<article class="post article-post <?php foreach (get_the_category() as $category ) { echo $category->cat_name; };?>">
 											<header class="entry-header">
 												<a href="<?php the_permalink() ?>"><h3 class="entry-title"><?php the_title() ?></h3></a>
 											</header>
@@ -254,12 +255,12 @@ get_header('narrow'); ?>
 							</div>
 							</div>
 
-							<div class="col-sm-12 col-md-4 col-xl-12">
+							<!--<div class="col-sm-12 col-md-4 col-xl-12">
 							<div class="block-title">Search or something else?</div>
 							<div class="search-block">
-
+								<?php get_search_form(); ?>
 							</div>
-							</div>
+						</div>-->
 
 					</div>
 
@@ -269,14 +270,44 @@ get_header('narrow'); ?>
 
 				<div class="row">
 
-					<div class="col-sm-12">
-						<div class="block-title">Video roundups</div>
-						<div class="video-block">
 
-						<!--	<?php get_search_form(); ?> -->
+						<div class="block-title col-12">Video roundups</div>
+						<!--<div class="video-block">
+						</div>-->
+						<?php
+							// Get all posts with video cat
+							$args = array(
+								'post_type'						=> 'post',
+								'category_name'				=> 'video',
+								'posts_per_page'			=> '4',
+								'orderby'							=> 'date',
+								'order'								=> 'DESC'
 
-						</div>
-					</div>
+							);
+
+							$videos = new WP_Query( $args );
+
+				      if ( $videos->have_posts() ) :
+
+				          while ( $videos->have_posts() ) : $videos->the_post();
+				        ?>
+
+				        <!-- article block -->
+				        <article class="col-sm-12 col-md-4 single-video video-thumbnail">
+
+									<a href="<?php the_permalink(); ?>"><h3> <?php the_title();	?></h3></a>
+									<?php the_content(); ?>
+
+				        </article>
+				          <?php endwhile;
+				          wp_reset_postdata();
+				          ?>
+
+				        <?php else : ?>
+				          <p><?php esc_html_e( 'Sorry, there are no current judges.' ); ?></p>
+				        <?php endif; ?>
+
+
 
 				</div> <!-- end row -->
 			</div>

@@ -1338,4 +1338,12 @@ article.post p.author-contact {
   height: 1.8rem;
   margin-top: -.15rem; }
 
+/* Videos */
+.single-video iframe {
+  width: 100%;
+  height: 600px; }
+
+.video-thumbnail iframe {
+  height: 200px; }
+
 /*# sourceMappingURL=style.css.map */

@@ -198,8 +198,8 @@ function datatables_server_side_callback() {
             $nestedData = array();
             $nestedData[] = '<a href="'.get_the_permalink().'">'.get_the_title().'</a>';
             $nestedData[] = get_field('case_number');
-            $nestedData[] = get_field('date_filed');
-            $nestedData[] = get_field('last_docket_entry');
+            $nestedData[] = date('m/d/Y', strtotime(get_field('date_filed', false, false)));
+            $nestedData[] = date('m/d/Y', strtotime(get_field('last_docket_entry', false, false)));
             $nestedData[] = '<span class="'.$status.'">'.$status.'</span>'.$arg_badge.$opinion_badge;
 
             $data[] = $nestedData;
@@ -564,9 +564,9 @@ add_filter('the_content', 'ata_the_content_filter', 10, 1);
 
 function ata_the_content_filter($content)
 {
-  if ('post' === get_post_type() ) {
+  if ('post' === get_post_type() && !in_category('Video') ) {
     $parags = explode('</p>', $content);
-    $parags[-1] .= '<img class="endcap-icon" src="https://dccircuitbreaker.org/wp-content/uploads/2018/06/dc-gavel-icon.png">';// add whatever you want after first paragraph
+    $parags[count($parags)-1] .= '<img class="endcap-icon" src="https://dccircuitbreaker.org/wp-content/uploads/2018/06/dc-gavel-icon.png">';// add whatever you want after first paragraph
 
     $content_new = '';
 

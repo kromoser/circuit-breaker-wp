@@ -31,7 +31,7 @@ get_header('narrow'); ?>
 
 							<div class="col-sm-12 col-lg-6">
 								<div class="block-title">Date filed: </div>
-								<h5><?php the_field('date_filed') ?></h5>
+								<h5><?php echo date('m/d/Y', strtotime(get_field('date_filed', false, false))) ?></h5>
 							</div>
 
 					</div>
@@ -39,7 +39,7 @@ get_header('narrow'); ?>
 
 						<div class="col-sm-12 col-lg-6">
 							<div class="block-title">Last docket entry: </div>
-							<h5><?php the_field('last_docket_entry') ?></h5>
+							<h5><?php echo date('m/d/Y', strtotime(get_field('last_docket_entry', false, false))) ?></h5>
 						</div>
 
 						<div class="col-sm-12 col-lg-6">
