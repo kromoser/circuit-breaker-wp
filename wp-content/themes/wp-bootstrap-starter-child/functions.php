@@ -122,6 +122,7 @@ function datatables_server_side_callback() {
         )
       );
     } elseif( !empty($request['search']['value']) ) { // When datatables search is used
+
         $args['meta_query'] = array(
             'relation' => 'OR',
             array(

@@ -48,6 +48,13 @@
         if ( is_single() ) :
 
 					the_content();
+					?>
+					<?php if ( get_field('video_embed') ) { ?>
+					<div class="video-wrap">
+						<?php the_field('video_embed') ?>
+					</div>
+				<?php }; ?>
+					<?php
 					//echo the_content().' <img class="endcap-icon" src="https://dccircuitbreaker.org/wp-content/uploads/2018/06/dc-gavel-icon.png">';
 
 					$bios = get_the_coauthor_meta('bio');

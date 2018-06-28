@@ -71,7 +71,7 @@
 
             <div class="col-sm-12 col-lg-4 offset-lg-2 logo-footer">
 							<div class="">
-								<a href="<?php echo home_url() ?>"><img src="<?php echo wp_get_attachment_url( '1668' ); ?>" alt="DC Circuit Breaker"></a>
+								<a href="<?php echo home_url() ?>"><img src="//dccircuitbreaker.org/wp-content/uploads/2018/06/logo-inverse-1.png" alt="DC Circuit Breaker"></a>
 									&copy; <?php echo date('Y'); ?> <?php echo '<a href="'.home_url().'">'.get_bloginfo('name').'</a>'; ?>
 
 							</div>

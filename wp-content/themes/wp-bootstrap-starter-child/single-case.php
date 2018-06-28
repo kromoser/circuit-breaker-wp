@@ -14,10 +14,10 @@ get_header('narrow'); ?>
 				<?php
 					// Get opinions relationship field and argument date
 					$opinions = get_field('case_number_for_opinion');
-					$one_week_ago = date('m/d/Y', strtotime('-7 days'));
+					$one_week_ago = date('F d, Y', strtotime('-7 days'));
 					$date_scheduled = get_field('argument_date', false, false);
 					$date = new DateTime($date_scheduled);
-					$date_scheduled = date('m/d/Y', strtotime($date_scheduled) );
+					$date_scheduled = date('F d, Y', strtotime($date_scheduled) );
 
 				?>
 
@@ -31,7 +31,7 @@ get_header('narrow'); ?>
 
 							<div class="col-sm-12 col-lg-6">
 								<div class="block-title">Date filed: </div>
-								<h5><?php echo date('m/d/Y', strtotime(get_field('date_filed', false, false))) ?></h5>
+								<h5><?php echo date('F d, Y', strtotime(get_field('date_filed', false, false))) ?></h5>
 							</div>
 
 					</div>
@@ -39,7 +39,7 @@ get_header('narrow'); ?>
 
 						<div class="col-sm-12 col-lg-6">
 							<div class="block-title">Last docket entry: </div>
-							<h5><?php echo date('m/d/Y', strtotime(get_field('last_docket_entry', false, false))) ?></h5>
+							<h5><?php echo date('F d, Y', strtotime(get_field('last_docket_entry', false, false))) ?></h5>
 						</div>
 
 						<div class="col-sm-12 col-lg-6">
@@ -47,7 +47,7 @@ get_header('narrow'); ?>
 									<div class="block-title">
 										Oral argument on:
 									</div>
-									<h5><?php echo $date->format('j M Y'); ?></h5>
+									<h5><?php echo $date->format('F d, Y'); ?></h5>
 								<?php
 							} ?>
 						</div>
@@ -71,7 +71,7 @@ get_header('narrow'); ?>
 
 				<?php foreach( $judge as $j) : ?>
 					<h5>
-						Issued on <?php echo date('m-d-Y', strtotime( get_field('date_issued', $o->ID) ) ); ?> <br>
+						Issued on <?php echo date('F d, Y', strtotime( get_field('date_issued', $o->ID) ) ); ?> <br>
 						<?php if ( get_the_title($j->ID) != 'Per curiam' ) { ?>Written by <?php } ?>
 
 							<a href="<?php echo get_the_permalink($j->ID); ?>"><?php echo get_the_title($j->ID); ?></a>

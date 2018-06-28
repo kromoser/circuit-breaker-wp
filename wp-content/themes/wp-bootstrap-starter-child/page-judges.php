@@ -94,7 +94,7 @@ get_header('narrow'); ?>
 
 						<div class="card-header">
 							<div class="row">
-								<div class="col-4   headshot">
+								<div class="col-4 headshot">
 									<img src="<?php the_post_thumbnail_url() ?>" alt="" class="headshot">
 								</div>
 

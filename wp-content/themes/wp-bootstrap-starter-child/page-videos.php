@@ -37,10 +37,15 @@ get_header('narrow'); ?>
 						while ( $newest_video->have_posts() ) : $newest_video->the_post();
 				?>
 
-					<article class="col-12 single-video">
+					<article class="col-12 single-video col-md-8 offset-md-2 featured-video">
 						<a href="<?php the_permalink(); ?>"><h3> <?php the_title();	?></h3></a>
-						<?php the_content(); ?>
 						<p class="dek"><?php echo get_the_excerpt() ?></p>
+						<div class="video-wrap">
+							<?php the_field('video_embed') ?>
+						</div>
+
+						<?php the_content(); ?>
+
 					</article>
 
 					<?php endwhile;
@@ -48,7 +53,7 @@ get_header('narrow'); ?>
 					?>
 
 					<?php else : ?>
-						<p><?php esc_html_e( 'Sorry, there are no current judges.' ); ?></p>
+						<p><?php esc_html_e( 'Sorry, there are no videos.' ); ?></p>
 					<?php endif; ?>
 
 			</div>
@@ -78,9 +83,12 @@ get_header('narrow'); ?>
 				        <article class="col-sm-12 col-md-6 single-video">
 
 									<a href="<?php the_permalink(); ?>"><h3> <?php the_title();	?></h3></a>
-									<?php the_content(); ?>
-									<p class="dek"><?php echo get_the_excerpt() ?></p>
 
+									<p class="dek"><?php echo get_the_excerpt() ?></p>
+									<div class="video-wrap">
+										<?php the_field('video_embed') ?>
+									</div>
+									<?php the_content(); ?>
 
 				        </article>
 				          <?php endwhile;
@@ -88,7 +96,7 @@ get_header('narrow'); ?>
 				          ?>
 
 				        <?php else : ?>
-				          <p><?php esc_html_e( 'Sorry, there are no videos.' ); ?></p>
+				          <p><?php esc_html_e( 'Sorry, there are no more videos.' ); ?></p>
 				        <?php endif; ?>
 			</div>
 

@@ -433,6 +433,8 @@ div.gradient-overlay {
     padding: 2rem 1.5rem 2rem 1.5rem;
     border-left: 1px solid #dedede;
     display: flex;
+    align-items: center;
+    justify-content: center;
     background: #3a0033; }
     @media screen and (max-width: 991px) {
       div.gradient-overlay .secondary-feature-posts {
@@ -440,13 +442,11 @@ div.gradient-overlay {
         border-top: 1px solid #eaecef;
         padding: 2rem 1rem; } }
     div.gradient-overlay .secondary-feature-posts .secondary-container {
-      -webkit-align-self: flex-end;
-      align-self: flex-end;
       width: 100%;
       margin: 0 auto; }
     div.gradient-overlay .secondary-feature-posts h4 {
-      font-size: 1.1rem;
-      line-height: 1.5rem;
+      font-size: 1.3rem;
+      line-height: 1.6rem;
       text-align: left;
       margin-bottom: 1.6rem;
       font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
@@ -814,7 +814,9 @@ h1.entry-title {
       font-size: 2.4rem; } }
 
 .post-template-default h1.entry-title {
-  border-bottom: none; }
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 0.25rem; }
 .post-template-default .dek {
   font-size: 1rem;
   padding-bottom: .2rem;
@@ -1134,6 +1136,11 @@ a.opinion-badge {
 .single-judge {
   font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
   font-weight: 300; }
+  @media (max-width: 767px) {
+    .single-judge .card-body span {
+      font-size: 1.4rem !important;
+      display: block;
+      margin-bottom: 1rem; } }
   .single-judge h3 {
     font-size: 1.75rem;
     padding: .75rem 0 0;
@@ -1339,11 +1346,27 @@ article.post p.author-contact {
   margin-top: -.15rem; }
 
 /* Videos */
-.single-video iframe {
-  width: 100%;
-  height: 600px; }
+.single-video.featured-video {
+  margin-bottom: 3rem; }
 
-.video-thumbnail iframe {
-  height: 200px; }
+@media (max-width: 767px) {
+  .video-thumbnail {
+    margin-top: 2rem; } }
+@media (max-width: 767px) {
+  .video-thumbnail:first-of-type {
+    margin-top: 0; } }
+
+div.video-wrap {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56%;
+  margin-bottom: 1rem; }
+  div.video-wrap iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0; }
 
 /*# sourceMappingURL=style.css.map */

@@ -251,7 +251,7 @@ get_header('narrow'); ?>
 							<div class="col-sm-12 col-md-4  col-xl-12">
 							<div class="block-title">Recent tweets</div>
 							<div class="tweet-block">
-								<a class="twitter-timeline" data-height="455" data-dnt="true" data-link-color="#2B7BB9" href="https://twitter.com/TwitterDev?ref_src=twsrc%5Etfw">Tweets by TwitterDev</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+								<a class="twitter-timeline" href="https://twitter.com/DCCircuitBreak?ref_src=twsrc%5Etfw">Tweets by DCCircuitBreak</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 							</div>
 							</div>
 
@@ -271,7 +271,7 @@ get_header('narrow'); ?>
 				<div class="row">
 
 
-						<div class="block-title col-12">Video roundups</div>
+						<div class="block-title col-12">Latest Videos</div>
 						<!--<div class="video-block">
 						</div>-->
 						<?php
@@ -279,7 +279,7 @@ get_header('narrow'); ?>
 							$args = array(
 								'post_type'						=> 'post',
 								'category_name'				=> 'video',
-								'posts_per_page'			=> '4',
+								'posts_per_page'			=> '3',
 								'orderby'							=> 'date',
 								'order'								=> 'DESC'
 
@@ -296,7 +296,9 @@ get_header('narrow'); ?>
 				        <article class="col-sm-12 col-md-4 single-video video-thumbnail">
 
 									<a href="<?php the_permalink(); ?>"><h3> <?php the_title();	?></h3></a>
-									<?php the_content(); ?>
+									<div class="video-wrap">
+										<?php the_field('video_embed') ?>
+									</div>
 
 				        </article>
 				          <?php endwhile;
