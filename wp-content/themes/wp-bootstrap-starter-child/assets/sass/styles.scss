@@ -878,7 +878,7 @@ form.email-form {
       height: 100%;
       border: none;
       font-weight: 300;
-      cursor: pointer;
+      //cursor: pointer;
       padding-left: 6px;
       &:focus {
         outline: 0;
@@ -940,7 +940,8 @@ div.calendar {
 /* twitter feed */
 div.tweet-block {
   background: lighten($medium-gray, 5%);
-  height: 455px;
+  height: 500px;
+  overflow: scroll;
   margin-bottom: 1.5rem;
 
   a.twitter-timeline {
@@ -2129,6 +2130,10 @@ article.post {
 }
 
 .video-thumbnail {
+
+  -webkit-align-self: flex-end;
+  align-self: flex-end;
+
   @include breakpoint(mobileonly) {
       margin-top: 2rem;
   }
@@ -2161,4 +2166,9 @@ div.video-wrap {
 
 body.home article.Video:before {
   //content: "VIDEO";
+}
+
+article.post twitterwidget {
+  margin-left: auto;
+  margin-right: auto;
 }

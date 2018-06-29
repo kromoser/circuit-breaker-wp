@@ -7,7 +7,7 @@ $(document).ready(function() {
         "serverSide": true,
         "ordering": true,
         "order": [[ 2, 'desc' ]],
-        "pageLength" : 30,
+        "pageLength" : 20,
         "ajax": ajax_url
     });
 

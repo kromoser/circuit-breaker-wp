@@ -557,7 +557,6 @@ form.email-form {
       height: 100%;
       border: none;
       font-weight: 300;
-      cursor: pointer;
       padding-left: 6px; }
       form.email-form .email-form-group input:focus {
         outline: 0;
@@ -590,7 +589,8 @@ div.calendar ul {
 /* twitter feed */
 div.tweet-block {
   background: #ebebeb;
-  height: 455px;
+  height: 500px;
+  overflow: scroll;
   margin-bottom: 1.5rem; }
   div.tweet-block a.twitter-timeline {
     max-height: 455px; }
@@ -1349,12 +1349,15 @@ article.post p.author-contact {
 .single-video.featured-video {
   margin-bottom: 3rem; }
 
-@media (max-width: 767px) {
-  .video-thumbnail {
-    margin-top: 2rem; } }
-@media (max-width: 767px) {
-  .video-thumbnail:first-of-type {
-    margin-top: 0; } }
+.video-thumbnail {
+  -webkit-align-self: flex-end;
+  align-self: flex-end; }
+  @media (max-width: 767px) {
+    .video-thumbnail {
+      margin-top: 2rem; } }
+  @media (max-width: 767px) {
+    .video-thumbnail:first-of-type {
+      margin-top: 0; } }
 
 div.video-wrap {
   position: relative;
@@ -1368,5 +1371,9 @@ div.video-wrap {
     height: 100%;
     left: 0;
     top: 0; }
+
+article.post twitterwidget {
+  margin-left: auto;
+  margin-right: auto; }
 
 /*# sourceMappingURL=style.css.map */

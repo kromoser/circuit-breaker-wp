@@ -24,8 +24,16 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 	<?php
 	$args = array(
 		'post_type'						=> 'case',
-		'meta_key'						=> 'featured',
-		'meta_value'					=> '1',
+		'meta_query' 					=> array(
+			array(
+				'key'							=> 'featured',
+				'compare'					=> '=',
+				'value'						=> 1
+			)
+		),
+		'meta_key'						=> 'featured_case_order',
+		'orderby'							=> 'meta_value date',
+		'order'								=> 'DESC',
 		'posts_per_page'			=> '-1'
 	);
 

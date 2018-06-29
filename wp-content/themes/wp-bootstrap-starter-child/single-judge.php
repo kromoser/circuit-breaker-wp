@@ -101,40 +101,16 @@ get_header('narrow'); ?>
 		// TO SHOW THE PAGE CONTENTS
 		while ( have_posts() ) : the_post(); ?> <!--Because the_content() works only inside a WP Loop -->
 			<?php
+			$opinion_names = get_field('opinion_name_for_judges');
 
-			$opinions = get_field('opinion_name_for_judges');
-			//$opinions_test = get_field('opinion_name_for_judges');
-
-			//$args = array(
-			//	'post_type' => 'opinion',
-			//	'posts_per_page' => 4,
-			//	'post__in' => $opinions_test
-			//);
-
-		//	$associated_ops = new WP_Query($args);
-
-
-			//if ( $associated_ops ) {
-
-			//	foreach ( $associated_ops as $op ) {
-			//		setup_postdata($op);
-			//		echo '<p>'.the_title().'</p>';
-			//	};
-
-			//} else {
-
-			//};
-
-			if ( $opinions ) { ?>
+			if ( $opinion_names ) { ?>
 				<aside id="secondary" class="widget-area col-sm-12 col-lg-4" role="complementary">
 				<div class="block-title">
 					Recent Opinions
-
-					<?php // echo print_r($opinions); ?>
 				</div>
 				<div class="case-summary">
 					<ul>
-						<?php foreach ($opinions as $o ) {
+						<?php foreach ($opinion_names as $o ) {
 
 							$case = get_posts(array(
 								'posts_per_page' => 1,
