@@ -96,7 +96,7 @@ get_header('narrow'); ?>
 		// TO SHOW THE PAGE CONTENTS
 		while ( have_posts() ) : the_post(); ?> <!--Because the_content() works only inside a WP Loop -->
 			<?php
-			$opinion_names = array_merge(get_field('opinion_name_for_judges', false, false), get_field('concurring_judge_opinion', false, false));
+			$opinion_names = array_merge(get_field('opinion_name_for_judges', false, false), get_field('concurring_judge_opinion', false, false), get_field('dissenting_judge_opinion', false, false));
 
 			$args = array(
 				'post_type' 			=> 'opinion',
@@ -126,11 +126,16 @@ get_header('narrow'); ?>
 							<?php $case_ID = get_field('case_number_for_opinion', false, false)[0]; ?>
 
 
-								<li> <?php if ( get_field('concurring_judge_opinion') ) { echo 'CONCURRING'; }; ?><a href="<?php echo get_the_permalink($case_ID); ?>"><?php echo get_the_title($case_ID) ?></a></li>
+								<li> <?php if ( get_field('dissenting_judge_opinion') ) { echo 'DISSENTING'; } elseif ( get_field('concurring_judge_opinion')) {
+									echo 'CONCURRING';
+								}; ?><a href="<?php echo get_the_permalink($case_ID); ?>"><?php echo get_the_title($case_ID) ?></a></li>
 
 
 					<?php	};	?>
+
+
 					</ul>
+
 				</div>
 				</aside><!-- #secondary -->
 				<?php
@@ -140,7 +145,11 @@ get_header('narrow'); ?>
 
 				endwhile; //resetting the page loop
 				wp_reset_query(); //resetting the page query
+
 				?>
+				<?php $id = get_the_ID(); ?>
+				<a href="<?php echo site_url('opinions/judge/'.$id ); ?>" class="btn btn-main">View all opinions</a>
+
 
 <?php
 //get_sidebar('cases');

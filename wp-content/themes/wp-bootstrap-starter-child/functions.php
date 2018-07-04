@@ -403,6 +403,8 @@ function bidirectional_acf_update_value( $value, $post_id, $field  ) {
 
 add_filter('acf/update_value/name=case_number_for_opinion', 'bidirectional_acf_update_value', 10, 3);
 add_filter('acf/update_value/name=opinion_name_for_judges', 'bidirectional_acf_update_value', 10, 3);
+add_filter('acf/update_value/name=concurring_judge_opinion', 'bidirectional_acf_update_value', 10, 3);
+add_filter('acf/update_value/name=dissenting_judge_opinion', 'bidirectional_acf_update_value', 10, 3);
 
 //Insert ads after second paragraph of single post content.
 /*add_filter( 'the_content', 'prefix_insert_post_ads' );
@@ -561,6 +563,7 @@ add_filter( 'get_the_archive_title', function ( $title ) {
 //}
 
 
+// ADD LOGO ICON BEFORE CLOSING TAG OF LAST PARAGRAPH IN ARTICLES
 add_filter('the_content', 'ata_the_content_filter', 10, 1);
 
 function ata_the_content_filter($content)
@@ -579,6 +582,21 @@ function ata_the_content_filter($content)
   } else {
     return $content;
   }
+}
+
+// REWRITE RULE FOR JUDGES' DECISIONS PAGE
+add_action( 'init', 'wpse26388_rewrites_init' );
+function wpse26388_rewrites_init(){
+    add_rewrite_rule(
+        'opinions/judge/([0-9]+)/?$',
+        'index.php?pagename=judge&judge_id=$matches[1]',
+        'top' );
+}
+
+add_filter( 'query_vars', 'wpse26388_query_vars' );
+function wpse26388_query_vars( $query_vars ){
+    $query_vars[] = 'judge_id';
+    return $query_vars;
 }
 
 ?>
