@@ -86,11 +86,6 @@ get_header('narrow'); ?>
 				</div>
 				<h5><?php echo get_post_meta(get_the_ID(), 'trivia', true) ?></h5>
 			</div>
-
-
-
-
-
 			</div>
 
 
@@ -101,32 +96,40 @@ get_header('narrow'); ?>
 		// TO SHOW THE PAGE CONTENTS
 		while ( have_posts() ) : the_post(); ?> <!--Because the_content() works only inside a WP Loop -->
 			<?php
-			$opinion_names = get_field('opinion_name_for_judges');
+			$opinion_names = array_merge(get_field('opinion_name_for_judges', false, false), get_field('concurring_judge_opinion', false, false));
 
-			if ( $opinion_names ) { ?>
+			$args = array(
+				'post_type' 			=> 'opinion',
+				'posts_per_page'	=> -1,
+				'post__in'				=> $opinion_names,
+				'meta_key'				=> 'date_issued',
+				'order'						=> 'DESC',
+				'orderby'					=> 'meta_value'
+			);
+
+			$recent_opinions = new WP_Query($args);
+
+
+
+			if ( $recent_opinions->have_posts() ) { ?>
+
 				<aside id="secondary" class="widget-area col-sm-12 col-lg-4" role="complementary">
-				<div class="block-title">
-					Recent Opinions
-				</div>
-				<div class="case-summary">
-					<ul>
-						<?php foreach ($opinion_names as $o ) {
+					<div class="block-title">
+						Recent Opinions
+					</div>
+					<div class="case-summary">
+						<ul>
+				<?php while ( $recent_opinions->have_posts() ) {
+					$recent_opinions->the_post();
+				?>
 
-							$case = get_posts(array(
-								'posts_per_page' => 1,
-								'post_type'		=> 'case',
-								'meta_key' 		=> 'case_number',
-								'meta_value'	=> get_the_title($o->ID)
-							));
-
-							foreach ($case as $c) {
+							<?php $case_ID = get_field('case_number_for_opinion', false, false)[0]; ?>
 
 
-							?>
-							<li><a href="<?php echo get_the_permalink($c->ID) ?>"><?php echo get_the_title($c->ID) ?></a></li>
-							<?php
-							}
-						};	?>
+								<li> <?php if ( get_field('concurring_judge_opinion') ) { echo 'CONCURRING'; }; ?><a href="<?php echo get_the_permalink($case_ID); ?>"><?php echo get_the_title($case_ID) ?></a></li>
+
+
+					<?php	};	?>
 					</ul>
 				</div>
 				</aside><!-- #secondary -->

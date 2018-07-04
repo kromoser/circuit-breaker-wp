@@ -385,7 +385,7 @@ div.gradient-overlay {
     height: 100%;
     z-index: -1;
     background-size: cover;
-    background-position: 0% 50%; }
+    background-position: center; }
   div.gradient-overlay .primary-feature-post {
     text-shadow: 0px 2px 10px black;
     -webkit-align-self: flex-end;
@@ -1032,7 +1032,8 @@ h5.entry-title {
 
 a.opinion-badge {
   text-transform: uppercase;
-  color: #ffffff;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
+  color: #ffffff !important;
   font-weight: bold;
   background: #e8d41a;
   letter-spacing: 0.1rem;
