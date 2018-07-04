@@ -26,12 +26,12 @@ get_header('narrow'); ?>
 			<?php
 			$url_id = get_query_var('judge_id');
 			$judge_name = get_the_title($url_id);
-			$rel_opinions = get_field('opinion_name_for_judges', $url_id, false);
+			$rel_opinions = array_merge(get_field('opinion_name_for_judges', $url_id, false), get_field('dissenting_judge_opinion', $url_id, false), get_field('concurring_judge_opinion', $url_id, false) );
 			// TO SHOW THE PAGE CONTENTS
 			while ( have_posts() ) : the_post(); ?> <!--Because the_content() works only inside a WP Loop -->
 					<div class="entry-content-page mb-5">
 							<!--<?php the_content(); ?> --><!-- Page Content -->
-							<h3>The <?php echo count( $rel_opinions ); ?> opinions written by Judge <?php echo $judge_name.' - '.$url_id ?> </h3>
+							<h3>The <?php echo count( $rel_opinions ); ?> opinions written by Judge <?php echo $judge_name ?> </h3>
 							<?php the_content(); ?>
 					</div><!-- .entry-content-page -->
 
@@ -70,9 +70,19 @@ get_header('narrow'); ?>
 
 										<article class="col-sm-12 block-list-single news">
 											<?php $case_ID = get_field('case_number_for_opinion', false, false)[0]; ?>
-											<h3><a href="<?php echo get_the_permalink($case_ID); ?>"><?php echo the_title().' - '.get_the_title( $case_ID ) ?></a> <a href="<?php echo get_field('opinion_file');?>" class="opinion-badge">PDF <i class="material-icons">file_download</i></a></h3>
+											<h3><a href="<?php echo get_the_permalink($case_ID); ?>"><?php echo the_title().' - '.get_the_title( $case_ID ) ?></a>
+
+												<?php if ( get_field('dissenting_judge_opinion') ) {
+													echo '<span class="opinion-badge__dissenting">Dissenting</span>';
+												} elseif ( get_field('concurring_judge_opinion')) {
+													echo '<span class="opinion-badge__concurring">Concurring</span>';
+												}; ?>
+
+												<a href="<?php echo get_field('opinion_file');?>" class="opinion-badge">PDF <i class="material-icons">file_download</i></a>
+											</h3>
 											<!--<p><?php // print_r(get_field('case_number_for_opinion'))?></p>-->
 											<span class="post-date">Issued on <?php echo date('F d, Y', strtotime( get_field('date_issued') )); ?></span>
+
 										</article><?php
 						}
 

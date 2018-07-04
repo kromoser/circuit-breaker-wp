@@ -126,9 +126,13 @@ get_header('narrow'); ?>
 							<?php $case_ID = get_field('case_number_for_opinion', false, false)[0]; ?>
 
 
-								<li> <?php if ( get_field('dissenting_judge_opinion') ) { echo 'DISSENTING'; } elseif ( get_field('concurring_judge_opinion')) {
-									echo 'CONCURRING';
-								}; ?><a href="<?php echo get_the_permalink($case_ID); ?>"><?php echo get_the_title($case_ID) ?></a></li>
+								<li> <a href="<?php echo get_the_permalink($case_ID); ?>"><?php echo get_the_title($case_ID) ?></a>
+									<?php if ( get_field('dissenting_judge_opinion') ) {
+										echo '<span class="opinion-badge__dissenting">Dissenting</span>';
+									} elseif ( get_field('concurring_judge_opinion')) {
+										echo '<span class="opinion-badge__concurring">Concurring</span>';
+									}; ?>
+								</li>
 
 
 					<?php	};	?>

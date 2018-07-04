@@ -2173,3 +2173,37 @@ article.post twitterwidget {
   margin-left: auto;
   margin-right: auto;
 }
+
+span.opinion-badge__concurring {
+  text-transform: uppercase;
+  font-family: $sans-serif;
+  color: $white;
+  font-weight: bold;
+  background: $accent-turquoise;
+  letter-spacing: 0.1rem;
+  font-size: 0.5rem;
+  border-radius: 2px;
+  padding: 2px 4px;
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  margin: -2px 2px 0;
+  vertical-align: middle;
+}
+
+span.opinion-badge__dissenting {
+  text-transform: uppercase;
+  font-family: $sans-serif;
+  color: $white;
+  font-weight: bold;
+  background: $blue-plum;
+  letter-spacing: 0.1rem;
+  font-size: 0.5rem;
+  border-radius: 2px;
+  padding: 2px 4px;
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  margin: -2px 2px 0;
+  vertical-align: middle;
+}
