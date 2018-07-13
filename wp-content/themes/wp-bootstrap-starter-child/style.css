@@ -1409,4 +1409,95 @@ span.opinion-badge__dissenting {
   margin: -2px 2px 0;
   vertical-align: middle; }
 
+/* JUDGE OPINIONS / FEATURES STYLES */
+h3.feature {
+  text-align: center;
+  font-size: 2.6rem; }
+
+article.feature-opinion-list {
+  margin-top: 1.2rem; }
+  article.feature-opinion-list span.post-date {
+    margin-bottom: .25rem; }
+  article.feature-opinion-list h3 {
+    font-size: 1.2rem; }
+    article.feature-opinion-list h3 span.case-number {
+      font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
+      font-weight: bolder;
+      padding-right: .4rem;
+      font-size: .8rem;
+      position: relative;
+      top: -1px; }
+      @media screen and (max-width: 767px) {
+        article.feature-opinion-list h3 span.case-number {
+          top: 0;
+          display: block;
+          font-size: 1.1rem; } }
+  article.feature-opinion-list .opinion-badge {
+    padding: 2px 4px; }
+
+a.no-line:hover {
+  color: #ffffff;
+  border-bottom: 1px solid #ffffff; }
+
+.hero-banner {
+  background: #e8d41a;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
+  color: #ffffff;
+  padding-top: .75rem;
+  padding-bottom: 0.75rem;
+  font-weight: bolder;
+  font-size: 1.15rem;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center; }
+  .hero-banner:hover {
+    background: #d3c115;
+    text-decoration: none; }
+
+/* Temporary fix for Kav page */
+@media screen and (max-width: 767px) {
+  body.page-id-39854 .block-title, body.page-id-39854 div.entry-meta, body.page-id-39854 .footer-block-title {
+    margin-top: 4rem; } }
+
+/* Opinion Tag Filtering */
+p.tag-list {
+  text-align: center;
+  width: 80%;
+  margin: 0 auto; }
+
+a.tag-cloud-link {
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
+  background: #451b5e;
+  color: #ffffff;
+  border-radius: 2px;
+  text-decoration: none;
+  padding: .2rem .6rem;
+  margin: .13rem 0;
+  display: inline-flex;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem; }
+  a.tag-cloud-link:hover {
+    background: #7f32ad;
+    color: #ffffff;
+    text-decoration: none; }
+  a.tag-cloud-link.active {
+    background: #e8d41a; }
+
+span.case-tag {
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
+  color: #451b5e;
+  font-size: 0.5rem;
+  display: inline-flex;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  border-radius: 2px;
+  border: 1px solid #451b5e; }
+  span.case-tag:hover {
+    background: #c597e1; }
+  span.case-tag a {
+    padding: .1rem .3rem;
+    color: #451b5e; }
+    span.case-tag a:hover {
+      text-decoration: none; }
+
 /*# sourceMappingURL=style.css.map */

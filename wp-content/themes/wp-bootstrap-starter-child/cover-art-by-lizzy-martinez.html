@@ -1,0 +1,237 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Storyscape Journal - Issue 19 - Cover Art by Lizzy Martinez</title>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,300italic,400,300|Open+Sans+Condensed:300,300italic,400' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="piecestyles.css">
+<!-- Load in jQuery -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+
+<script>
+
+$(document).ready(function(){
+  $("#truthList,#untruthList,#dontknowList").hide();
+  $("#truth").click(function(){
+    $("#untruthList,#dontknowList,#coverartList").hide();
+    $("#truthList").fadeToggle(300);
+  });
+  $("#untruth").click(function(){
+    $("#truthList,#dontknowList,#coverartList").hide();
+    $("#untruthList").fadeToggle(300);
+  });
+  $("#dontknow").click(function(){
+    $("#untruthList,#truthList,#coverartList").hide();
+    $("#dontknowList").fadeToggle(300);
+  });
+  $("#coverart").click(function(){
+    $("#untruthList,#truthList,#dontknowList").hide();
+    $("#coverartList").fadeToggle(300);
+  });
+$(".artPiece").not("#pieceOne").hide();
+
+  $("#artButton1").click(function(){
+    $(".artPiece").hide();
+    $("#pieceOne").show();
+  });
+
+  $("#artButton2").click(function(){
+    $(".artPiece").hide();
+    $("#pieceTwo").show();
+  });
+
+  $("#artButton3").click(function(){
+    $(".artPiece").hide();
+    $("#pieceThree").show();
+  });
+
+  $("#artButton4").click(function(){
+    $(".artPiece").hide();
+    $("#pieceFour").show();
+  });
+
+  $("#artButton5").click(function(){
+    $(".artPiece").hide();
+    $("#pieceFive").show();
+  });
+
+
+
+
+
+  $(".artPiece").not("#pieceThree").click(function(){
+    $(this).hide();
+    var next = $(this).closest(this).nextAll(this).eq(0);
+    /*if (next.length === 0) next = $(this).closest(this).prevAll(this).last();*/
+    next.show();
+  });
+
+});
+
+</script>
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-58433481-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+
+<body>
+
+
+
+
+<!--<nav>
+<ul>
+
+<li>mission</li>
+<li>archive</li>
+<li>stores</li>
+<li>submit</li>
+<li>masthead</li>
+
+
+</ul>
+</nav>-->
+
+<a href="http://storyscapejournal.com"><img src="../Issue12/logo.png" id="logo"></a>
+<nav>
+<ul>
+<li><a href="../mission">Mission</a></li>
+<li><a href="../archive">Archive</a></li>
+<li><a href="../stores">Stores</a></li>
+<li><a href="../submit">Submit</a></li>
+<li><a href="../donate">Donate</a></li>
+<li><a href="../events">Events</a></li>
+<li><a href="masthead.html">Masthead</a></li>
+<li><a href="http://blog.storyscapejournal.com">Blog</a></li>
+
+</ul>
+
+</nav>
+
+
+<div class="sidebar">
+<p id="truth">Truth</p>
+<p id="untruth">unTruth</p>
+<p id="dontknow">We don't know...</p>
+<p id="coverart" class="active"><a href="cover-art-by-lizzy-martinez.html">Cover Art</a></p>
+<ul id="truthList">
+<li>Joey Belonger
+  <p><a href="urim-and-thummim-by-joey-belonger.html">Urim and Thummim</a></p>
+</li>
+
+<li>Janelle Effiwatt
+  <p><a href="phrases-that-might-be-helpful-by-janelle-effiwatt.html">Phrases That Might Be Helpful</a></p>
+  <p><a href="2006-Elida-St-by-janelle-effiwatt.html">2006 Elida St.</a></p>
+</li>
+
+<li>Caroline M. Mar
+  <p><a href="chinese-girl-by-caroline-m-mar.html">Chinese Girl</a></p>
+  <p><a href="uniform-by-caroline-m-mar.html">Uniform</a></p>
+</li>
+
+<li>Indigo Perry
+  <p><a href="umbra-1976-by-indigo-perry.html">Umbra, 1976</a></p>
+</li>
+
+<li>Samantha Kim Rogers
+  <p><a href="in-women-by-samantha-kim-rogers.html">In Women</a></p>
+</li>
+
+<li>William Walker
+  <p><a href="sex-education-by-william-walker.html">Sex Education</a></p>
+</li>
+
+</ul>
+
+<ul id="untruthList">
+<li>Rosaleen Bertolino
+  <p><a href="i-missed-my-bed-by-rosaleen-bertolino.html">I Missed My Bed</a></p>
+</li>
+
+<li>Anu Kandikuppa
+  <p><a href="little-rabbit-by-anu-kandikuppa.html">Little Rabbit</a></p>
+</li>
+
+<li>John Mandelberg
+  <p><a href="about-the-desert-photos-by-john-mandelberg.html">About the Desert Photos</a></p>
+</li>
+
+<li>Simon Perchik
+  <p><a href="untitled-by-simon-perchik.html">Untitled</a></p>
+</li>
+
+<li>Katie Runde
+  <p><a href="sun-and-shade-by-katie-runde.html">Sun and Shade</a></p>
+</li>
+
+</ul>
+
+<ul id="dontknowList">
+
+<li>Jeni De La O
+  <p><a href="viandero-by-jeni-de-la-o.html">Viandero</a></p>
+  <p><a href="v-home-by-jeni-de-la-o.html">V. Home</a></p>
+</li>
+
+<li>Kathleen Hellen
+  <p><a href="the-black-ops-of-pop-by-kathleen-hellen.html">The Black Ops of Pop</a></p>
+</li>
+
+<li>Elizabeth Langemak
+  <p><a href="the-answer-to-everything-by-elizabeth-langemak.html">The Answer to Everything</a></p>
+</li>
+
+<li>Yen Nguyen
+  <p><a href="the-mark-by-yen-nguyen.html">The Mark</a></p>
+</li>
+
+<li>C.E. Shue
+  <p><a href="someone-to-watch-over-me-by-c-e-shue.html">Someone to Watch Over Me</a></p>
+</li>
+
+</ul>
+
+<ul id="coverartList">
+  <li>Lizzy Martinez
+    <p id="artButton1">Disco Wolf</p>
+      <p id="artButton2">Paper Dragon</p>
+      <p id="artButton3">Sunday</p>
+
+
+  </li>
+</ul>
+
+</div>
+
+<div class="pieceTitle">Cover Art</div>
+<div class="byline">Lizzy Martinez</div>
+<div class="pieceText">
+<div id="pieceOne" class="artPiece"><img src="images/disco-wolf.jpg" alt="Art by Lizzy Martinez"></div>
+<div id="pieceTwo" class="artPiece"><img src="images/paper-dragon.jpg" alt="Art by Lizzy Martinez"></div>
+<div id="pieceThree" class="artPiece"><img src="images/Sunday.jpg" alt="Art by Lizzy Martinez"></div>
+
+</div>
+<div class="bio">
+<p>Lizzy Martinez is a figurative, Latina artist based in St. Louis, an alumni of Boston University and the Minneapolis of Art &smp; Design, an Elizabeth Greenshields Foundation and the Brand Boeshaar awardee, and a winner of the Constantin Alajalov Scholarship among other distinctions such as her semester long exhibit in 2017 at the University of Missouri St. Louis, <em>Jumbled Time</em>. Indeed, Martinez often marries the cultural outputs of the past to talk about her social concerns of the present: advocating for women’s and animal rights by borrowing and retelling their positions in works that have traditionally given the male advantage whether classic fairytales such as <em>Little Red Riding hood</em>, Homer’s <em>The Odyssey</em>, <em>Aesop's Fables</em>, or H.G. Wells’ <em>The Island of Doctor Moreau</em>. She finds unexpected female heroines whom our greater society has forgotten such as <em>Candy Land</em> inventor Eleanor Abbott or Annie Malone, the first black millionaire, and reflects on both the hardships and the accomplishments women face through her work. She channels traditional techniques while considering the human form with a pointed, feminist, minority eyes to interpret symbolism and narratives both original and adapted from literature or film to enhance both humor and tension. She has exhibited in the Midwest, New England, and Ireland including the Figge Art Museum. She is always seeking new opportunities and is concurrently planning exciting artist in residence journeys that couple travel with lectures, creation, and exhibitions.<br>
+<br><a href="http://lizzymartinez.com">lizzymartinez.com</a></p>
+</div>
+
+
+
+
+<footer>
+<div id="copyright">Copyright &copy; 2007–2018 <br />Storyscape Journal <br />ISSN 1941-3157</div><a href="https://www.facebook.com/storyscape"><img src="../Issue12/facebookbadge.png"></a><a href="https://twitter.com/_storyscape"><img src="../Issue12/twitterbadge.png"></a><a href="http://storyscapejournal.us1.list-manage.com/subscribe/post?u=827a3200ce6a7e7f127c32de4&id=c114b13be2"><img src="../Issue12/mailbadge.png"></a><a href="http://www.clmp.org/><img src="clmp-large.png" id="clmp"></a>
+</footer>
+
+</body>
+</html>

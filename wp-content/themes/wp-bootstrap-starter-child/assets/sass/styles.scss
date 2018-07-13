@@ -2207,3 +2207,140 @@ span.opinion-badge__dissenting {
   margin: -2px 2px 0;
   vertical-align: middle;
 }
+
+/* JUDGE OPINIONS / FEATURES STYLES */
+
+h3.feature {
+  text-align: center;
+  font-size: 2.6rem;
+
+}
+
+article.feature-opinion-list {
+
+  margin-top: 1.2rem;
+
+  span.post-date {
+    margin-bottom: .25rem;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+
+    span.case-number {
+      font-family: $sans-serif;
+      font-weight: bolder;
+      padding-right: .4rem;
+      font-size: .8rem;
+      position: relative;
+      top: -1px;
+      //vertical-align: middle;
+      //color: $medium-gray;
+
+      @media screen and (max-width: 767px) {
+        top: 0;
+        display: block;
+        font-size: 1.1rem;
+      }
+    }
+  }
+
+  .opinion-badge {
+    padding: 2px 4px;
+  }
+
+
+}
+
+a.no-line:hover {
+  //text-decoration: none;
+  color: $white;
+  border-bottom: 1px solid $white;
+}
+.hero-banner {
+  background: $gold-highlight;
+  font-family: $sans-serif;
+  color: $white;
+  padding-top: .75rem;
+  padding-bottom: 0.75rem;
+  //text-transform: uppercase;
+  font-weight: bolder;
+  font-size: 1.15rem;
+  //letter-spacing: 0.1rem;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+
+  &:hover {
+    background: darken($gold-highlight, 5%);
+    text-decoration: none;
+    //border-bottom: 1px solid $white;
+  }
+}
+
+/* Temporary fix for Kav page */
+body.page-id-39854 {
+
+  .block-title {
+    @media screen and (max-width: 767px) {
+      margin-top: 4rem;
+    }
+  }
+}
+
+/* Opinion Tag Filtering */
+p.tag-list {
+  text-align: center;
+  width: 80%;
+  margin: 0 auto;
+}
+a.tag-cloud-link {
+
+  font-family: $sans-serif;
+  background: $blue-plum;
+  color: $white;
+  border-radius: 2px;
+  text-decoration: none;
+  padding: .2rem .6rem;
+  margin: .13rem 0;
+  display: inline-flex;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+
+  &:hover {
+    background: lighten($blue-plum, 20%);
+    color: $white;
+    text-decoration: none;
+  }
+
+  &.active {
+    background: $gold-highlight;
+  }
+
+}
+
+span.case-tag {
+  font-family: $sans-serif;
+  color: $blue-plum;
+  font-size: 0.5rem;
+
+  display: inline-flex;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  border-radius: 2px;
+  border: 1px solid $blue-plum;
+
+  &:hover {
+    background: lighten($blue-plum, 50%);
+  }
+
+  a {
+    padding: .1rem .3rem;
+    color: $blue-plum;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+}

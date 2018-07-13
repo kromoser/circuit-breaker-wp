@@ -21,6 +21,7 @@ get_header('narrow'); ?>
 					$date_scheduled = get_field('argument_date', false, false);
 					$date = new DateTime($date_scheduled);
 					$date_scheduled = date('m/d/Y', strtotime($date_scheduled) );
+					$id = get_the_ID();
 
 				?>
 
@@ -96,11 +97,18 @@ get_header('narrow'); ?>
 		// TO SHOW THE PAGE CONTENTS
 		while ( have_posts() ) : the_post(); ?> <!--Because the_content() works only inside a WP Loop -->
 			<?php
-			$opinion_names = array_merge(get_field('opinion_name_for_judges', false, false), get_field('concurring_judge_opinion', false, false), get_field('dissenting_judge_opinion', false, false));
+
+
+			if (get_field('opinion_name_for_judges')) { $written_opinions = get_field('opinion_name_for_judges', false, false); } else { $written_opinions = []; }
+			if (get_field('concurring_judge_opinion')) { $concurring_opinions = get_field('concurring_judge_opinion', false, false); } else { $concurring_opinions = []; }
+			if (get_field('dissenting_judge_opinion')) { $dissenting_opinions = get_field('dissenting_judge_opinion', false, false); } else { $dissenting_opinions = []; }
+
+
+			$opinion_names = array_merge( $written_opinions, $concurring_opinions, $dissenting_opinions );
 
 			$args = array(
 				'post_type' 			=> 'opinion',
-				'posts_per_page'	=> -1,
+				'posts_per_page'	=> 25,
 				'post__in'				=> $opinion_names,
 				'meta_key'				=> 'date_issued',
 				'order'						=> 'DESC',
@@ -127,11 +135,11 @@ get_header('narrow'); ?>
 
 
 								<li> <a href="<?php echo get_the_permalink($case_ID); ?>"><?php echo get_the_title($case_ID) ?></a>
-									<?php if ( get_field('dissenting_judge_opinion') ) {
-										echo '<span class="opinion-badge__dissenting">Dissenting</span>';
-									} elseif ( get_field('concurring_judge_opinion')) {
-										echo '<span class="opinion-badge__concurring">Concurring</span>';
-									}; ?>
+									<?php //if ( get_field('dissenting_judge_opinion') ) {
+										//echo '<span class="opinion-badge__dissenting">Dissenting</span>';
+									//} elseif ( get_field('concurring_judge_opinion')) {
+										//echo '<span class="opinion-badge__concurring">Concurring</span>';
+									//}; ?>
 								</li>
 
 
@@ -140,10 +148,13 @@ get_header('narrow'); ?>
 
 					</ul>
 
-				</div>
-				</aside><!-- #secondary -->
+
+
+
 				<?php
 
+			} else {
+				echo 'There are no opinions by this judge.';
 			};?>
 				<?php
 
@@ -151,8 +162,10 @@ get_header('narrow'); ?>
 				wp_reset_query(); //resetting the page query
 
 				?>
-				<?php $id = get_the_ID(); ?>
+
 				<a href="<?php echo site_url('opinions/judge/'.$id ); ?>" class="btn btn-main">View all opinions</a>
+			</div>
+			</aside><!-- #secondary -->
 
 
 <?php

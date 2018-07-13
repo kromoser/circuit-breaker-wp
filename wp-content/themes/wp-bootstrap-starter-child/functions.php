@@ -599,4 +599,19 @@ function wpse26388_query_vars( $query_vars ){
     return $query_vars;
 }
 
+// Redirect Kavanaugh page
+add_action('init', 'redirect_kav_page');
+function redirect_kav_page(){
+  add_rewrite_rule(
+    'kavanaugh-opinions',
+    'index.php?pagename=judge&judge_id=1654',
+    'top'
+  );
+}
+
+// Make names possessive
+function properize($string) {
+	return $string.'’'.($string[strlen($string) - 1] != 's' ? 's' : '');
+}
+
 ?>

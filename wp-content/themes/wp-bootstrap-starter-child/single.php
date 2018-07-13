@@ -17,6 +17,10 @@ get_header('narrow'); ?>
 
 			get_template_part( 'template-parts/content', get_post_format() );
 
+			if(function_exists('social_warfare')) {
+    		social_warfare();
+			};
+
 			   // the_post_navigation();
 
 			// If comments are open or we have at least one comment, load up the comment template.
