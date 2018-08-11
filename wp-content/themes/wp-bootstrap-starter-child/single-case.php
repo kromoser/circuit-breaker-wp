@@ -15,9 +15,12 @@ get_header('narrow'); ?>
 					// Get opinions relationship field and argument date
 					$opinions = get_field('case_number_for_opinion');
 					$one_week_ago = date('F d, Y', strtotime('-7 days'));
-					$date_scheduled = get_field('argument_date', false, false);
-					$date = new DateTime($date_scheduled);
-					$date_scheduled = date('F d, Y', strtotime($date_scheduled) );
+					if (get_field('argument_date')) {
+						$date_scheduled = get_field('argument_date', false, false);
+						$date = new DateTime($date_scheduled);
+						$date_scheduled = date('F d, Y', strtotime($date_scheduled) );
+					};
+
 
 				?>
 

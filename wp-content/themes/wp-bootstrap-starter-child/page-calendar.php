@@ -42,7 +42,7 @@ get_header('narrow'); ?>
 				'post_type'						=> 'case',
 				'meta_key'						=> 'argument_date',
 				'order'								=> 'ASC',
-				'posts_per_page'			=> '10',
+				'posts_per_page'			=> '-1',
 				'meta_compare' 				=> '>=',
 				'meta_type' 					=> 'numeric',
 				'meta_value' 					=> $today,
@@ -85,6 +85,7 @@ get_header('narrow'); ?>
 					?>
 
 					$('#calendar').fullCalendar({
+						defaultView: $(window).width() < 765 ? 'listWeek':'month',
 
 						events: javascript_array
 					});

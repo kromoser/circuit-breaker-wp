@@ -21,8 +21,11 @@
     <link rel="profile" href="http://gmpg.org/xfn/11">
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
     <?php 			$url_id = get_query_var('judge_id');
+    $judge_name = get_the_title($url_id);
+
  ?>
     <title><?php echo get_the_title($url_id) ?> - Opinions </title>
+
 <?php wp_head(); ?>
 
 <script
