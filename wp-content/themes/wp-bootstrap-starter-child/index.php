@@ -168,11 +168,9 @@ KAVANAUGH EXCLUSIVE: Click here for every opinion, dissent, and concurrence writ
 									</ul>
 									<a href="cases" class="btn btn-main">View all cases</a>
 
-								<!--<div class="block-title">Upcoming arguments</div>
+								<div class="block-title">Upcoming arguments</div>
 		                <div class="calendar">
-											<p class="alert-note">
-												Note: The court does not typically hold arguments during the summer. When the court resumes arguments in September, the calendar will be updated.
-											</p>
+
 											<ul>
 												<?php
 												// Upcoming arguments case list
@@ -185,7 +183,7 @@ KAVANAUGH EXCLUSIVE: Click here for every opinion, dissent, and concurrence writ
 													'post_type'						=> 'case',
 													'meta_key'						=> 'argument_date',
 													'order'								=> 'ASC',
-													'posts_per_page'			=> '10',
+													'posts_per_page'			=> '5',
 													'meta_compare' 				=> '>=',
 													'meta_type' 					=> 'numeric',
 													'meta_value' 					=> $today,
@@ -214,7 +212,7 @@ KAVANAUGH EXCLUSIVE: Click here for every opinion, dissent, and concurrence writ
 
 											<a href="calendar" class="btn btn-main">View all upcoming arguments</a>
 
-		                </div>-->
+		                </div>
 					</div>
 
 					<!-- right column / sidebar -->
