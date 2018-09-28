@@ -59,8 +59,10 @@ KAVANAUGH EXCLUSIVE: Click here for every opinion, dissent, and concurrence writ
 														<div class="post-background" style="background-image: url('<?php echo $image[0] ?>');">
 
 														</div>
-														<h2 class=""><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h2>
-														<?php the_excerpt() ?>
+														<div class="headline-excerpt-container">
+															<h2 class=""><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h2>
+															<?php the_excerpt() ?>
+														</div>
 													</div>
 
 													<div class="col-lg-4 col-12 secondary-feature-posts h-100">
