@@ -49,8 +49,8 @@ get_header('narrow'); ?>
 
 											$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
 											<!-- FEATURED POST/IMG HERO -->
-											<a href="kavanaugh-opinions" class="w-100 no-line"><div class="hero-banner">
-KAVANAUGH EXCLUSIVE: Click here for every opinion, dissent, and concurrence written by Judge Kavanaugh.												</div></a>
+											<!--<a href="kavanaugh-opinions" class="w-100 no-line"><div class="hero-banner">
+KAVANAUGH EXCLUSIVE: Click here for every opinion, dissent, and concurrence written by Judge Kavanaugh.</div></a>-->
 											<div class="container-fluid hero-posts align-items-center" >
 
 												<div class="row align-items-center h-100 text-white gradient-overlay">
