@@ -59,7 +59,8 @@ crossorigin="anonymous"></script>
 
       searchButton.on('click', function() {
         searchContainer.slideToggle(200);
-      //  jQuery('.search form input').focus();
+        jQuery('.search-field').focus();
+        jQuery('.search-field').prop('autofocus');
       });
 
       //jQuery('.search form input').on('change', function() {

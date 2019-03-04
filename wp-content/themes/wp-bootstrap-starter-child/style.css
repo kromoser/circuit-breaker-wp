@@ -511,12 +511,12 @@ ul.case-list {
       top: -3px;
       margin-right: 6px; }
     ul.case-list a li.arguments:before {
-      content: "Arguments";
+      content: "Pending Argument";
       text-transform: uppercase;
       color: #ffffff;
       font-weight: bold;
       background: #278585;
-      letter-spacing: 0.15rem;
+      letter-spacing: 0.1rem;
       font-size: 0.6rem;
       border-radius: 3px;
       padding: 3px 3px 3px 6px;

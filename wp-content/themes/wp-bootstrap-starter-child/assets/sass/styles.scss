@@ -821,12 +821,12 @@ ul.case-list {
     }
 
     li.arguments:before {
-      content: "Arguments";
+      content: "Pending Argument";
       text-transform: uppercase;
       color: $white;
       font-weight: bold;
       background: $accent-turquoise;
-      letter-spacing: 0.15rem;
+      letter-spacing: 0.1rem;
       font-size: 0.6rem;
       border-radius: 3px;
       padding: 3px 3px 3px 6px;

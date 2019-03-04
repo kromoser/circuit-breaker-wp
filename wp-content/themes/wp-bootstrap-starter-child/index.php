@@ -157,8 +157,13 @@ KAVANAUGH EXCLUSIVE: Click here for every opinion, dissent, and concurrence writ
 											<?php
 												$opinion = get_post_meta($post->ID, 'opinion', true);
 												$argument = get_post_meta($post->ID, 'argument_date', true);
+
+												$argument_date = date('Ymd', strtotime($argument));
+
+												$today = date('Ymd', strtotime("now"));
+
 											?>
-												<a href="<?php the_permalink() ?>"><li class="<?php if ($opinion) {?>opinion-issued<?php }?><?php if ($argument) {?>arguments<?php }?>"><?php the_title() ?></li></a>
+												<a href="<?php the_permalink() ?>"><li class="<?php if ($opinion) {?>opinion-issued<?php }?><?php if ($argument && $argument_date >= $today) {?>arguments<?php }?>"><?php the_title() ?></li></a>
 											<?php endwhile;
 
 											wp_reset_postdata();
